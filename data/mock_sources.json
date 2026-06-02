@@ -1,0 +1,38 @@
+[
+  {
+    "source_id": "guideline_ada_2024",
+    "title": "ADA Standards of Care in Diabetes 2024",
+    "source_type": "guideline",
+    "year": 2024,
+    "url": "https://example.org/ada-2024",
+    "quality_score": 0.95,
+    "content": "For adults with type 2 diabetes and hypertension, blood pressure management should be part of comprehensive cardiovascular risk reduction. ACE inhibitors or angiotensin receptor blockers are commonly recommended, especially when albuminuria or chronic kidney disease is present. Lifestyle management remains foundational."
+  },
+  {
+    "source_id": "guideline_esh_2023",
+    "title": "European Society of Hypertension Guideline 2023",
+    "source_type": "guideline",
+    "year": 2023,
+    "url": "https://example.org/esh-2023",
+    "quality_score": 0.91,
+    "content": "In patients with diabetes and hypertension, first-line antihypertensive treatment often includes ACE inhibitors or ARBs. Blood pressure targets should be individualized according to cardiovascular risk, age, and comorbidities."
+  },
+  {
+    "source_id": "review_t2dm_htn_2022",
+    "title": "Review on Type 2 Diabetes with Hypertension in Primary Care",
+    "source_type": "review",
+    "year": 2022,
+    "url": "https://example.org/review-2022",
+    "quality_score": 0.76,
+    "content": "Combined control of glucose, blood pressure, weight, and lifestyle factors is important in type 2 diabetes with hypertension. Guideline-based treatment frequently prioritizes renin-angiotensin system blockade together with diet and exercise."
+  },
+  {
+    "source_id": "blog_low_quality_2021",
+    "title": "Personal Blog About Diabetes and Blood Pressure",
+    "source_type": "blog",
+    "year": 2021,
+    "url": "https://example.org/blog-2021",
+    "quality_score": 0.28,
+    "content": "Some people believe natural therapies should always be tried before medication. Drug choice can depend mainly on personal experience and preference."
+  }
+]
