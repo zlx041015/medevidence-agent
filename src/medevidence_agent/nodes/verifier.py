@@ -20,9 +20,21 @@ def verify_evidence(
     source_count = len(evidence_items)
     recent_count = sum(1 for item in evidence_items if item.year >= 2020)
 
-    confidence = avg_score * 0.45
-    confidence += min(source_count, 5) * 0.08
+    type_weights = {
+        "guideline": 0.14,
+        "systematic_review": 0.12,
+        "meta_analysis": 0.12,
+        "review": 0.08,
+        "trial": 0.08,
+        "case_report": 0.03,
+        "pubmed_article": 0.05,
+    }
+    type_bonus = sum(type_weights.get(item.source_type, 0.05) for item in evidence_items)
+
+    confidence = avg_score * 0.4
+    confidence += min(source_count, 5) * 0.06
     confidence += min(recent_count, 3) * 0.05
+    confidence += min(type_bonus, 0.25)
     confidence = min(1.0, round(confidence, 3))
 
     conflicts: list[str] = []
@@ -32,6 +44,9 @@ def verify_evidence(
 
     if recent_count == 0:
         conflicts.append("当前证据缺少较新的文献来源。")
+
+    if all(item.source_type == "case_report" for item in evidence_items):
+        conflicts.append("当前证据主要来自病例报告，证据等级较弱。")
 
     question_keywords: list[str] = []
     if "癌" in question_text or "cancer" in question_lower:
@@ -63,7 +78,9 @@ def verify_evidence(
     elif unique_keywords and keyword_hits <= max(1, len(unique_keywords) // 5):
         conflicts.append("当前证据仅部分覆盖问题主题。")
 
-    if source_count >= 3 and recent_count >= 1:
+    if any(item.source_type == "guideline" for item in evidence_items):
+        summary_claim = "当前已有较高层级来源证据，可用于支持初步医学总结。"
+    elif source_count >= 3 and recent_count >= 1:
         summary_claim = "当前已有多条来源证据可用于支持初步医学总结。"
     elif source_count >= 2:
         summary_claim = "当前已有有限但可用的来源证据，可形成初步总结。"

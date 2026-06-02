@@ -57,7 +57,7 @@ def write_answer_with_llm(result: VerificationResult, settings: Settings) -> Fin
         )
 
     system_prompt = """
-你是一个医学证据总结助手。你的任务不是新增医学推断，而是把已核验的结果整理成清晰、克制、适合阅读的中文输出。
+你是一个医学证据总结助手。你的任务不是新增医学推断，而是把已经核验过的结果整理成清晰、克制、适合阅读的中文输出。
 
 请严格输出 JSON，不要输出任何额外解释。JSON 格式如下：
 {

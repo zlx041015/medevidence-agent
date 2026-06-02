@@ -9,39 +9,56 @@ def build_rule_based_search_plan(question: ClinicalQuestion) -> SearchPlan:
     text = question.text.strip()
     lowered = text.lower()
 
-    keywords = ["diabetes", "hypertension", "guideline"]
+    keywords = ["clinical guideline"]
 
+    if "癌" in text or "cancer" in lowered:
+        keywords.append("cancer")
+    if "胰腺癌" in text or "pancreatic cancer" in lowered:
+        keywords.append("pancreatic cancer")
+    if "甲状腺" in text or "thyroid" in lowered:
+        keywords.append("thyroid")
+    if "甲状腺肿大" in text or "goiter" in lowered or "thyroid enlargement" in lowered:
+        keywords.append("goiter")
+        keywords.append("thyroid enlargement")
+
+    if "糖尿病" in text or "diabetes" in lowered:
+        keywords.append("diabetes mellitus")
     if "高血压" in text or "hypertension" in lowered:
+        keywords.append("hypertension")
         keywords.append("blood pressure")
-        keywords.append("antihypertensive")
 
-    if "2型糖尿病" in text or "type 2 diabetes" in lowered:
-        keywords.append("type 2 diabetes")
-
-    if "一线" in text or "first-line" in lowered or "首选" in text:
-        keywords.append("first-line")
-        keywords.append("ACE inhibitor")
-        keywords.append("ARB")
-
-    if "蛋白尿" in text or "albuminuria" in lowered:
-        keywords.append("albuminuria")
-
+    if "蛋白尿" in text or "albuminuria" in lowered or "proteinuria" in lowered:
+        keywords.append("proteinuria")
     if "肾病" in text or "chronic kidney disease" in lowered or "ckd" in lowered:
         keywords.append("chronic kidney disease")
 
-    if "目标" in text or "target" in lowered:
-        keywords.append("blood pressure targets")
-        keywords.append("individualized targets")
+    if "并发症" in text or "complication" in lowered:
+        keywords.append("complications")
+    if "压迫" in text or "compressive" in lowered:
+        keywords.append("compressive symptoms")
+    if "甲亢" in text or "hyperthyroidism" in lowered:
+        keywords.append("hyperthyroidism")
+    if "甲减" in text or "hypothyroidism" in lowered:
+        keywords.append("hypothyroidism")
 
-    if "生活方式" in text or "lifestyle" in lowered:
-        keywords.append("lifestyle")
-        keywords.append("exercise")
-        keywords.append("diet")
+    if "用药" in text or "治疗" in text or "treatment" in lowered or "therapy" in lowered:
+        keywords.append("drug therapy")
+        keywords.append("treatment")
+
+    if "一线" in text or "首选" in text or "first-line" in lowered:
+        keywords.append("first-line")
+
+    if "目标" in text or "target" in lowered:
+        keywords.append("management target")
+        keywords.append("individualized treatment")
+
+    if "指南" in text or "guideline" in lowered:
+        keywords.append("guideline")
 
     keywords = list(dict.fromkeys(keywords))
 
     return SearchPlan(
-        intent="Find evidence-based management suggestions for the clinical question.",
+        intent=f"Find evidence-based management suggestions for: {question.text}",
         keywords=keywords,
         risk_level="high",
     )
@@ -61,7 +78,7 @@ def build_llm_search_plan(question: ClinicalQuestion, settings: Settings) -> Sea
 要求：
 1. 不要直接回答医学问题
 2. keywords 应适合检索临床指南、综述或医学资料
-3. risk_level 对治疗建议类问题统一输出 high
+3. risk_level 对治疗建议类、并发症类和临床风险类问题统一输出 high
 4. keywords 数量控制在 4 到 8 个之间
 5. 关键词优先使用英文医学检索词
 """.strip()
@@ -69,14 +86,13 @@ def build_llm_search_plan(question: ClinicalQuestion, settings: Settings) -> Sea
     user_prompt = f"用户问题：{question.text}"
 
     raw = chat_completion(
-    settings=settings,
-    system_prompt=system_prompt,
-    user_prompt=user_prompt,
-    temperature=0.2,
+        settings=settings,
+        system_prompt=system_prompt,
+        user_prompt=user_prompt,
+        temperature=0.2,
     )
 
     data = json.loads(raw)
-    
 
     return SearchPlan(
         intent=data["intent"],

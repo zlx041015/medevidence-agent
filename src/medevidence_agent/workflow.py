@@ -1,19 +1,56 @@
-from rich.console import Console
+from collections import OrderedDict
 from typing import Callable
 
+from rich.console import Console
+
 from medevidence_agent.config import Settings
-from medevidence_agent.models import ClinicalQuestion, WorkflowState
+from medevidence_agent.models import ClinicalQuestion, SourceDocument, WorkflowState
 from medevidence_agent.nodes.extractor import extract_evidence
 from medevidence_agent.nodes.planner import build_search_plan
 from medevidence_agent.nodes.verifier import verify_evidence
 from medevidence_agent.nodes.writer import write_answer
-from medevidence_agent.tools.pubmed import fetch_pubmed_articles, search_pubmed_pmids
-from medevidence_agent.tools.search import keyword_overlap_score
-from medevidence_agent.tools.search import retrieve_sources
+from medevidence_agent.rag.retriever import build_rag_context, persist_documents_to_store
+from medevidence_agent.tools.pubmed import (
+    fetch_pubmed_articles,
+    search_pubmed_pmids_with_fallback,
+)
+from medevidence_agent.tools.search import keyword_overlap_score, retrieve_sources
 from medevidence_agent.tools.storage import load_mock_sources
 
 
 console = Console()
+
+
+def _apply_pubmed_scoring(documents: list[SourceDocument], query_terms: list[str]) -> list[SourceDocument]:
+    for source in documents:
+        overlap = keyword_overlap_score(query_terms, source.content)
+        final_score = 0.6 * overlap + 0.4 * source.quality_score
+        source.relevance_score = round(final_score, 3)
+    documents.sort(key=lambda item: item.relevance_score, reverse=True)
+    return documents
+
+
+def _compress_rag_chunks_to_sources(chunks) -> list[SourceDocument]:
+    grouped: OrderedDict[str, SourceDocument] = OrderedDict()
+
+    for chunk in chunks:
+        existing = grouped.get(chunk.source_id)
+        if existing is None:
+            grouped[chunk.source_id] = SourceDocument(
+                source_id=chunk.source_id,
+                title=chunk.title,
+                source_type=chunk.source_type,
+                year=chunk.year,
+                url=chunk.url,
+                quality_score=0.78,
+                content=chunk.text,
+                relevance_score=chunk.score,
+            )
+        else:
+            existing.content += f"\n\n{chunk.text}"
+            existing.relevance_score = max(existing.relevance_score, chunk.score)
+
+    return list(grouped.values())
 
 
 def run_workflow(
@@ -29,6 +66,7 @@ def run_workflow(
             progress_callback(stage, current, total)
 
     update_progress("开始分析", 0, 5)
+
     if verbose:
         console.rule("Planner")
     update_progress("规划检索问题", 1, 5)
@@ -47,15 +85,21 @@ def run_workflow(
     update_progress("检索候选来源", 2, 5)
 
     if settings.source_mode == "pubmed":
-        query = " ".join(state.plan.keywords)
-        pmids = search_pubmed_pmids(query, retmax=max(settings.top_k, 5))
-        sources = fetch_pubmed_articles(pmids)
-        for source in sources:
-            overlap = keyword_overlap_score(state.plan.keywords, source.content)
-            final_score = 0.6 * overlap + 0.4 * source.quality_score
-            source.relevance_score = round(final_score, 3)
-        sources.sort(key=lambda item: item.relevance_score, reverse=True)
-        state.candidate_sources = sources[: settings.top_k]
+        pmids = search_pubmed_pmids_with_fallback(
+            state.plan.keywords,
+            retmax=max(settings.top_k, 8),
+        )
+        raw_sources = fetch_pubmed_articles(pmids)
+        scored_sources = _apply_pubmed_scoring(raw_sources, state.plan.keywords)
+        persist_documents_to_store(scored_sources, settings.rag_store_path)
+        rag_chunks = build_rag_context(
+            scored_sources,
+            state.plan.keywords,
+            top_k_chunks=settings.rag_top_k_chunks,
+            sparse_weight=settings.rag_sparse_weight,
+            dense_weight=settings.rag_dense_weight,
+        )
+        state.candidate_sources = _compress_rag_chunks_to_sources(rag_chunks)[: settings.top_k]
     else:
         sources = load_mock_sources(settings.data_path)
         state.candidate_sources = retrieve_sources(

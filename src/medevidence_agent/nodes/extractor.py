@@ -19,12 +19,12 @@ def build_rule_based_claim_from_content(content: str) -> str:
         return "ACEI/ARB 常作为一线降压选择，并应结合生活方式干预。"
 
     if mentions_ace_arb:
-        return "ACEI/ARB 常作为糖尿病合并高血压患者的一线降压选择。"
+        return "ACEI/ARB 常作为相关疾病管理中的重要治疗选择。"
 
     if mentions_lifestyle:
-        return "生活方式干预是糖尿病合并高血压管理的重要组成部分。"
+        return "该来源强调了生活方式干预在疾病管理中的重要性。"
 
-    return "该来源支持糖尿病合并高血压患者需要综合管理。"
+    return "该来源支持当前问题需要结合临床背景进行综合管理。"
 
 
 def extract_evidence_rule_based(candidates: list[SourceDocument]) -> list[EvidenceItem]:
@@ -49,9 +49,7 @@ def extract_evidence_rule_based(candidates: list[SourceDocument]) -> list[Eviden
     return evidence
 
 
-def extract_single_evidence_with_llm(
-    item: SourceDocument, settings: Settings
-) -> EvidenceItem:
+def extract_single_evidence_with_llm(item: SourceDocument, settings: Settings) -> EvidenceItem:
     system_prompt = """
 你是一个医学证据抽取助手。你的任务不是回答问题，而是从单条来源内容中抽取结构化证据。
 
@@ -96,9 +94,7 @@ def extract_single_evidence_with_llm(
     )
 
 
-def extract_evidence(
-    candidates: list[SourceDocument], settings: Settings
-) -> list[EvidenceItem]:
+def extract_evidence(candidates: list[SourceDocument], settings: Settings) -> list[EvidenceItem]:
     try:
         return [extract_single_evidence_with_llm(item, settings) for item in candidates]
     except Exception as exc:
