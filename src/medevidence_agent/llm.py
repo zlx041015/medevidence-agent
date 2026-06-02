@@ -1,4 +1,5 @@
 import json
+import time
 from urllib import request
 
 from medevidence_agent.config import Settings
@@ -42,12 +43,20 @@ def chat_completion(
         },
     )
 
-    with request.urlopen(req, timeout=60) as response:
-        raw = response.read().decode("utf-8")
+    last_error: Exception | None = None
 
-    result = json.loads(raw)
+    for attempt in range(3):
+        try:
+            with request.urlopen(req, timeout=60) as response:
+                raw = response.read().decode("utf-8")
 
-    return result["choices"][0]["message"]["content"]
+            result = json.loads(raw)
+            return result["choices"][0]["message"]["content"]
+        except Exception as exc:
+            last_error = exc
+            if attempt < 2:
+                time.sleep(1.2 * (attempt + 1))
+            else:
+                break
 
-    result = json.loads(raw)
-    return result["choices"][0]["message"]["content"]
+    raise RuntimeError(f"LLM request failed after 3 attempts: {last_error}")

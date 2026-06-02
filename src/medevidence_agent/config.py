@@ -13,6 +13,7 @@ class Settings:
     openai_api_key: str = os.getenv("OPENAI_API_KEY", "")
     openai_base_url: str = os.getenv("OPENAI_BASE_URL", "")
     openai_model: str = os.getenv("OPENAI_MODEL", "")
+    source_mode: str = os.getenv("MEDEVIDENCE_SOURCE_MODE", "mock")
 
     use_mock: bool = os.getenv("MEDEVIDENCE_USE_MOCK", "true").lower() == "true"
     top_k: int = int(os.getenv("MEDEVIDENCE_TOP_K", "4"))

@@ -181,3 +181,111 @@
 - Insight:
   - 在 Verifier 仍然作为规则安全闸门的情况下，LLM Writer 是一种低风险、高收益的升级
   - 当前系统已经具备“LLM 负责理解与表达，规则负责检索排序和安全把关”的 v0.2 核心形态
+
+## Experiment 17: First Real Source Retrieval via PubMed ESearch
+- Change:
+  - 新增 `src/medevidence_agent/tools/pubmed.py`
+  - 实现 `search_pubmed_pmids()`，使用 PubMed E-utilities 的 `esearch.fcgi` 获取 PMID 列表
+- Observations:
+  - 使用检索词 `diabetes mellitus proteinuria hypertension ACE inhibitor` 成功返回真实 PMID 列表
+  - 说明 PubMed 检索接口可访问，且当前项目已具备真实医学来源入口
+- Insight:
+  - v0.3 的第一步应先解决“如何获取真实来源”，而不是一开始就做全文解析
+  - 通过 `PubMed -> PMID` 这一步，系统已经从 mock 数据阶段进入真实来源接入阶段
+
+## Experiment 18: Map PubMed Results into SourceDocument
+- Change:
+  - 在 `pubmed.py` 中新增 `fetch_pubmed_articles()`
+  - 使用 PubMed `efetch.fcgi` 获取标题、摘要和年份
+  - 将真实文献结果映射为项目内部的 `SourceDocument`
+- Observations:
+  - 系统已能将真实 PubMed 文献转换为 `SourceDocument`
+  - 每条来源包含 PMID、标题、年份、PubMed URL 和摘要拼接内容
+  - 真实检索结果会带来更复杂的来源分布，例如优先返回与蛋白尿/肾病相关的药物研究，而不一定直接是指南型结论
+- Insight:
+  - 当前项目已具备从真实医学来源构建证据输入的能力
+  - 与 mock 数据不同，真实来源引入后，Planner 和 Retriever 的检索质量将直接影响后续证据链质量
+
+## Experiment 19: First End-to-End Run with Real PubMed Sources
+- Change:
+  - 在 `workflow.py` 中加入 `source_mode` 分支
+  - 当 `MEDEVIDENCE_SOURCE_MODE=pubmed` 时，使用 `PubMed -> PMID -> SourceDocument` 替代本地 mock 数据
+- Observations:
+  - 系统成功完成了从真实 PubMed 检索到最终中文结论生成的端到端流程
+  - Retriever 返回了真实文献来源，而不再依赖 `mock_sources.json`
+  - LLM Extractor 能对真实文献摘要抽取中文 claim
+  - 在当前测试问题下，PubMed 检索结果偏向单药研究（如 irbesartan），而不是理想中的指南型证据
+  - Verifier 因证据不足、来源不够权威而显著降低 confidence，并触发人工审核
+- Insight:
+  - v0.3 的核心问题已经从“系统是否能跑通”转向“真实来源检索质量是否足够好”
+  - 对真实医学来源而言，Planner 的检索词设计和来源过滤策略将直接决定系统最终结论质量
+
+## Experiment 20: Domain Mismatch Under Planner Fallback
+- Question:
+  - 胰腺癌应该怎样用药
+- Observations:
+  - 在 LLM Planner 失败时，旧版规则 fallback 会错误地退回糖尿病/高血压主题
+  - 这会导致非目标疾病问题被错误检索到糖尿病/高血压相关文献
+- Insight:
+  - Agent 系统中的 fallback 不能只是“旧逻辑继续跑”，而必须与用户当前问题主题保持一致
+  - 规则版 Planner 需要从特定场景硬编码，升级为通用医学问题回退机制
+
+## Experiment 21: Generic Fallback Planner Prevents Topic Drift
+- Question:
+  - 胰腺癌应该怎样用药
+- Observations:
+  - 即使 LLM Planner 调用失败，通用规则版 fallback 仍能围绕 `cancer`、`pancreatic cancer`、`drug therapy` 等关键词继续检索
+  - 检索结果开始出现胰腺癌指南、癌症相关治疗和肿瘤风险管理相关文献，不再跑偏到糖尿病/高血压主题
+  - 当前 Verifier 仍因其规则围绕 ACEI/ARB 设计而给出较低置信度和冲突提示
+- Insight:
+  - Fallback planner 的通用化已经解决了“主题跑偏”的核心问题
+  - 下一阶段需要继续把下游核验逻辑从糖尿病高血压专用规则，升级为面向更广泛疾病问题的通用核验框架
+
+## Experiment 22: Shift to PubMed Direct-Through Workflow
+- Change:
+  - 将 `workflow.py` 调整为 `source_mode=pubmed` 时直接使用 PubMed 检索与抓取结果
+  - 弱化对本地 mock 来源库和强规则重排的依赖
+  - 将 `Verifier` 重构为面向多疾病问题的轻量审核器，不再绑定 ACEI/ARB 场景
+- Observations:
+  - 工作流已可实现“问题 -> PubMed 检索 -> LLM 抽取 -> LLM 总结”的直通式链路
+  - 对非糖尿病高血压场景，系统不再因旧 Verifier 规则而明显误判
+- Insight:
+  - 对当前项目而言，实时检索 + 抽取 + 总结比自建本地数据库更适合作为可展示、可落地的 agent 路线
+  - 将复杂规则简化为轻量审核，更有利于提升通用性
+
+## Experiment 23: Thyroid Goiter Complications End-to-End Test
+- Question:
+  - 甲状腺肿大会有什么并发症
+- Observations:
+  - LLM Planner 成功生成了与 `goiter`、`thyroid enlargement`、`complications`、`compressive symptoms`、`hyperthyroidism`、`hypothyroidism` 相关的检索词
+  - PubMed 直通检索返回了与甲状腺肿大并发症、压迫症状和功能异常相关的真实来源
+  - LLM Extractor 能从病例报告、病例系列和手术相关文献中提炼出并发症与风险信息
+  - LLM Writer 能围绕“并发症与风险识别”生成较自然的中文总结
+  - 当前来源的 `score` 仍然显示为 `0.0`，说明 PubMed 直通模式下还没有补充轻量相关性评分
+- Insight:
+  - 直通式工作流已经能够处理通用医学问题，而不局限于原始糖尿病高血压场景
+  - 下一步应补充轻量相关性评分或来源优先级逻辑，以提升置信度计算的可解释性
+
+## Experiment 17: First Real Source Retrieval via PubMed ESearch
+- Change:
+  - 新增 `src/medevidence_agent/tools/pubmed.py`
+  - 实现 `search_pubmed_pmids()`，使用 PubMed E-utilities 的 `esearch.fcgi` 获取 PMID 列表
+- Observations:
+  - 使用检索词 `diabetes mellitus proteinuria hypertension ACE inhibitor` 成功返回真实 PMID 列表
+  - 说明 PubMed 检索接口可访问，且当前项目已具备真实医学来源入口
+- Insight:
+  - v0.3 的第一步应先解决“如何获取真实来源”，而不是一开始就做全文解析
+  - 通过 `PubMed -> PMID` 这一步，系统已经从 mock 数据阶段进入真实来源接入阶段
+
+## Experiment 18: Map PubMed Results into SourceDocument
+- Change:
+  - 在 `pubmed.py` 中新增 `fetch_pubmed_articles()`
+  - 使用 PubMed `efetch.fcgi` 获取标题、摘要和年份
+  - 将真实文献结果映射为项目内部的 `SourceDocument`
+- Observations:
+  - 系统已能将真实 PubMed 文献转换为 `SourceDocument`
+  - 每条来源包含 PMID、标题、年份、PubMed URL 和摘要拼接内容
+  - 真实检索结果会带来更复杂的来源分布，例如优先返回与蛋白尿/肾病相关的药物研究，而不一定直接是指南型结论
+- Insight:
+  - 当前项目已具备从真实医学来源构建证据输入的能力
+  - 与 mock 数据不同，真实来源引入后，Planner 和 Retriever 的检索质量将直接影响后续证据链质量

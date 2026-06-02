@@ -115,3 +115,26 @@ Python 项目的依赖和安装配置文件。
 - 便于调试和定位问题
 - 能保留中间结果和证据链
 - 更适合后续扩展到 LangGraph、人工审核和前端系统
+
+---
+
+## Planned v0.3 Extension
+
+### Goal
+将当前基于本地 mock 数据的工作流，扩展为基于真实医学来源的 agent 工作流。
+
+### Planned Source Flow
+`Planner -> PubMed Search -> PubMed Fetch -> SourceDocument -> Retriever -> Extractor -> Verifier -> Writer`
+
+### New Module to Add
+- `src/medevidence_agent/tools/pubmed.py`
+
+### Responsibility of `pubmed.py`
+- 根据 Planner 生成的关键词搜索 PubMed
+- 获取 PMID、标题、摘要、年份等文献信息
+- 将结果转换为 `SourceDocument` 列表，供现有工作流继续使用
+
+### Design Principle
+v0.3 的核心不是推翻当前工作流，而是替换“来源获取方式”：
+- v0.2：来源来自本地 mock 数据
+- v0.3：来源来自真实 PubMed 检索结果

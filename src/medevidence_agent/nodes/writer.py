@@ -11,18 +11,23 @@ def write_answer_rule_based(result: VerificationResult) -> FinalAnswer:
         for index, item in enumerate(result.supporting_evidence, start=1)
     ]
 
-    uncertainty_line = ""
-    if result.needs_human_review:
-        uncertainty_line = (
-            "\n\n提示：当前结果尚未完全满足置信度要求，或检测到了冲突信息，"
-            "建议由临床专业人员进一步审核。"
-        )
+    evidence_points = []
+    for item in result.supporting_evidence[:3]:
+        evidence_points.append(f"- {item.claim}")
+
+    risk_line = "需要人工审核" if result.needs_human_review else "可作为初步参考"
+    conflict_block = ""
+    if result.conflicts:
+        conflict_block = "\n已识别风险：\n" + "\n".join(f"- {conflict}" for conflict in result.conflicts)
 
     answer = (
-        "初步证据结论：\n"
+        "结论：\n"
         f"{result.summary_claim}\n\n"
-        f"置信度：{result.confidence:.2f}。"
-        f"{uncertainty_line}"
+        "证据要点：\n"
+        + ("\n".join(evidence_points) if evidence_points else "- 暂无可展示证据要点")
+        + "\n\n"
+        f"置信度与风险：\n- 置信度：{result.confidence:.2f}\n- 状态：{risk_line}"
+        f"{conflict_block}"
     )
 
     return FinalAnswer(
@@ -52,19 +57,32 @@ def write_answer_with_llm(result: VerificationResult, settings: Settings) -> Fin
         )
 
     system_prompt = """
-你是一个医学证据总结助手。你的任务不是做新的医学推断，而是根据已经核验过的结果，生成简洁、专业、克制的中文总结。
+你是一个医学证据总结助手。你的任务不是新增医学推断，而是把已核验的结果整理成清晰、克制、适合阅读的中文输出。
 
 请严格输出 JSON，不要输出任何额外解释。JSON 格式如下：
 {
-  "answer": "给用户展示的中文总结正文"
+  "answer": "最终展示给用户的排版后正文"
 }
 
-要求：
-1. 只基于提供的核验结果和证据信息写总结
-2. 不要编造新的医学事实
-3. 语气要专业、克制
-4. 如果需要人工审核，应在正文中明确提醒
-5. 不要输出 markdown 代码块
+正文排版要求：
+1. 使用以下固定结构：
+结论：
+...
+
+证据要点：
+- ...
+- ...
+
+置信度与风险：
+- 置信度：...
+- 状态：...
+- 风险：...
+
+2. 不要写成长段重复叙述
+3. 证据要点控制在 2 到 4 条
+4. 只基于给定核验结果和证据内容输出，不要编造新事实
+5. 如果需要人工审核，必须明确写出“需要人工审核”
+6. 不要输出 markdown 代码块
 """.strip()
 
     user_prompt = f"""核验结论：
@@ -77,7 +95,7 @@ def write_answer_with_llm(result: VerificationResult, settings: Settings) -> Fin
 {result.needs_human_review}
 
 冲突信息：
-{result.conflicts}
+{json.dumps(result.conflicts, ensure_ascii=False)}
 
 证据列表：
 {json.dumps(evidence_summary, ensure_ascii=False, indent=2)}
@@ -87,7 +105,7 @@ def write_answer_with_llm(result: VerificationResult, settings: Settings) -> Fin
         settings=settings,
         system_prompt=system_prompt,
         user_prompt=user_prompt,
-        temperature=0.3,
+        temperature=0.2,
     )
 
     data = json.loads(raw)

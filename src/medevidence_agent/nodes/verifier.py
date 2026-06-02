@@ -2,6 +2,7 @@ from medevidence_agent.models import EvidenceItem, VerificationResult
 
 
 def verify_evidence(
+    question_text: str,
     evidence_items: list[EvidenceItem],
     confidence_threshold: float,
 ) -> VerificationResult:
@@ -10,50 +11,74 @@ def verify_evidence(
             summary_claim="当前未检索到足够证据，无法形成可靠结论。",
             confidence=0.0,
             supporting_evidence=[],
-            conflicts=["没有证据通过检索阈值过滤。"],
+            conflicts=["没有获得可用于总结的来源证据。"],
             needs_human_review=True,
         )
 
+    question_lower = question_text.lower()
     avg_score = sum(item.score for item in evidence_items) / len(evidence_items)
-    guideline_count = sum(1 for item in evidence_items if item.source_type == "guideline")
+    source_count = len(evidence_items)
+    recent_count = sum(1 for item in evidence_items if item.year >= 2020)
 
-    supports_ace_arb = any("ACEI/ARB" in item.claim or "ACEI" in item.claim for item in evidence_items)
-    supports_lifestyle = any("生活方式" in item.claim for item in evidence_items)
-    supports_individualized = any("个体化" in item.claim for item in evidence_items)
-
-    confidence = avg_score * 0.5 + guideline_count * 0.1
-
-    if supports_ace_arb:
-        confidence += 0.1
-    if supports_lifestyle:
-        confidence += 0.05
-    if supports_individualized:
-        confidence += 0.05
-
+    confidence = avg_score * 0.45
+    confidence += min(source_count, 5) * 0.08
+    confidence += min(recent_count, 3) * 0.05
     confidence = min(1.0, round(confidence, 3))
 
-    conflicts = []
+    conflicts: list[str] = []
 
-    if any(item.source_type == "blog" for item in evidence_items):
-        conflicts.append("证据池中混入了低质量、非指南类来源。")
+    if source_count < 2:
+        conflicts.append("当前可用证据来源数量较少。")
 
-    if not supports_ace_arb:
-        conflicts.append("当前证据未明确支持 ACEI/ARB 作为核心治疗选择。")
+    if recent_count == 0:
+        conflicts.append("当前证据缺少较新的文献来源。")
 
-    summary_parts = []
+    question_keywords: list[str] = []
+    if "癌" in question_text or "cancer" in question_lower:
+        question_keywords.extend(["癌", "cancer", "tumor", "tumour", "oncology"])
+    if "甲状腺" in question_text or "thyroid" in question_lower:
+        question_keywords.extend(["甲状腺", "thyroid", "goiter"])
+    if "胰腺" in question_text or "pancreatic" in question_lower:
+        question_keywords.extend(["胰腺", "pancreatic"])
+    if "高血压" in question_text or "hypertension" in question_lower:
+        question_keywords.extend(["高血压", "hypertension", "blood pressure"])
+    if "糖尿病" in question_text or "diabetes" in question_lower:
+        question_keywords.extend(["糖尿病", "diabetes"])
+    if "并发症" in question_text or "complication" in question_lower:
+        question_keywords.extend(["并发症", "complication"])
+    if (
+        "用药" in question_text
+        or "治疗" in question_text
+        or "treatment" in question_lower
+        or "therapy" in question_lower
+    ):
+        question_keywords.extend(["用药", "治疗", "treatment", "therapy", "drug"])
 
-    if supports_ace_arb:
-        summary_parts.append("较高质量证据支持 ACEI/ARB 可作为常见的一线降压治疗选择")
+    combined_claims = " ".join(item.claim for item in evidence_items).lower()
+    unique_keywords = list(dict.fromkeys(question_keywords))
+    keyword_hits = sum(1 for keyword in unique_keywords if keyword.lower() in combined_claims)
+
+    if unique_keywords and keyword_hits == 0:
+        conflicts.append("当前证据与问题主题匹配度较低。")
+    elif unique_keywords and keyword_hits <= max(1, len(unique_keywords) // 5):
+        conflicts.append("当前证据仅部分覆盖问题主题。")
+
+    if source_count >= 3 and recent_count >= 1:
+        summary_claim = "当前已有多条来源证据可用于支持初步医学总结。"
+    elif source_count >= 2:
+        summary_claim = "当前已有有限但可用的来源证据，可形成初步总结。"
     else:
-        summary_parts.append("当前证据对一线药物选择的支持仍不足")
+        summary_claim = "当前证据较少，仅能形成非常初步的总结。"
 
-    if supports_lifestyle:
-        summary_parts.append("应结合生活方式干预")
-
-    if supports_individualized:
-        summary_parts.append("并根据患者情况设置个体化管理目标")
-
-    summary_claim = "；".join(summary_parts) + "。"
+    if "并发症" in question_text or "complication" in question_lower:
+        summary_claim += " 现有证据更适合用于识别相关并发症或风险信息。"
+    elif (
+        "用药" in question_text
+        or "治疗" in question_text
+        or "treatment" in question_lower
+        or "therapy" in question_lower
+    ):
+        summary_claim += " 现有证据更适合用于提炼治疗或用药相关线索。"
 
     return VerificationResult(
         summary_claim=summary_claim,
