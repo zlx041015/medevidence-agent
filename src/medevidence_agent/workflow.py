@@ -17,7 +17,7 @@ def run_workflow(question_text: str, settings: Settings) -> WorkflowState:
     state = WorkflowState(question=ClinicalQuestion(text=question_text))
 
     console.rule("Planner")
-    state.plan = build_search_plan(state.question)
+    state.plan = build_search_plan(state.question, settings)
     console.print(
         {
             "intent": state.plan.intent,
@@ -47,7 +47,7 @@ def run_workflow(question_text: str, settings: Settings) -> WorkflowState:
     )
 
     console.rule("Extractor")
-    state.evidence_items = extract_evidence(state.candidate_sources)
+    state.evidence_items = extract_evidence(state.candidate_sources, settings)
     console.print(
         [
             {
@@ -74,7 +74,7 @@ def run_workflow(question_text: str, settings: Settings) -> WorkflowState:
     )
 
     console.rule("Writer")
-    state.final_answer = write_answer(state.verification)
+    state.final_answer = write_answer(state.verification, settings)
     console.print(state.final_answer.answer)
     console.print(state.final_answer.references)
 
