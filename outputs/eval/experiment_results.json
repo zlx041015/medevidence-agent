@@ -1,0 +1,440 @@
+[
+  {
+    "method_name": "direct_llm",
+    "question_id": "q1",
+    "question": "2型糖尿病合并高血压且伴蛋白尿时，一线降压治疗通常优先考虑什么？",
+    "answer": "Direct LLM baseline unavailable in offline mode. This placeholder intentionally has no retrieval evidence.",
+    "references": [],
+    "retrieved_source_ids": [],
+    "extracted_claims": [],
+    "summary_claim": "No evidence-backed summary was produced in offline baseline mode.",
+    "confidence": 0.2,
+    "needs_human_review": true,
+    "conflicts": [
+      "Direct LLM baseline was simulated offline without source grounding."
+    ],
+    "check_results": {
+      "baseline_mode": "offline_placeholder"
+    },
+    "failure_reason": "offline_llm_unavailable",
+    "metrics": {
+      "retrieval_recall_at_k": 0.0,
+      "citation_precision": 0.0,
+      "claim_consistency": 0.0,
+      "hallucination_rate": 1.0,
+      "human_review_trigger_rate": 1.0
+    }
+  },
+  {
+    "method_name": "direct_llm",
+    "question_id": "q2",
+    "question": "2型糖尿病患者并发症随访时，常见的筛查项目包括哪些？",
+    "answer": "Direct LLM baseline unavailable in offline mode. This placeholder intentionally has no retrieval evidence.",
+    "references": [],
+    "retrieved_source_ids": [],
+    "extracted_claims": [],
+    "summary_claim": "No evidence-backed summary was produced in offline baseline mode.",
+    "confidence": 0.2,
+    "needs_human_review": true,
+    "conflicts": [
+      "Direct LLM baseline was simulated offline without source grounding."
+    ],
+    "check_results": {
+      "baseline_mode": "offline_placeholder"
+    },
+    "failure_reason": "offline_llm_unavailable",
+    "metrics": {
+      "retrieval_recall_at_k": 0.0,
+      "citation_precision": 0.0,
+      "claim_consistency": 0.0,
+      "hallucination_rate": 1.0,
+      "human_review_trigger_rate": 0.0
+    }
+  },
+  {
+    "method_name": "direct_llm",
+    "question_id": "q3",
+    "question": "甲状腺肿大出现压迫症状时，评估与处理应重点关注什么？",
+    "answer": "Direct LLM baseline unavailable in offline mode. This placeholder intentionally has no retrieval evidence.",
+    "references": [],
+    "retrieved_source_ids": [],
+    "extracted_claims": [],
+    "summary_claim": "No evidence-backed summary was produced in offline baseline mode.",
+    "confidence": 0.2,
+    "needs_human_review": true,
+    "conflicts": [
+      "Direct LLM baseline was simulated offline without source grounding."
+    ],
+    "check_results": {
+      "baseline_mode": "offline_placeholder"
+    },
+    "failure_reason": "offline_llm_unavailable",
+    "metrics": {
+      "retrieval_recall_at_k": 0.0,
+      "citation_precision": 0.0,
+      "claim_consistency": 0.0,
+      "hallucination_rate": 1.0,
+      "human_review_trigger_rate": 1.0
+    }
+  },
+  {
+    "method_name": "retrieve_then_summarize",
+    "question_id": "q1",
+    "question": "2型糖尿病合并高血压且伴蛋白尿时，一线降压治疗通常优先考虑什么？",
+    "answer": "结论：\nHigh-level guideline evidence is available and supports a cautious clinical summary. The evidence is mainly useful for treatment-oriented recommendation synthesis.\n\n证据要点：\n- In patients with diabetes and hypertension, first-line antihypertensive treatment often includes ACE inhibitors or ARBs\n- For diabetes with hypertension, individualized blood pressure targets and kidney-protective antihypertensive agents should be considered\n- For adults with type 2 diabetes and hypertension, blood pressure management should be part of comprehensive cardiovascular risk reduction\n\n置信度与风险：\n- 置信度：0.95\n- 状态：可作为初步参考",
+    "references": [
+      "1. European Society of Hypertension Guideline 2023 (2023) - https://example.org/esh-2023",
+      "2. ADA Blood Pressure Targets Update 2024 (2024) - https://example.org/ada-bp-2024",
+      "3. ADA Standards of Care in Diabetes 2024 (2024) - https://example.org/ada-2024",
+      "4. Review on Type 2 Diabetes with Hypertension in Primary Care (2022) - https://example.org/review-2022"
+    ],
+    "retrieved_source_ids": [
+      "guideline_esh_2023",
+      "guideline_ada_bp_targets_2024",
+      "guideline_ada_2024",
+      "review_t2dm_htn_2022"
+    ],
+    "extracted_claims": [
+      "In patients with diabetes and hypertension, first-line antihypertensive treatment often includes ACE inhibitors or ARBs",
+      "For diabetes with hypertension, individualized blood pressure targets and kidney-protective antihypertensive agents should be considered",
+      "For adults with type 2 diabetes and hypertension, blood pressure management should be part of comprehensive cardiovascular risk reduction",
+      "Combined control of glucose, blood pressure, weight, and lifestyle factors is important in type 2 diabetes with hypertension"
+    ],
+    "summary_claim": "High-level guideline evidence is available and supports a cautious clinical summary. The evidence is mainly useful for treatment-oriented recommendation synthesis.",
+    "confidence": 0.954,
+    "needs_human_review": false,
+    "conflicts": [],
+    "check_results": {
+      "topic_alignment": "passed",
+      "support_strength": "passed",
+      "evidence_level": "passed",
+      "timeliness": "passed",
+      "conflict_check": "passed"
+    },
+    "failure_reason": "",
+    "metrics": {
+      "retrieval_recall_at_k": 0.75,
+      "citation_precision": 0.75,
+      "claim_consistency": 0.0,
+      "hallucination_rate": 0.0,
+      "human_review_trigger_rate": 0.0
+    }
+  },
+  {
+    "method_name": "retrieve_then_summarize",
+    "question_id": "q2",
+    "question": "2型糖尿病患者并发症随访时，常见的筛查项目包括哪些？",
+    "answer": "结论：\nHigh-level guideline evidence is available and supports a cautious clinical summary. The current evidence is more suitable for complication or risk identification.\n\n证据要点：\n- For diabetes with hypertension, individualized blood pressure targets and kidney-protective antihypertensive agents should be considered\n- For adults with type 2 diabetes and hypertension, blood pressure management should be part of comprehensive cardiovascular risk reduction\n- Adults with chronic kidney disease, diabetes, and albuminuria are commonly managed with renin-angiotensin system blockade, especially ACE inhibitors or ARBs, alongside blood pressure control and risk-factor management\n\n置信度与风险：\n- 置信度：0.83\n- 状态：可作为初步参考",
+    "references": [
+      "1. ADA Blood Pressure Targets Update 2024 (2024) - https://example.org/ada-bp-2024",
+      "2. ADA Standards of Care in Diabetes 2024 (2024) - https://example.org/ada-2024",
+      "3. NICE Chronic Kidney Disease Guideline 2021 (2021) - https://example.org/nice-ckd-2021",
+      "4. European Society of Hypertension Guideline 2023 (2023) - https://example.org/esh-2023"
+    ],
+    "retrieved_source_ids": [
+      "guideline_ada_bp_targets_2024",
+      "guideline_ada_2024",
+      "guideline_nice_ckd_2021",
+      "guideline_esh_2023"
+    ],
+    "extracted_claims": [
+      "For diabetes with hypertension, individualized blood pressure targets and kidney-protective antihypertensive agents should be considered",
+      "For adults with type 2 diabetes and hypertension, blood pressure management should be part of comprehensive cardiovascular risk reduction",
+      "Adults with chronic kidney disease, diabetes, and albuminuria are commonly managed with renin-angiotensin system blockade, especially ACE inhibitors or ARBs, alongside blood pressure control and risk-factor management",
+      "In patients with diabetes and hypertension, first-line antihypertensive treatment often includes ACE inhibitors or ARBs"
+    ],
+    "summary_claim": "High-level guideline evidence is available and supports a cautious clinical summary. The current evidence is more suitable for complication or risk identification.",
+    "confidence": 0.834,
+    "needs_human_review": false,
+    "conflicts": [],
+    "check_results": {
+      "topic_alignment": "warning",
+      "support_strength": "passed",
+      "evidence_level": "passed",
+      "timeliness": "passed",
+      "conflict_check": "passed"
+    },
+    "failure_reason": "",
+    "metrics": {
+      "retrieval_recall_at_k": 0.5,
+      "citation_precision": 0.25,
+      "claim_consistency": 0.0,
+      "hallucination_rate": 0.0,
+      "human_review_trigger_rate": 1.0
+    }
+  },
+  {
+    "method_name": "retrieve_then_summarize",
+    "question_id": "q3",
+    "question": "甲状腺肿大出现压迫症状时，评估与处理应重点关注什么？",
+    "answer": "结论：\nHigh-level guideline evidence is available and supports a cautious clinical summary.\n\n证据要点：\n- Evaluation of benign thyroid enlargement should consider compressive symptoms, thyroid function, and ultrasound findings\n- For diabetes with hypertension, individualized blood pressure targets and kidney-protective antihypertensive agents should be considered\n- For adults with type 2 diabetes and hypertension, blood pressure management should be part of comprehensive cardiovascular risk reduction\n\n置信度与风险：\n- 置信度：0.89\n- 状态：可作为初步参考",
+    "references": [
+      "1. Consensus Statement on Benign Thyroid Enlargement 2022 (2022) - https://example.org/thyroid-consensus-2022",
+      "2. ADA Blood Pressure Targets Update 2024 (2024) - https://example.org/ada-bp-2024",
+      "3. ADA Standards of Care in Diabetes 2024 (2024) - https://example.org/ada-2024",
+      "4. NICE Chronic Kidney Disease Guideline 2021 (2021) - https://example.org/nice-ckd-2021"
+    ],
+    "retrieved_source_ids": [
+      "consensus_thyroid_2022",
+      "guideline_ada_bp_targets_2024",
+      "guideline_ada_2024",
+      "guideline_nice_ckd_2021"
+    ],
+    "extracted_claims": [
+      "Evaluation of benign thyroid enlargement should consider compressive symptoms, thyroid function, and ultrasound findings",
+      "For diabetes with hypertension, individualized blood pressure targets and kidney-protective antihypertensive agents should be considered",
+      "For adults with type 2 diabetes and hypertension, blood pressure management should be part of comprehensive cardiovascular risk reduction",
+      "Adults with chronic kidney disease, diabetes, and albuminuria are commonly managed with renin-angiotensin system blockade, especially ACE inhibitors or ARBs, alongside blood pressure control and risk-factor management"
+    ],
+    "summary_claim": "High-level guideline evidence is available and supports a cautious clinical summary.",
+    "confidence": 0.891,
+    "needs_human_review": false,
+    "conflicts": [],
+    "check_results": {
+      "topic_alignment": "passed",
+      "support_strength": "passed",
+      "evidence_level": "passed",
+      "timeliness": "passed",
+      "conflict_check": "passed"
+    },
+    "failure_reason": "",
+    "metrics": {
+      "retrieval_recall_at_k": 1.0,
+      "citation_precision": 0.25,
+      "claim_consistency": 0.0,
+      "hallucination_rate": 0.0,
+      "human_review_trigger_rate": 0.0
+    }
+  },
+  {
+    "method_name": "current_workflow",
+    "question_id": "q1",
+    "question": "2型糖尿病合并高血压且伴蛋白尿时，一线降压治疗通常优先考虑什么？",
+    "answer": "结论：\nHigh-level guideline evidence is available and supports a cautious clinical summary. The evidence is mainly useful for treatment-oriented recommendation synthesis.\n\n证据要点：\n- ACEI/ARB 常作为相关疾病管理中的重要治疗选择。\n\n置信度与风险：\n- 置信度：0.55\n- 状态：需要人工审核\n已识别风险：\n- Evidence claims only weakly match the question topic.",
+    "references": [
+      "1. European Society of Hypertension Guideline 2023 (2023) - https://example.org/esh-2023"
+    ],
+    "retrieved_source_ids": [
+      "guideline_esh_2023"
+    ],
+    "extracted_claims": [
+      "ACEI/ARB 常作为相关疾病管理中的重要治疗选择。"
+    ],
+    "summary_claim": "High-level guideline evidence is available and supports a cautious clinical summary. The evidence is mainly useful for treatment-oriented recommendation synthesis.",
+    "confidence": 0.546,
+    "needs_human_review": true,
+    "conflicts": [
+      "Evidence claims only weakly match the question topic."
+    ],
+    "check_results": {
+      "topic_alignment": "warning",
+      "support_strength": "passed",
+      "evidence_level": "passed",
+      "timeliness": "warning",
+      "conflict_check": "passed"
+    },
+    "failure_reason": "",
+    "metrics": {
+      "retrieval_recall_at_k": 0.25,
+      "citation_precision": 1.0,
+      "claim_consistency": 0.0,
+      "hallucination_rate": 0.0,
+      "human_review_trigger_rate": 1.0
+    }
+  },
+  {
+    "method_name": "current_workflow",
+    "question_id": "q2",
+    "question": "2型糖尿病患者并发症随访时，常见的筛查项目包括哪些？",
+    "answer": "结论：\nNo sufficient evidence was retrieved for a reliable clinical summary.\n\n证据要点：\n- 暂无可展示证据要点\n\n置信度与风险：\n- 置信度：0.00\n- 状态：需要人工审核\n已识别风险：\n- No usable evidence was available for verification.",
+    "references": [],
+    "retrieved_source_ids": [],
+    "extracted_claims": [],
+    "summary_claim": "No sufficient evidence was retrieved for a reliable clinical summary.",
+    "confidence": 0.0,
+    "needs_human_review": true,
+    "conflicts": [
+      "No usable evidence was available for verification."
+    ],
+    "check_results": {
+      "topic_alignment": "failed",
+      "support_strength": "failed",
+      "evidence_level": "failed",
+      "timeliness": "failed",
+      "conflict_check": "failed"
+    },
+    "failure_reason": "",
+    "metrics": {
+      "retrieval_recall_at_k": 0.0,
+      "citation_precision": 0.0,
+      "claim_consistency": 0.0,
+      "hallucination_rate": 1.0,
+      "human_review_trigger_rate": 0.0
+    }
+  },
+  {
+    "method_name": "current_workflow",
+    "question_id": "q3",
+    "question": "甲状腺肿大出现压迫症状时，评估与处理应重点关注什么？",
+    "answer": "结论：\nNo sufficient evidence was retrieved for a reliable clinical summary.\n\n证据要点：\n- 暂无可展示证据要点\n\n置信度与风险：\n- 置信度：0.00\n- 状态：需要人工审核\n已识别风险：\n- No usable evidence was available for verification.",
+    "references": [],
+    "retrieved_source_ids": [],
+    "extracted_claims": [],
+    "summary_claim": "No sufficient evidence was retrieved for a reliable clinical summary.",
+    "confidence": 0.0,
+    "needs_human_review": true,
+    "conflicts": [
+      "No usable evidence was available for verification."
+    ],
+    "check_results": {
+      "topic_alignment": "failed",
+      "support_strength": "failed",
+      "evidence_level": "failed",
+      "timeliness": "failed",
+      "conflict_check": "failed"
+    },
+    "failure_reason": "",
+    "metrics": {
+      "retrieval_recall_at_k": 0.0,
+      "citation_precision": 0.0,
+      "claim_consistency": 0.0,
+      "hallucination_rate": 1.0,
+      "human_review_trigger_rate": 1.0
+    }
+  },
+  {
+    "method_name": "workflow_with_rag_and_verifier",
+    "question_id": "q1",
+    "question": "2型糖尿病合并高血压且伴蛋白尿时，一线降压治疗通常优先考虑什么？",
+    "answer": "结论：\nHigh-level guideline evidence is available and supports a cautious clinical summary. The evidence is mainly useful for treatment-oriented recommendation synthesis.\n\n证据要点：\n- ACEI/ARB 常作为相关疾病管理中的重要治疗选择。\n- 该来源强调了生活方式干预在疾病管理中的重要性。\n- 该来源支持当前问题需要结合临床背景进行综合管理。\n\n置信度与风险：\n- 置信度：0.73\n- 状态：需要人工审核\n已识别风险：\n- Evidence claims only weakly match the question topic.",
+    "references": [
+      "1. European Society of Hypertension Guideline 2023 (2023) - https://example.org/esh-2023",
+      "2. Review on Type 2 Diabetes with Hypertension in Primary Care (2022) - https://example.org/review-2022",
+      "3. Clinical Knowledge Base for Diabetes Screening 2023 (2023) - https://example.org/diabetes-screening-kb-2023",
+      "4. ADA Blood Pressure Targets Update 2024 (2024) - https://example.org/ada-bp-2024"
+    ],
+    "retrieved_source_ids": [
+      "guideline_esh_2023",
+      "review_t2dm_htn_2022",
+      "knowledgebase_screening_2023",
+      "guideline_ada_bp_targets_2024"
+    ],
+    "extracted_claims": [
+      "ACEI/ARB 常作为相关疾病管理中的重要治疗选择。",
+      "该来源强调了生活方式干预在疾病管理中的重要性。",
+      "该来源支持当前问题需要结合临床背景进行综合管理。",
+      "ACEI/ARB 常作为相关疾病管理中的重要治疗选择。"
+    ],
+    "summary_claim": "High-level guideline evidence is available and supports a cautious clinical summary. The evidence is mainly useful for treatment-oriented recommendation synthesis.",
+    "confidence": 0.727,
+    "needs_human_review": true,
+    "conflicts": [
+      "Evidence claims only weakly match the question topic."
+    ],
+    "check_results": {
+      "topic_alignment": "warning",
+      "support_strength": "passed",
+      "evidence_level": "passed",
+      "timeliness": "passed",
+      "conflict_check": "passed"
+    },
+    "failure_reason": "",
+    "metrics": {
+      "retrieval_recall_at_k": 0.5,
+      "citation_precision": 0.5,
+      "claim_consistency": 0.0,
+      "hallucination_rate": 0.0,
+      "human_review_trigger_rate": 1.0
+    }
+  },
+  {
+    "method_name": "workflow_with_rag_and_verifier",
+    "question_id": "q2",
+    "question": "2型糖尿病患者并发症随访时，常见的筛查项目包括哪些？",
+    "answer": "结论：\nHigh-level guideline evidence is available and supports a cautious clinical summary. The current evidence is more suitable for complication or risk identification.\n\n证据要点：\n- ACEI/ARB 常作为相关疾病管理中的重要治疗选择。\n- ACEI/ARB 常作为相关疾病管理中的重要治疗选择。\n- 该来源支持当前问题需要结合临床背景进行综合管理。\n\n置信度与风险：\n- 置信度：0.67\n- 状态：需要人工审核\n已识别风险：\n- Evidence claims only weakly match the question topic.",
+    "references": [
+      "1. European Society of Hypertension Guideline 2023 (2023) - https://example.org/esh-2023",
+      "2. ADA Blood Pressure Targets Update 2024 (2024) - https://example.org/ada-bp-2024",
+      "3. Clinical Knowledge Base for Diabetes Screening 2023 (2023) - https://example.org/diabetes-screening-kb-2023",
+      "4. Review on Type 2 Diabetes with Hypertension in Primary Care (2022) - https://example.org/review-2022"
+    ],
+    "retrieved_source_ids": [
+      "guideline_esh_2023",
+      "guideline_ada_bp_targets_2024",
+      "knowledgebase_screening_2023",
+      "review_t2dm_htn_2022"
+    ],
+    "extracted_claims": [
+      "ACEI/ARB 常作为相关疾病管理中的重要治疗选择。",
+      "ACEI/ARB 常作为相关疾病管理中的重要治疗选择。",
+      "该来源支持当前问题需要结合临床背景进行综合管理。",
+      "该来源强调了生活方式干预在疾病管理中的重要性。"
+    ],
+    "summary_claim": "High-level guideline evidence is available and supports a cautious clinical summary. The current evidence is more suitable for complication or risk identification.",
+    "confidence": 0.666,
+    "needs_human_review": true,
+    "conflicts": [
+      "Evidence claims only weakly match the question topic."
+    ],
+    "check_results": {
+      "topic_alignment": "warning",
+      "support_strength": "passed",
+      "evidence_level": "passed",
+      "timeliness": "passed",
+      "conflict_check": "passed"
+    },
+    "failure_reason": "",
+    "metrics": {
+      "retrieval_recall_at_k": 0.5,
+      "citation_precision": 0.25,
+      "claim_consistency": 0.0,
+      "hallucination_rate": 0.0,
+      "human_review_trigger_rate": 0.0
+    }
+  },
+  {
+    "method_name": "workflow_with_rag_and_verifier",
+    "question_id": "q3",
+    "question": "甲状腺肿大出现压迫症状时，评估与处理应重点关注什么？",
+    "answer": "结论：\nHigh-level guideline evidence is available and supports a cautious clinical summary.\n\n证据要点：\n- 该来源支持当前问题需要结合临床背景进行综合管理。\n- 该来源支持当前问题需要结合临床背景进行综合管理。\n- ACEI/ARB 常作为相关疾病管理中的重要治疗选择。\n\n置信度与风险：\n- 置信度：0.69\n- 状态：需要人工审核\n已识别风险：\n- Evidence claims only weakly match the question topic.",
+    "references": [
+      "1. Consensus Statement on Benign Thyroid Enlargement 2022 (2022) - https://example.org/thyroid-consensus-2022",
+      "2. Clinical Knowledge Base for Diabetes Screening 2023 (2023) - https://example.org/diabetes-screening-kb-2023",
+      "3. ADA Blood Pressure Targets Update 2024 (2024) - https://example.org/ada-bp-2024",
+      "4. ADA Standards of Care in Diabetes 2024 (2024) - https://example.org/ada-2024"
+    ],
+    "retrieved_source_ids": [
+      "consensus_thyroid_2022",
+      "knowledgebase_screening_2023",
+      "guideline_ada_bp_targets_2024",
+      "guideline_ada_2024"
+    ],
+    "extracted_claims": [
+      "该来源支持当前问题需要结合临床背景进行综合管理。",
+      "该来源支持当前问题需要结合临床背景进行综合管理。",
+      "ACEI/ARB 常作为相关疾病管理中的重要治疗选择。",
+      "ACEI/ARB 常作为一线降压选择，并应结合生活方式干预。"
+    ],
+    "summary_claim": "High-level guideline evidence is available and supports a cautious clinical summary.",
+    "confidence": 0.686,
+    "needs_human_review": true,
+    "conflicts": [
+      "Evidence claims only weakly match the question topic."
+    ],
+    "check_results": {
+      "topic_alignment": "warning",
+      "support_strength": "passed",
+      "evidence_level": "passed",
+      "timeliness": "passed",
+      "conflict_check": "passed"
+    },
+    "failure_reason": "",
+    "metrics": {
+      "retrieval_recall_at_k": 1.0,
+      "citation_precision": 0.25,
+      "claim_consistency": 0.0,
+      "hallucination_rate": 0.0,
+      "human_review_trigger_rate": 1.0
+    }
+  }
+]

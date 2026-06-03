@@ -1,0 +1,1799 @@
+﻿[
+  {
+    "question_id": "q1",
+    "question": "高血压一线管理或治疗的核心是什么，请结合循证医学角度说明。",
+    "question_type": "treatment",
+    "risk_level": "high",
+    "gold_keywords": [
+      "hypertension",
+      "blood pressure",
+      "management",
+      "target"
+    ],
+    "gold_sources": [
+      "guideline_esh_2023",
+      "guideline_ada_bp_targets_2024"
+    ],
+    "gold_claim": "该病症管理通常强调规范化治疗、风险控制和个体化决策。",
+    "needs_human_review": true
+  },
+  {
+    "question_id": "q2",
+    "question": "2型糖尿病一线管理或治疗的核心是什么，请结合循证医学角度说明。",
+    "question_type": "treatment",
+    "risk_level": "high",
+    "gold_keywords": [
+      "diabetes mellitus",
+      "glycemic control",
+      "complication",
+      "management"
+    ],
+    "gold_sources": [
+      "guideline_ada_2024",
+      "knowledgebase_screening_2023"
+    ],
+    "gold_claim": "该病症管理通常强调规范化治疗、风险控制和个体化决策。",
+    "needs_human_review": true
+  },
+  {
+    "question_id": "q3",
+    "question": "慢性肾病一线管理或治疗的核心是什么，请结合循证医学角度说明。",
+    "question_type": "treatment",
+    "risk_level": "high",
+    "gold_keywords": [
+      "chronic kidney disease",
+      "albuminuria",
+      "monitoring",
+      "management"
+    ],
+    "gold_sources": [
+      "guideline_nice_ckd_2021",
+      "guideline_ada_bp_targets_2024"
+    ],
+    "gold_claim": "该病症管理通常强调规范化治疗、风险控制和个体化决策。",
+    "needs_human_review": true
+  },
+  {
+    "question_id": "q4",
+    "question": "甲状腺肿大一线管理或治疗的核心是什么，请结合循证医学角度说明。",
+    "question_type": "treatment",
+    "risk_level": "high",
+    "gold_keywords": [
+      "thyroid",
+      "goiter",
+      "compressive symptoms",
+      "management"
+    ],
+    "gold_sources": [
+      "consensus_thyroid_2022"
+    ],
+    "gold_claim": "该病症管理通常强调规范化治疗、风险控制和个体化决策。",
+    "needs_human_review": true
+  },
+  {
+    "question_id": "q5",
+    "question": "高脂血症一线管理或治疗的核心是什么，请结合循证医学角度说明。",
+    "question_type": "treatment",
+    "risk_level": "medium",
+    "gold_keywords": [
+      "hyperlipidemia",
+      "ldl cholesterol",
+      "cardiovascular risk",
+      "management"
+    ],
+    "gold_sources": [
+      "guideline_lipid_2023",
+      "review_lipid_primarycare_2022"
+    ],
+    "gold_claim": "该病症管理通常强调规范化治疗、风险控制和个体化决策。",
+    "needs_human_review": false
+  },
+  {
+    "question_id": "q6",
+    "question": "冠心病一线管理或治疗的核心是什么，请结合循证医学角度说明。",
+    "question_type": "treatment",
+    "risk_level": "high",
+    "gold_keywords": [
+      "coronary artery disease",
+      "secondary prevention",
+      "cardiovascular risk",
+      "therapy"
+    ],
+    "gold_sources": [
+      "guideline_cad_secondary_2023",
+      "review_secondary_prevention_2022"
+    ],
+    "gold_claim": "该病症管理通常强调规范化治疗、风险控制和个体化决策。",
+    "needs_human_review": true
+  },
+  {
+    "question_id": "q7",
+    "question": "心力衰竭一线管理或治疗的核心是什么，请结合循证医学角度说明。",
+    "question_type": "treatment",
+    "risk_level": "high",
+    "gold_keywords": [
+      "heart failure",
+      "cardiac function",
+      "follow-up",
+      "therapy"
+    ],
+    "gold_sources": [
+      "guideline_heart_failure_2023",
+      "review_heart_failure_2022"
+    ],
+    "gold_claim": "该病症管理通常强调规范化治疗、风险控制和个体化决策。",
+    "needs_human_review": true
+  },
+  {
+    "question_id": "q8",
+    "question": "房颤一线管理或治疗的核心是什么，请结合循证医学角度说明。",
+    "question_type": "treatment",
+    "risk_level": "high",
+    "gold_keywords": [
+      "atrial fibrillation",
+      "stroke risk",
+      "anticoagulation",
+      "management"
+    ],
+    "gold_sources": [
+      "guideline_af_2023",
+      "review_af_2022"
+    ],
+    "gold_claim": "该病症管理通常强调规范化治疗、风险控制和个体化决策。",
+    "needs_human_review": true
+  },
+  {
+    "question_id": "q9",
+    "question": "脑卒中后管理一线管理或治疗的核心是什么，请结合循证医学角度说明。",
+    "question_type": "treatment",
+    "risk_level": "high",
+    "gold_keywords": [
+      "stroke",
+      "secondary prevention",
+      "rehabilitation",
+      "risk"
+    ],
+    "gold_sources": [
+      "guideline_stroke_2023",
+      "review_stroke_2022"
+    ],
+    "gold_claim": "该病症管理通常强调规范化治疗、风险控制和个体化决策。",
+    "needs_human_review": true
+  },
+  {
+    "question_id": "q10",
+    "question": "慢阻肺稳定期一线管理或治疗的核心是什么，请结合循证医学角度说明。",
+    "question_type": "treatment",
+    "risk_level": "medium",
+    "gold_keywords": [
+      "copd",
+      "stable management",
+      "exacerbation risk",
+      "therapy"
+    ],
+    "gold_sources": [
+      "guideline_copd_2024",
+      "review_copd_primarycare_2022"
+    ],
+    "gold_claim": "该病症管理通常强调规范化治疗、风险控制和个体化决策。",
+    "needs_human_review": false
+  },
+  {
+    "question_id": "q11",
+    "question": "支气管哮喘一线管理或治疗的核心是什么，请结合循证医学角度说明。",
+    "question_type": "treatment",
+    "risk_level": "medium",
+    "gold_keywords": [
+      "asthma",
+      "control",
+      "inhaled therapy",
+      "follow-up"
+    ],
+    "gold_sources": [
+      "guideline_asthma_2024",
+      "review_asthma_management_2022"
+    ],
+    "gold_claim": "该病症管理通常强调规范化治疗、风险控制和个体化决策。",
+    "needs_human_review": false
+  },
+  {
+    "question_id": "q12",
+    "question": "社区获得性肺炎一线管理或治疗的核心是什么，请结合循证医学角度说明。",
+    "question_type": "treatment",
+    "risk_level": "high",
+    "gold_keywords": [
+      "community acquired pneumonia",
+      "severity",
+      "infection",
+      "therapy"
+    ],
+    "gold_sources": [
+      "guideline_cap_2023",
+      "review_pneumonia_2022"
+    ],
+    "gold_claim": "该病症管理通常强调规范化治疗、风险控制和个体化决策。",
+    "needs_human_review": true
+  },
+  {
+    "question_id": "q13",
+    "question": "肺结核一线管理或治疗的核心是什么，请结合循证医学角度说明。",
+    "question_type": "treatment",
+    "risk_level": "high",
+    "gold_keywords": [
+      "tuberculosis",
+      "infection",
+      "follow-up",
+      "screening"
+    ],
+    "gold_sources": [
+      "guideline_tb_2023",
+      "review_tb_2022"
+    ],
+    "gold_claim": "该病症管理通常强调规范化治疗、风险控制和个体化决策。",
+    "needs_human_review": true
+  },
+  {
+    "question_id": "q14",
+    "question": "缺铁性贫血一线管理或治疗的核心是什么，请结合循证医学角度说明。",
+    "question_type": "treatment",
+    "risk_level": "medium",
+    "gold_keywords": [
+      "iron deficiency anemia",
+      "hemoglobin",
+      "evaluation",
+      "management"
+    ],
+    "gold_sources": [
+      "guideline_anemia_2023",
+      "review_iron_deficiency_2022"
+    ],
+    "gold_claim": "该病症管理通常强调规范化治疗、风险控制和个体化决策。",
+    "needs_human_review": false
+  },
+  {
+    "question_id": "q15",
+    "question": "骨质疏松一线管理或治疗的核心是什么，请结合循证医学角度说明。",
+    "question_type": "treatment",
+    "risk_level": "medium",
+    "gold_keywords": [
+      "osteoporosis",
+      "fracture risk",
+      "screening",
+      "management"
+    ],
+    "gold_sources": [
+      "guideline_osteoporosis_2023",
+      "review_osteoporosis_2022"
+    ],
+    "gold_claim": "该病症管理通常强调规范化治疗、风险控制和个体化决策。",
+    "needs_human_review": false
+  },
+  {
+    "question_id": "q16",
+    "question": "痛风一线管理或治疗的核心是什么，请结合循证医学角度说明。",
+    "question_type": "treatment",
+    "risk_level": "medium",
+    "gold_keywords": [
+      "gout",
+      "urate",
+      "joint pain",
+      "management"
+    ],
+    "gold_sources": [
+      "guideline_gout_2023",
+      "review_gout_2022"
+    ],
+    "gold_claim": "该病症管理通常强调规范化治疗、风险控制和个体化决策。",
+    "needs_human_review": false
+  },
+  {
+    "question_id": "q17",
+    "question": "类风湿关节炎一线管理或治疗的核心是什么，请结合循证医学角度说明。",
+    "question_type": "treatment",
+    "risk_level": "high",
+    "gold_keywords": [
+      "rheumatoid arthritis",
+      "joint inflammation",
+      "therapy",
+      "follow-up"
+    ],
+    "gold_sources": [
+      "guideline_ra_2023",
+      "review_ra_2022"
+    ],
+    "gold_claim": "该病症管理通常强调规范化治疗、风险控制和个体化决策。",
+    "needs_human_review": true
+  },
+  {
+    "question_id": "q18",
+    "question": "骨关节炎一线管理或治疗的核心是什么，请结合循证医学角度说明。",
+    "question_type": "treatment",
+    "risk_level": "medium",
+    "gold_keywords": [
+      "osteoarthritis",
+      "joint pain",
+      "function",
+      "management"
+    ],
+    "gold_sources": [
+      "guideline_oa_2023",
+      "review_oa_2022"
+    ],
+    "gold_claim": "该病症管理通常强调规范化治疗、风险控制和个体化决策。",
+    "needs_human_review": false
+  },
+  {
+    "question_id": "q19",
+    "question": "胃食管反流病一线管理或治疗的核心是什么，请结合循证医学角度说明。",
+    "question_type": "treatment",
+    "risk_level": "medium",
+    "gold_keywords": [
+      "gastroesophageal reflux",
+      "heartburn",
+      "therapy",
+      "lifestyle"
+    ],
+    "gold_sources": [
+      "guideline_gerd_2023",
+      "review_gerd_2022"
+    ],
+    "gold_claim": "该病症管理通常强调规范化治疗、风险控制和个体化决策。",
+    "needs_human_review": false
+  },
+  {
+    "question_id": "q20",
+    "question": "消化性溃疡一线管理或治疗的核心是什么，请结合循证医学角度说明。",
+    "question_type": "treatment",
+    "risk_level": "high",
+    "gold_keywords": [
+      "peptic ulcer",
+      "bleeding risk",
+      "therapy",
+      "evaluation"
+    ],
+    "gold_sources": [
+      "guideline_ulcer_2023",
+      "review_ulcer_2022"
+    ],
+    "gold_claim": "该病症管理通常强调规范化治疗、风险控制和个体化决策。",
+    "needs_human_review": true
+  },
+  {
+    "question_id": "q21",
+    "question": "急性胃肠炎一线管理或治疗的核心是什么，请结合循证医学角度说明。",
+    "question_type": "treatment",
+    "risk_level": "medium",
+    "gold_keywords": [
+      "gastroenteritis",
+      "dehydration",
+      "infection",
+      "management"
+    ],
+    "gold_sources": [
+      "guideline_gastroenteritis_2023",
+      "review_gastroenteritis_2022"
+    ],
+    "gold_claim": "该病症管理通常强调规范化治疗、风险控制和个体化决策。",
+    "needs_human_review": false
+  },
+  {
+    "question_id": "q22",
+    "question": "脂肪肝一线管理或治疗的核心是什么，请结合循证医学角度说明。",
+    "question_type": "treatment",
+    "risk_level": "medium",
+    "gold_keywords": [
+      "fatty liver",
+      "metabolic risk",
+      "lifestyle",
+      "monitoring"
+    ],
+    "gold_sources": [
+      "guideline_fatty_liver_2023",
+      "review_fatty_liver_2022"
+    ],
+    "gold_claim": "该病症管理通常强调规范化治疗、风险控制和个体化决策。",
+    "needs_human_review": false
+  },
+  {
+    "question_id": "q23",
+    "question": "乙肝慢性感染一线管理或治疗的核心是什么，请结合循证医学角度说明。",
+    "question_type": "treatment",
+    "risk_level": "high",
+    "gold_keywords": [
+      "hepatitis b",
+      "liver function",
+      "monitoring",
+      "therapy"
+    ],
+    "gold_sources": [
+      "guideline_hbv_2023",
+      "review_hbv_2022"
+    ],
+    "gold_claim": "该病症管理通常强调规范化治疗、风险控制和个体化决策。",
+    "needs_human_review": true
+  },
+  {
+    "question_id": "q24",
+    "question": "尿路感染一线管理或治疗的核心是什么，请结合循证医学角度说明。",
+    "question_type": "treatment",
+    "risk_level": "medium",
+    "gold_keywords": [
+      "urinary tract infection",
+      "infection",
+      "antibiotic therapy",
+      "evaluation"
+    ],
+    "gold_sources": [
+      "guideline_uti_2023",
+      "review_uti_2022"
+    ],
+    "gold_claim": "该病症管理通常强调规范化治疗、风险控制和个体化决策。",
+    "needs_human_review": false
+  },
+  {
+    "question_id": "q25",
+    "question": "良性前列腺增生一线管理或治疗的核心是什么，请结合循证医学角度说明。",
+    "question_type": "treatment",
+    "risk_level": "medium",
+    "gold_keywords": [
+      "benign prostatic hyperplasia",
+      "urinary symptoms",
+      "management",
+      "follow-up"
+    ],
+    "gold_sources": [
+      "guideline_bph_2023",
+      "review_bph_2022"
+    ],
+    "gold_claim": "该病症管理通常强调规范化治疗、风险控制和个体化决策。",
+    "needs_human_review": false
+  },
+  {
+    "question_id": "q26",
+    "question": "肾结石一线管理或治疗的核心是什么，请结合循证医学角度说明。",
+    "question_type": "treatment",
+    "risk_level": "medium",
+    "gold_keywords": [
+      "kidney stone",
+      "pain",
+      "evaluation",
+      "recurrence risk"
+    ],
+    "gold_sources": [
+      "guideline_stone_2023",
+      "review_stone_2022"
+    ],
+    "gold_claim": "该病症管理通常强调规范化治疗、风险控制和个体化决策。",
+    "needs_human_review": false
+  },
+  {
+    "question_id": "q27",
+    "question": "抑郁症一线管理或治疗的核心是什么，请结合循证医学角度说明。",
+    "question_type": "treatment",
+    "risk_level": "high",
+    "gold_keywords": [
+      "depression",
+      "mood symptoms",
+      "follow-up",
+      "therapy"
+    ],
+    "gold_sources": [
+      "guideline_depression_2023",
+      "review_depression_2022"
+    ],
+    "gold_claim": "该病症管理通常强调规范化治疗、风险控制和个体化决策。",
+    "needs_human_review": true
+  },
+  {
+    "question_id": "q28",
+    "question": "焦虑障碍一线管理或治疗的核心是什么，请结合循证医学角度说明。",
+    "question_type": "treatment",
+    "risk_level": "medium",
+    "gold_keywords": [
+      "anxiety disorder",
+      "symptom control",
+      "therapy",
+      "follow-up"
+    ],
+    "gold_sources": [
+      "guideline_anxiety_2023",
+      "review_anxiety_2022"
+    ],
+    "gold_claim": "该病症管理通常强调规范化治疗、风险控制和个体化决策。",
+    "needs_human_review": false
+  },
+  {
+    "question_id": "q29",
+    "question": "失眠一线管理或治疗的核心是什么，请结合循证医学角度说明。",
+    "question_type": "treatment",
+    "risk_level": "medium",
+    "gold_keywords": [
+      "insomnia",
+      "sleep hygiene",
+      "therapy",
+      "follow-up"
+    ],
+    "gold_sources": [
+      "guideline_insomnia_2023",
+      "review_insomnia_2022"
+    ],
+    "gold_claim": "该病症管理通常强调规范化治疗、风险控制和个体化决策。",
+    "needs_human_review": false
+  },
+  {
+    "question_id": "q30",
+    "question": "偏头痛一线管理或治疗的核心是什么，请结合循证医学角度说明。",
+    "question_type": "treatment",
+    "risk_level": "medium",
+    "gold_keywords": [
+      "migraine",
+      "headache",
+      "trigger",
+      "management"
+    ],
+    "gold_sources": [
+      "guideline_migraine_2023",
+      "review_migraine_2022"
+    ],
+    "gold_claim": "该病症管理通常强调规范化治疗、风险控制和个体化决策。",
+    "needs_human_review": false
+  },
+  {
+    "question_id": "q31",
+    "question": "湿疹一线管理或治疗的核心是什么，请结合循证医学角度说明。",
+    "question_type": "treatment",
+    "risk_level": "medium",
+    "gold_keywords": [
+      "eczema",
+      "skin barrier",
+      "itch",
+      "management"
+    ],
+    "gold_sources": [
+      "guideline_eczema_2023",
+      "review_eczema_2022"
+    ],
+    "gold_claim": "该病症管理通常强调规范化治疗、风险控制和个体化决策。",
+    "needs_human_review": false
+  },
+  {
+    "question_id": "q32",
+    "question": "荨麻疹一线管理或治疗的核心是什么，请结合循证医学角度说明。",
+    "question_type": "treatment",
+    "risk_level": "medium",
+    "gold_keywords": [
+      "urticaria",
+      "allergy",
+      "itch",
+      "management"
+    ],
+    "gold_sources": [
+      "guideline_urticaria_2023",
+      "review_urticaria_2022"
+    ],
+    "gold_claim": "该病症管理通常强调规范化治疗、风险控制和个体化决策。",
+    "needs_human_review": false
+  },
+  {
+    "question_id": "q33",
+    "question": "痤疮一线管理或治疗的核心是什么，请结合循证医学角度说明。",
+    "question_type": "treatment",
+    "risk_level": "medium",
+    "gold_keywords": [
+      "acne",
+      "skin care",
+      "therapy",
+      "follow-up"
+    ],
+    "gold_sources": [
+      "guideline_acne_2023",
+      "review_acne_2022"
+    ],
+    "gold_claim": "该病症管理通常强调规范化治疗、风险控制和个体化决策。",
+    "needs_human_review": false
+  },
+  {
+    "question_id": "q34",
+    "question": "肥胖症一线管理或治疗的核心是什么，请结合循证医学角度说明。",
+    "question_type": "treatment",
+    "risk_level": "high",
+    "gold_keywords": [
+      "obesity",
+      "weight management",
+      "lifestyle",
+      "metabolic risk"
+    ],
+    "gold_sources": [
+      "guideline_obesity_2023",
+      "review_obesity_2022"
+    ],
+    "gold_claim": "该病症管理通常强调规范化治疗、风险控制和个体化决策。",
+    "needs_human_review": true
+  },
+  {
+    "question_id": "q35",
+    "question": "高血压为什么需要重视相关筛查或评估，请结合循证医学角度说明。",
+    "question_type": "screening",
+    "risk_level": "high",
+    "gold_keywords": [
+      "hypertension",
+      "blood pressure",
+      "management",
+      "target"
+    ],
+    "gold_sources": [
+      "guideline_esh_2023",
+      "guideline_ada_bp_targets_2024"
+    ],
+    "gold_claim": "相关筛查和评估有助于更早识别风险、并发症或病情严重程度。",
+    "needs_human_review": true
+  },
+  {
+    "question_id": "q36",
+    "question": "2型糖尿病为什么需要重视相关筛查或评估，请结合循证医学角度说明。",
+    "question_type": "screening",
+    "risk_level": "high",
+    "gold_keywords": [
+      "diabetes mellitus",
+      "glycemic control",
+      "complication",
+      "management"
+    ],
+    "gold_sources": [
+      "guideline_ada_2024",
+      "knowledgebase_screening_2023"
+    ],
+    "gold_claim": "相关筛查和评估有助于更早识别风险、并发症或病情严重程度。",
+    "needs_human_review": true
+  },
+  {
+    "question_id": "q37",
+    "question": "慢性肾病为什么需要重视相关筛查或评估，请结合循证医学角度说明。",
+    "question_type": "screening",
+    "risk_level": "high",
+    "gold_keywords": [
+      "chronic kidney disease",
+      "albuminuria",
+      "monitoring",
+      "management"
+    ],
+    "gold_sources": [
+      "guideline_nice_ckd_2021",
+      "guideline_ada_bp_targets_2024"
+    ],
+    "gold_claim": "相关筛查和评估有助于更早识别风险、并发症或病情严重程度。",
+    "needs_human_review": true
+  },
+  {
+    "question_id": "q38",
+    "question": "甲状腺肿大为什么需要重视相关筛查或评估，请结合循证医学角度说明。",
+    "question_type": "screening",
+    "risk_level": "high",
+    "gold_keywords": [
+      "thyroid",
+      "goiter",
+      "compressive symptoms",
+      "management"
+    ],
+    "gold_sources": [
+      "consensus_thyroid_2022"
+    ],
+    "gold_claim": "相关筛查和评估有助于更早识别风险、并发症或病情严重程度。",
+    "needs_human_review": true
+  },
+  {
+    "question_id": "q39",
+    "question": "高脂血症为什么需要重视相关筛查或评估，请结合循证医学角度说明。",
+    "question_type": "screening",
+    "risk_level": "medium",
+    "gold_keywords": [
+      "hyperlipidemia",
+      "ldl cholesterol",
+      "cardiovascular risk",
+      "management"
+    ],
+    "gold_sources": [
+      "guideline_lipid_2023",
+      "review_lipid_primarycare_2022"
+    ],
+    "gold_claim": "相关筛查和评估有助于更早识别风险、并发症或病情严重程度。",
+    "needs_human_review": false
+  },
+  {
+    "question_id": "q40",
+    "question": "冠心病为什么需要重视相关筛查或评估，请结合循证医学角度说明。",
+    "question_type": "screening",
+    "risk_level": "high",
+    "gold_keywords": [
+      "coronary artery disease",
+      "secondary prevention",
+      "cardiovascular risk",
+      "therapy"
+    ],
+    "gold_sources": [
+      "guideline_cad_secondary_2023",
+      "review_secondary_prevention_2022"
+    ],
+    "gold_claim": "相关筛查和评估有助于更早识别风险、并发症或病情严重程度。",
+    "needs_human_review": true
+  },
+  {
+    "question_id": "q41",
+    "question": "心力衰竭为什么需要重视相关筛查或评估，请结合循证医学角度说明。",
+    "question_type": "screening",
+    "risk_level": "high",
+    "gold_keywords": [
+      "heart failure",
+      "cardiac function",
+      "follow-up",
+      "therapy"
+    ],
+    "gold_sources": [
+      "guideline_heart_failure_2023",
+      "review_heart_failure_2022"
+    ],
+    "gold_claim": "相关筛查和评估有助于更早识别风险、并发症或病情严重程度。",
+    "needs_human_review": true
+  },
+  {
+    "question_id": "q42",
+    "question": "房颤为什么需要重视相关筛查或评估，请结合循证医学角度说明。",
+    "question_type": "screening",
+    "risk_level": "high",
+    "gold_keywords": [
+      "atrial fibrillation",
+      "stroke risk",
+      "anticoagulation",
+      "management"
+    ],
+    "gold_sources": [
+      "guideline_af_2023",
+      "review_af_2022"
+    ],
+    "gold_claim": "相关筛查和评估有助于更早识别风险、并发症或病情严重程度。",
+    "needs_human_review": true
+  },
+  {
+    "question_id": "q43",
+    "question": "脑卒中后管理为什么需要重视相关筛查或评估，请结合循证医学角度说明。",
+    "question_type": "screening",
+    "risk_level": "high",
+    "gold_keywords": [
+      "stroke",
+      "secondary prevention",
+      "rehabilitation",
+      "risk"
+    ],
+    "gold_sources": [
+      "guideline_stroke_2023",
+      "review_stroke_2022"
+    ],
+    "gold_claim": "相关筛查和评估有助于更早识别风险、并发症或病情严重程度。",
+    "needs_human_review": true
+  },
+  {
+    "question_id": "q44",
+    "question": "慢阻肺稳定期为什么需要重视相关筛查或评估，请结合循证医学角度说明。",
+    "question_type": "screening",
+    "risk_level": "medium",
+    "gold_keywords": [
+      "copd",
+      "stable management",
+      "exacerbation risk",
+      "therapy"
+    ],
+    "gold_sources": [
+      "guideline_copd_2024",
+      "review_copd_primarycare_2022"
+    ],
+    "gold_claim": "相关筛查和评估有助于更早识别风险、并发症或病情严重程度。",
+    "needs_human_review": false
+  },
+  {
+    "question_id": "q45",
+    "question": "支气管哮喘为什么需要重视相关筛查或评估，请结合循证医学角度说明。",
+    "question_type": "screening",
+    "risk_level": "medium",
+    "gold_keywords": [
+      "asthma",
+      "control",
+      "inhaled therapy",
+      "follow-up"
+    ],
+    "gold_sources": [
+      "guideline_asthma_2024",
+      "review_asthma_management_2022"
+    ],
+    "gold_claim": "相关筛查和评估有助于更早识别风险、并发症或病情严重程度。",
+    "needs_human_review": false
+  },
+  {
+    "question_id": "q46",
+    "question": "社区获得性肺炎为什么需要重视相关筛查或评估，请结合循证医学角度说明。",
+    "question_type": "screening",
+    "risk_level": "high",
+    "gold_keywords": [
+      "community acquired pneumonia",
+      "severity",
+      "infection",
+      "therapy"
+    ],
+    "gold_sources": [
+      "guideline_cap_2023",
+      "review_pneumonia_2022"
+    ],
+    "gold_claim": "相关筛查和评估有助于更早识别风险、并发症或病情严重程度。",
+    "needs_human_review": true
+  },
+  {
+    "question_id": "q47",
+    "question": "肺结核为什么需要重视相关筛查或评估，请结合循证医学角度说明。",
+    "question_type": "screening",
+    "risk_level": "high",
+    "gold_keywords": [
+      "tuberculosis",
+      "infection",
+      "follow-up",
+      "screening"
+    ],
+    "gold_sources": [
+      "guideline_tb_2023",
+      "review_tb_2022"
+    ],
+    "gold_claim": "相关筛查和评估有助于更早识别风险、并发症或病情严重程度。",
+    "needs_human_review": true
+  },
+  {
+    "question_id": "q48",
+    "question": "缺铁性贫血为什么需要重视相关筛查或评估，请结合循证医学角度说明。",
+    "question_type": "screening",
+    "risk_level": "medium",
+    "gold_keywords": [
+      "iron deficiency anemia",
+      "hemoglobin",
+      "evaluation",
+      "management"
+    ],
+    "gold_sources": [
+      "guideline_anemia_2023",
+      "review_iron_deficiency_2022"
+    ],
+    "gold_claim": "相关筛查和评估有助于更早识别风险、并发症或病情严重程度。",
+    "needs_human_review": false
+  },
+  {
+    "question_id": "q49",
+    "question": "骨质疏松为什么需要重视相关筛查或评估，请结合循证医学角度说明。",
+    "question_type": "screening",
+    "risk_level": "medium",
+    "gold_keywords": [
+      "osteoporosis",
+      "fracture risk",
+      "screening",
+      "management"
+    ],
+    "gold_sources": [
+      "guideline_osteoporosis_2023",
+      "review_osteoporosis_2022"
+    ],
+    "gold_claim": "相关筛查和评估有助于更早识别风险、并发症或病情严重程度。",
+    "needs_human_review": false
+  },
+  {
+    "question_id": "q50",
+    "question": "痛风为什么需要重视相关筛查或评估，请结合循证医学角度说明。",
+    "question_type": "screening",
+    "risk_level": "medium",
+    "gold_keywords": [
+      "gout",
+      "urate",
+      "joint pain",
+      "management"
+    ],
+    "gold_sources": [
+      "guideline_gout_2023",
+      "review_gout_2022"
+    ],
+    "gold_claim": "相关筛查和评估有助于更早识别风险、并发症或病情严重程度。",
+    "needs_human_review": false
+  },
+  {
+    "question_id": "q51",
+    "question": "类风湿关节炎为什么需要重视相关筛查或评估，请结合循证医学角度说明。",
+    "question_type": "screening",
+    "risk_level": "high",
+    "gold_keywords": [
+      "rheumatoid arthritis",
+      "joint inflammation",
+      "therapy",
+      "follow-up"
+    ],
+    "gold_sources": [
+      "guideline_ra_2023",
+      "review_ra_2022"
+    ],
+    "gold_claim": "相关筛查和评估有助于更早识别风险、并发症或病情严重程度。",
+    "needs_human_review": true
+  },
+  {
+    "question_id": "q52",
+    "question": "骨关节炎为什么需要重视相关筛查或评估，请结合循证医学角度说明。",
+    "question_type": "screening",
+    "risk_level": "medium",
+    "gold_keywords": [
+      "osteoarthritis",
+      "joint pain",
+      "function",
+      "management"
+    ],
+    "gold_sources": [
+      "guideline_oa_2023",
+      "review_oa_2022"
+    ],
+    "gold_claim": "相关筛查和评估有助于更早识别风险、并发症或病情严重程度。",
+    "needs_human_review": false
+  },
+  {
+    "question_id": "q53",
+    "question": "胃食管反流病为什么需要重视相关筛查或评估，请结合循证医学角度说明。",
+    "question_type": "screening",
+    "risk_level": "medium",
+    "gold_keywords": [
+      "gastroesophageal reflux",
+      "heartburn",
+      "therapy",
+      "lifestyle"
+    ],
+    "gold_sources": [
+      "guideline_gerd_2023",
+      "review_gerd_2022"
+    ],
+    "gold_claim": "相关筛查和评估有助于更早识别风险、并发症或病情严重程度。",
+    "needs_human_review": false
+  },
+  {
+    "question_id": "q54",
+    "question": "消化性溃疡为什么需要重视相关筛查或评估，请结合循证医学角度说明。",
+    "question_type": "screening",
+    "risk_level": "high",
+    "gold_keywords": [
+      "peptic ulcer",
+      "bleeding risk",
+      "therapy",
+      "evaluation"
+    ],
+    "gold_sources": [
+      "guideline_ulcer_2023",
+      "review_ulcer_2022"
+    ],
+    "gold_claim": "相关筛查和评估有助于更早识别风险、并发症或病情严重程度。",
+    "needs_human_review": true
+  },
+  {
+    "question_id": "q55",
+    "question": "急性胃肠炎为什么需要重视相关筛查或评估，请结合循证医学角度说明。",
+    "question_type": "screening",
+    "risk_level": "medium",
+    "gold_keywords": [
+      "gastroenteritis",
+      "dehydration",
+      "infection",
+      "management"
+    ],
+    "gold_sources": [
+      "guideline_gastroenteritis_2023",
+      "review_gastroenteritis_2022"
+    ],
+    "gold_claim": "相关筛查和评估有助于更早识别风险、并发症或病情严重程度。",
+    "needs_human_review": false
+  },
+  {
+    "question_id": "q56",
+    "question": "脂肪肝为什么需要重视相关筛查或评估，请结合循证医学角度说明。",
+    "question_type": "screening",
+    "risk_level": "medium",
+    "gold_keywords": [
+      "fatty liver",
+      "metabolic risk",
+      "lifestyle",
+      "monitoring"
+    ],
+    "gold_sources": [
+      "guideline_fatty_liver_2023",
+      "review_fatty_liver_2022"
+    ],
+    "gold_claim": "相关筛查和评估有助于更早识别风险、并发症或病情严重程度。",
+    "needs_human_review": false
+  },
+  {
+    "question_id": "q57",
+    "question": "乙肝慢性感染为什么需要重视相关筛查或评估，请结合循证医学角度说明。",
+    "question_type": "screening",
+    "risk_level": "high",
+    "gold_keywords": [
+      "hepatitis b",
+      "liver function",
+      "monitoring",
+      "therapy"
+    ],
+    "gold_sources": [
+      "guideline_hbv_2023",
+      "review_hbv_2022"
+    ],
+    "gold_claim": "相关筛查和评估有助于更早识别风险、并发症或病情严重程度。",
+    "needs_human_review": true
+  },
+  {
+    "question_id": "q58",
+    "question": "尿路感染为什么需要重视相关筛查或评估，请结合循证医学角度说明。",
+    "question_type": "screening",
+    "risk_level": "medium",
+    "gold_keywords": [
+      "urinary tract infection",
+      "infection",
+      "antibiotic therapy",
+      "evaluation"
+    ],
+    "gold_sources": [
+      "guideline_uti_2023",
+      "review_uti_2022"
+    ],
+    "gold_claim": "相关筛查和评估有助于更早识别风险、并发症或病情严重程度。",
+    "needs_human_review": false
+  },
+  {
+    "question_id": "q59",
+    "question": "良性前列腺增生为什么需要重视相关筛查或评估，请结合循证医学角度说明。",
+    "question_type": "screening",
+    "risk_level": "medium",
+    "gold_keywords": [
+      "benign prostatic hyperplasia",
+      "urinary symptoms",
+      "management",
+      "follow-up"
+    ],
+    "gold_sources": [
+      "guideline_bph_2023",
+      "review_bph_2022"
+    ],
+    "gold_claim": "相关筛查和评估有助于更早识别风险、并发症或病情严重程度。",
+    "needs_human_review": false
+  },
+  {
+    "question_id": "q60",
+    "question": "肾结石为什么需要重视相关筛查或评估，请结合循证医学角度说明。",
+    "question_type": "screening",
+    "risk_level": "medium",
+    "gold_keywords": [
+      "kidney stone",
+      "pain",
+      "evaluation",
+      "recurrence risk"
+    ],
+    "gold_sources": [
+      "guideline_stone_2023",
+      "review_stone_2022"
+    ],
+    "gold_claim": "相关筛查和评估有助于更早识别风险、并发症或病情严重程度。",
+    "needs_human_review": false
+  },
+  {
+    "question_id": "q61",
+    "question": "抑郁症为什么需要重视相关筛查或评估，请结合循证医学角度说明。",
+    "question_type": "screening",
+    "risk_level": "high",
+    "gold_keywords": [
+      "depression",
+      "mood symptoms",
+      "follow-up",
+      "therapy"
+    ],
+    "gold_sources": [
+      "guideline_depression_2023",
+      "review_depression_2022"
+    ],
+    "gold_claim": "相关筛查和评估有助于更早识别风险、并发症或病情严重程度。",
+    "needs_human_review": true
+  },
+  {
+    "question_id": "q62",
+    "question": "焦虑障碍为什么需要重视相关筛查或评估，请结合循证医学角度说明。",
+    "question_type": "screening",
+    "risk_level": "medium",
+    "gold_keywords": [
+      "anxiety disorder",
+      "symptom control",
+      "therapy",
+      "follow-up"
+    ],
+    "gold_sources": [
+      "guideline_anxiety_2023",
+      "review_anxiety_2022"
+    ],
+    "gold_claim": "相关筛查和评估有助于更早识别风险、并发症或病情严重程度。",
+    "needs_human_review": false
+  },
+  {
+    "question_id": "q63",
+    "question": "失眠为什么需要重视相关筛查或评估，请结合循证医学角度说明。",
+    "question_type": "screening",
+    "risk_level": "medium",
+    "gold_keywords": [
+      "insomnia",
+      "sleep hygiene",
+      "therapy",
+      "follow-up"
+    ],
+    "gold_sources": [
+      "guideline_insomnia_2023",
+      "review_insomnia_2022"
+    ],
+    "gold_claim": "相关筛查和评估有助于更早识别风险、并发症或病情严重程度。",
+    "needs_human_review": false
+  },
+  {
+    "question_id": "q64",
+    "question": "偏头痛为什么需要重视相关筛查或评估，请结合循证医学角度说明。",
+    "question_type": "screening",
+    "risk_level": "medium",
+    "gold_keywords": [
+      "migraine",
+      "headache",
+      "trigger",
+      "management"
+    ],
+    "gold_sources": [
+      "guideline_migraine_2023",
+      "review_migraine_2022"
+    ],
+    "gold_claim": "相关筛查和评估有助于更早识别风险、并发症或病情严重程度。",
+    "needs_human_review": false
+  },
+  {
+    "question_id": "q65",
+    "question": "湿疹为什么需要重视相关筛查或评估，请结合循证医学角度说明。",
+    "question_type": "screening",
+    "risk_level": "medium",
+    "gold_keywords": [
+      "eczema",
+      "skin barrier",
+      "itch",
+      "management"
+    ],
+    "gold_sources": [
+      "guideline_eczema_2023",
+      "review_eczema_2022"
+    ],
+    "gold_claim": "相关筛查和评估有助于更早识别风险、并发症或病情严重程度。",
+    "needs_human_review": false
+  },
+  {
+    "question_id": "q66",
+    "question": "荨麻疹为什么需要重视相关筛查或评估，请结合循证医学角度说明。",
+    "question_type": "screening",
+    "risk_level": "medium",
+    "gold_keywords": [
+      "urticaria",
+      "allergy",
+      "itch",
+      "management"
+    ],
+    "gold_sources": [
+      "guideline_urticaria_2023",
+      "review_urticaria_2022"
+    ],
+    "gold_claim": "相关筛查和评估有助于更早识别风险、并发症或病情严重程度。",
+    "needs_human_review": false
+  },
+  {
+    "question_id": "q67",
+    "question": "痤疮为什么需要重视相关筛查或评估，请结合循证医学角度说明。",
+    "question_type": "screening",
+    "risk_level": "medium",
+    "gold_keywords": [
+      "acne",
+      "skin care",
+      "therapy",
+      "follow-up"
+    ],
+    "gold_sources": [
+      "guideline_acne_2023",
+      "review_acne_2022"
+    ],
+    "gold_claim": "相关筛查和评估有助于更早识别风险、并发症或病情严重程度。",
+    "needs_human_review": false
+  },
+  {
+    "question_id": "q68",
+    "question": "肥胖症为什么需要重视相关筛查或评估，请结合循证医学角度说明。",
+    "question_type": "screening",
+    "risk_level": "high",
+    "gold_keywords": [
+      "obesity",
+      "weight management",
+      "lifestyle",
+      "metabolic risk"
+    ],
+    "gold_sources": [
+      "guideline_obesity_2023",
+      "review_obesity_2022"
+    ],
+    "gold_claim": "相关筛查和评估有助于更早识别风险、并发症或病情严重程度。",
+    "needs_human_review": true
+  },
+  {
+    "question_id": "q69",
+    "question": "高血压长期随访时最重要的关注点是什么，请结合循证医学角度说明。",
+    "question_type": "follow_up",
+    "risk_level": "high",
+    "gold_keywords": [
+      "hypertension",
+      "blood pressure",
+      "management",
+      "target"
+    ],
+    "gold_sources": [
+      "guideline_esh_2023",
+      "guideline_ada_bp_targets_2024"
+    ],
+    "gold_claim": "长期随访重点通常在症状变化、风险趋势、依从性和治疗效果评估。",
+    "needs_human_review": true
+  },
+  {
+    "question_id": "q70",
+    "question": "2型糖尿病长期随访时最重要的关注点是什么，请结合循证医学角度说明。",
+    "question_type": "follow_up",
+    "risk_level": "high",
+    "gold_keywords": [
+      "diabetes mellitus",
+      "glycemic control",
+      "complication",
+      "management"
+    ],
+    "gold_sources": [
+      "guideline_ada_2024",
+      "knowledgebase_screening_2023"
+    ],
+    "gold_claim": "长期随访重点通常在症状变化、风险趋势、依从性和治疗效果评估。",
+    "needs_human_review": true
+  },
+  {
+    "question_id": "q71",
+    "question": "慢性肾病长期随访时最重要的关注点是什么，请结合循证医学角度说明。",
+    "question_type": "follow_up",
+    "risk_level": "high",
+    "gold_keywords": [
+      "chronic kidney disease",
+      "albuminuria",
+      "monitoring",
+      "management"
+    ],
+    "gold_sources": [
+      "guideline_nice_ckd_2021",
+      "guideline_ada_bp_targets_2024"
+    ],
+    "gold_claim": "长期随访重点通常在症状变化、风险趋势、依从性和治疗效果评估。",
+    "needs_human_review": true
+  },
+  {
+    "question_id": "q72",
+    "question": "甲状腺肿大长期随访时最重要的关注点是什么，请结合循证医学角度说明。",
+    "question_type": "follow_up",
+    "risk_level": "high",
+    "gold_keywords": [
+      "thyroid",
+      "goiter",
+      "compressive symptoms",
+      "management"
+    ],
+    "gold_sources": [
+      "consensus_thyroid_2022"
+    ],
+    "gold_claim": "长期随访重点通常在症状变化、风险趋势、依从性和治疗效果评估。",
+    "needs_human_review": true
+  },
+  {
+    "question_id": "q73",
+    "question": "高脂血症长期随访时最重要的关注点是什么，请结合循证医学角度说明。",
+    "question_type": "follow_up",
+    "risk_level": "medium",
+    "gold_keywords": [
+      "hyperlipidemia",
+      "ldl cholesterol",
+      "cardiovascular risk",
+      "management"
+    ],
+    "gold_sources": [
+      "guideline_lipid_2023",
+      "review_lipid_primarycare_2022"
+    ],
+    "gold_claim": "长期随访重点通常在症状变化、风险趋势、依从性和治疗效果评估。",
+    "needs_human_review": false
+  },
+  {
+    "question_id": "q74",
+    "question": "冠心病长期随访时最重要的关注点是什么，请结合循证医学角度说明。",
+    "question_type": "follow_up",
+    "risk_level": "high",
+    "gold_keywords": [
+      "coronary artery disease",
+      "secondary prevention",
+      "cardiovascular risk",
+      "therapy"
+    ],
+    "gold_sources": [
+      "guideline_cad_secondary_2023",
+      "review_secondary_prevention_2022"
+    ],
+    "gold_claim": "长期随访重点通常在症状变化、风险趋势、依从性和治疗效果评估。",
+    "needs_human_review": true
+  },
+  {
+    "question_id": "q75",
+    "question": "心力衰竭长期随访时最重要的关注点是什么，请结合循证医学角度说明。",
+    "question_type": "follow_up",
+    "risk_level": "high",
+    "gold_keywords": [
+      "heart failure",
+      "cardiac function",
+      "follow-up",
+      "therapy"
+    ],
+    "gold_sources": [
+      "guideline_heart_failure_2023",
+      "review_heart_failure_2022"
+    ],
+    "gold_claim": "长期随访重点通常在症状变化、风险趋势、依从性和治疗效果评估。",
+    "needs_human_review": true
+  },
+  {
+    "question_id": "q76",
+    "question": "房颤长期随访时最重要的关注点是什么，请结合循证医学角度说明。",
+    "question_type": "follow_up",
+    "risk_level": "high",
+    "gold_keywords": [
+      "atrial fibrillation",
+      "stroke risk",
+      "anticoagulation",
+      "management"
+    ],
+    "gold_sources": [
+      "guideline_af_2023",
+      "review_af_2022"
+    ],
+    "gold_claim": "长期随访重点通常在症状变化、风险趋势、依从性和治疗效果评估。",
+    "needs_human_review": true
+  },
+  {
+    "question_id": "q77",
+    "question": "脑卒中后管理长期随访时最重要的关注点是什么，请结合循证医学角度说明。",
+    "question_type": "follow_up",
+    "risk_level": "high",
+    "gold_keywords": [
+      "stroke",
+      "secondary prevention",
+      "rehabilitation",
+      "risk"
+    ],
+    "gold_sources": [
+      "guideline_stroke_2023",
+      "review_stroke_2022"
+    ],
+    "gold_claim": "长期随访重点通常在症状变化、风险趋势、依从性和治疗效果评估。",
+    "needs_human_review": true
+  },
+  {
+    "question_id": "q78",
+    "question": "慢阻肺稳定期长期随访时最重要的关注点是什么，请结合循证医学角度说明。",
+    "question_type": "follow_up",
+    "risk_level": "medium",
+    "gold_keywords": [
+      "copd",
+      "stable management",
+      "exacerbation risk",
+      "therapy"
+    ],
+    "gold_sources": [
+      "guideline_copd_2024",
+      "review_copd_primarycare_2022"
+    ],
+    "gold_claim": "长期随访重点通常在症状变化、风险趋势、依从性和治疗效果评估。",
+    "needs_human_review": false
+  },
+  {
+    "question_id": "q79",
+    "question": "支气管哮喘长期随访时最重要的关注点是什么，请结合循证医学角度说明。",
+    "question_type": "follow_up",
+    "risk_level": "medium",
+    "gold_keywords": [
+      "asthma",
+      "control",
+      "inhaled therapy",
+      "follow-up"
+    ],
+    "gold_sources": [
+      "guideline_asthma_2024",
+      "review_asthma_management_2022"
+    ],
+    "gold_claim": "长期随访重点通常在症状变化、风险趋势、依从性和治疗效果评估。",
+    "needs_human_review": false
+  },
+  {
+    "question_id": "q80",
+    "question": "社区获得性肺炎长期随访时最重要的关注点是什么，请结合循证医学角度说明。",
+    "question_type": "follow_up",
+    "risk_level": "high",
+    "gold_keywords": [
+      "community acquired pneumonia",
+      "severity",
+      "infection",
+      "therapy"
+    ],
+    "gold_sources": [
+      "guideline_cap_2023",
+      "review_pneumonia_2022"
+    ],
+    "gold_claim": "长期随访重点通常在症状变化、风险趋势、依从性和治疗效果评估。",
+    "needs_human_review": true
+  },
+  {
+    "question_id": "q81",
+    "question": "肺结核长期随访时最重要的关注点是什么，请结合循证医学角度说明。",
+    "question_type": "follow_up",
+    "risk_level": "high",
+    "gold_keywords": [
+      "tuberculosis",
+      "infection",
+      "follow-up",
+      "screening"
+    ],
+    "gold_sources": [
+      "guideline_tb_2023",
+      "review_tb_2022"
+    ],
+    "gold_claim": "长期随访重点通常在症状变化、风险趋势、依从性和治疗效果评估。",
+    "needs_human_review": true
+  },
+  {
+    "question_id": "q82",
+    "question": "缺铁性贫血长期随访时最重要的关注点是什么，请结合循证医学角度说明。",
+    "question_type": "follow_up",
+    "risk_level": "medium",
+    "gold_keywords": [
+      "iron deficiency anemia",
+      "hemoglobin",
+      "evaluation",
+      "management"
+    ],
+    "gold_sources": [
+      "guideline_anemia_2023",
+      "review_iron_deficiency_2022"
+    ],
+    "gold_claim": "长期随访重点通常在症状变化、风险趋势、依从性和治疗效果评估。",
+    "needs_human_review": false
+  },
+  {
+    "question_id": "q83",
+    "question": "骨质疏松长期随访时最重要的关注点是什么，请结合循证医学角度说明。",
+    "question_type": "follow_up",
+    "risk_level": "medium",
+    "gold_keywords": [
+      "osteoporosis",
+      "fracture risk",
+      "screening",
+      "management"
+    ],
+    "gold_sources": [
+      "guideline_osteoporosis_2023",
+      "review_osteoporosis_2022"
+    ],
+    "gold_claim": "长期随访重点通常在症状变化、风险趋势、依从性和治疗效果评估。",
+    "needs_human_review": false
+  },
+  {
+    "question_id": "q84",
+    "question": "痛风长期随访时最重要的关注点是什么，请结合循证医学角度说明。",
+    "question_type": "follow_up",
+    "risk_level": "medium",
+    "gold_keywords": [
+      "gout",
+      "urate",
+      "joint pain",
+      "management"
+    ],
+    "gold_sources": [
+      "guideline_gout_2023",
+      "review_gout_2022"
+    ],
+    "gold_claim": "长期随访重点通常在症状变化、风险趋势、依从性和治疗效果评估。",
+    "needs_human_review": false
+  },
+  {
+    "question_id": "q85",
+    "question": "类风湿关节炎长期随访时最重要的关注点是什么，请结合循证医学角度说明。",
+    "question_type": "follow_up",
+    "risk_level": "high",
+    "gold_keywords": [
+      "rheumatoid arthritis",
+      "joint inflammation",
+      "therapy",
+      "follow-up"
+    ],
+    "gold_sources": [
+      "guideline_ra_2023",
+      "review_ra_2022"
+    ],
+    "gold_claim": "长期随访重点通常在症状变化、风险趋势、依从性和治疗效果评估。",
+    "needs_human_review": true
+  },
+  {
+    "question_id": "q86",
+    "question": "骨关节炎长期随访时最重要的关注点是什么，请结合循证医学角度说明。",
+    "question_type": "follow_up",
+    "risk_level": "medium",
+    "gold_keywords": [
+      "osteoarthritis",
+      "joint pain",
+      "function",
+      "management"
+    ],
+    "gold_sources": [
+      "guideline_oa_2023",
+      "review_oa_2022"
+    ],
+    "gold_claim": "长期随访重点通常在症状变化、风险趋势、依从性和治疗效果评估。",
+    "needs_human_review": false
+  },
+  {
+    "question_id": "q87",
+    "question": "胃食管反流病长期随访时最重要的关注点是什么，请结合循证医学角度说明。",
+    "question_type": "follow_up",
+    "risk_level": "medium",
+    "gold_keywords": [
+      "gastroesophageal reflux",
+      "heartburn",
+      "therapy",
+      "lifestyle"
+    ],
+    "gold_sources": [
+      "guideline_gerd_2023",
+      "review_gerd_2022"
+    ],
+    "gold_claim": "长期随访重点通常在症状变化、风险趋势、依从性和治疗效果评估。",
+    "needs_human_review": false
+  },
+  {
+    "question_id": "q88",
+    "question": "消化性溃疡长期随访时最重要的关注点是什么，请结合循证医学角度说明。",
+    "question_type": "follow_up",
+    "risk_level": "high",
+    "gold_keywords": [
+      "peptic ulcer",
+      "bleeding risk",
+      "therapy",
+      "evaluation"
+    ],
+    "gold_sources": [
+      "guideline_ulcer_2023",
+      "review_ulcer_2022"
+    ],
+    "gold_claim": "长期随访重点通常在症状变化、风险趋势、依从性和治疗效果评估。",
+    "needs_human_review": true
+  },
+  {
+    "question_id": "q89",
+    "question": "急性胃肠炎长期随访时最重要的关注点是什么，请结合循证医学角度说明。",
+    "question_type": "follow_up",
+    "risk_level": "medium",
+    "gold_keywords": [
+      "gastroenteritis",
+      "dehydration",
+      "infection",
+      "management"
+    ],
+    "gold_sources": [
+      "guideline_gastroenteritis_2023",
+      "review_gastroenteritis_2022"
+    ],
+    "gold_claim": "长期随访重点通常在症状变化、风险趋势、依从性和治疗效果评估。",
+    "needs_human_review": false
+  },
+  {
+    "question_id": "q90",
+    "question": "脂肪肝长期随访时最重要的关注点是什么，请结合循证医学角度说明。",
+    "question_type": "follow_up",
+    "risk_level": "medium",
+    "gold_keywords": [
+      "fatty liver",
+      "metabolic risk",
+      "lifestyle",
+      "monitoring"
+    ],
+    "gold_sources": [
+      "guideline_fatty_liver_2023",
+      "review_fatty_liver_2022"
+    ],
+    "gold_claim": "长期随访重点通常在症状变化、风险趋势、依从性和治疗效果评估。",
+    "needs_human_review": false
+  },
+  {
+    "question_id": "q91",
+    "question": "乙肝慢性感染长期随访时最重要的关注点是什么，请结合循证医学角度说明。",
+    "question_type": "follow_up",
+    "risk_level": "high",
+    "gold_keywords": [
+      "hepatitis b",
+      "liver function",
+      "monitoring",
+      "therapy"
+    ],
+    "gold_sources": [
+      "guideline_hbv_2023",
+      "review_hbv_2022"
+    ],
+    "gold_claim": "长期随访重点通常在症状变化、风险趋势、依从性和治疗效果评估。",
+    "needs_human_review": true
+  },
+  {
+    "question_id": "q92",
+    "question": "尿路感染长期随访时最重要的关注点是什么，请结合循证医学角度说明。",
+    "question_type": "follow_up",
+    "risk_level": "medium",
+    "gold_keywords": [
+      "urinary tract infection",
+      "infection",
+      "antibiotic therapy",
+      "evaluation"
+    ],
+    "gold_sources": [
+      "guideline_uti_2023",
+      "review_uti_2022"
+    ],
+    "gold_claim": "长期随访重点通常在症状变化、风险趋势、依从性和治疗效果评估。",
+    "needs_human_review": false
+  },
+  {
+    "question_id": "q93",
+    "question": "良性前列腺增生长期随访时最重要的关注点是什么，请结合循证医学角度说明。",
+    "question_type": "follow_up",
+    "risk_level": "medium",
+    "gold_keywords": [
+      "benign prostatic hyperplasia",
+      "urinary symptoms",
+      "management",
+      "follow-up"
+    ],
+    "gold_sources": [
+      "guideline_bph_2023",
+      "review_bph_2022"
+    ],
+    "gold_claim": "长期随访重点通常在症状变化、风险趋势、依从性和治疗效果评估。",
+    "needs_human_review": false
+  },
+  {
+    "question_id": "q94",
+    "question": "肾结石长期随访时最重要的关注点是什么，请结合循证医学角度说明。",
+    "question_type": "follow_up",
+    "risk_level": "medium",
+    "gold_keywords": [
+      "kidney stone",
+      "pain",
+      "evaluation",
+      "recurrence risk"
+    ],
+    "gold_sources": [
+      "guideline_stone_2023",
+      "review_stone_2022"
+    ],
+    "gold_claim": "长期随访重点通常在症状变化、风险趋势、依从性和治疗效果评估。",
+    "needs_human_review": false
+  },
+  {
+    "question_id": "q95",
+    "question": "抑郁症长期随访时最重要的关注点是什么，请结合循证医学角度说明。",
+    "question_type": "follow_up",
+    "risk_level": "high",
+    "gold_keywords": [
+      "depression",
+      "mood symptoms",
+      "follow-up",
+      "therapy"
+    ],
+    "gold_sources": [
+      "guideline_depression_2023",
+      "review_depression_2022"
+    ],
+    "gold_claim": "长期随访重点通常在症状变化、风险趋势、依从性和治疗效果评估。",
+    "needs_human_review": true
+  },
+  {
+    "question_id": "q96",
+    "question": "焦虑障碍长期随访时最重要的关注点是什么，请结合循证医学角度说明。",
+    "question_type": "follow_up",
+    "risk_level": "medium",
+    "gold_keywords": [
+      "anxiety disorder",
+      "symptom control",
+      "therapy",
+      "follow-up"
+    ],
+    "gold_sources": [
+      "guideline_anxiety_2023",
+      "review_anxiety_2022"
+    ],
+    "gold_claim": "长期随访重点通常在症状变化、风险趋势、依从性和治疗效果评估。",
+    "needs_human_review": false
+  },
+  {
+    "question_id": "q97",
+    "question": "失眠长期随访时最重要的关注点是什么，请结合循证医学角度说明。",
+    "question_type": "follow_up",
+    "risk_level": "medium",
+    "gold_keywords": [
+      "insomnia",
+      "sleep hygiene",
+      "therapy",
+      "follow-up"
+    ],
+    "gold_sources": [
+      "guideline_insomnia_2023",
+      "review_insomnia_2022"
+    ],
+    "gold_claim": "长期随访重点通常在症状变化、风险趋势、依从性和治疗效果评估。",
+    "needs_human_review": false
+  },
+  {
+    "question_id": "q98",
+    "question": "偏头痛长期随访时最重要的关注点是什么，请结合循证医学角度说明。",
+    "question_type": "follow_up",
+    "risk_level": "medium",
+    "gold_keywords": [
+      "migraine",
+      "headache",
+      "trigger",
+      "management"
+    ],
+    "gold_sources": [
+      "guideline_migraine_2023",
+      "review_migraine_2022"
+    ],
+    "gold_claim": "长期随访重点通常在症状变化、风险趋势、依从性和治疗效果评估。",
+    "needs_human_review": false
+  },
+  {
+    "question_id": "q99",
+    "question": "湿疹长期随访时最重要的关注点是什么，请结合循证医学角度说明。",
+    "question_type": "follow_up",
+    "risk_level": "medium",
+    "gold_keywords": [
+      "eczema",
+      "skin barrier",
+      "itch",
+      "management"
+    ],
+    "gold_sources": [
+      "guideline_eczema_2023",
+      "review_eczema_2022"
+    ],
+    "gold_claim": "长期随访重点通常在症状变化、风险趋势、依从性和治疗效果评估。",
+    "needs_human_review": false
+  },
+  {
+    "question_id": "q100",
+    "question": "荨麻疹长期随访时最重要的关注点是什么，请结合循证医学角度说明。",
+    "question_type": "follow_up",
+    "risk_level": "medium",
+    "gold_keywords": [
+      "urticaria",
+      "allergy",
+      "itch",
+      "management"
+    ],
+    "gold_sources": [
+      "guideline_urticaria_2023",
+      "review_urticaria_2022"
+    ],
+    "gold_claim": "长期随访重点通常在症状变化、风险趋势、依从性和治疗效果评估。",
+    "needs_human_review": false
+  }
+]

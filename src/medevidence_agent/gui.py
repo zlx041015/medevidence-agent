@@ -7,18 +7,21 @@ from tkinter import filedialog, messagebox, ttk
 from tkinter.scrolledtext import ScrolledText
 
 from medevidence_agent.config import settings
+from medevidence_agent.eval.runner import run_experiments
 from medevidence_agent.workflow import run_workflow
 
 
-HISTORY_PATH = Path(__file__).resolve().parents[2] / "data" / "history.json"
+ROOT_PATH = Path(__file__).resolve().parents[2]
+HISTORY_PATH = ROOT_PATH / "data" / "history.json"
+DEFAULT_EVAL_OUTPUT = ROOT_PATH / "outputs" / "eval"
 
 
 class MedEvidenceApp:
     def __init__(self, root: tk.Tk) -> None:
         self.root = root
         self.root.title("MedEvidence Agent")
-        self.root.geometry("1120x780")
-        self.root.minsize(920, 640)
+        self.root.geometry("1180x820")
+        self.root.minsize(980, 680)
 
         self.question_var = tk.StringVar()
         self.status_var = tk.StringVar(value="就绪")
@@ -35,15 +38,15 @@ class MedEvidenceApp:
 
         question_entry = ttk.Entry(top, textvariable=self.question_var, font=("Microsoft YaHei UI", 11))
         question_entry.pack(fill="x", pady=(8, 8))
-        question_entry.insert(0, "糖尿病伴蛋白尿时高血压首选什么药？")
+        question_entry.insert(0, "2型糖尿病合并高血压且伴蛋白尿时，一线降压治疗通常优先考虑什么？")
 
         action_row = ttk.Frame(top)
         action_row.pack(fill="x")
 
-        self.run_button = ttk.Button(action_row, text="开始分析", command=self.run_analysis)
+        self.run_button = ttk.Button(action_row, text="运行工作流", command=self.run_analysis)
         self.run_button.pack(side="left")
-
-        ttk.Button(action_row, text="复制结论", command=self.copy_summary).pack(side="left", padx=(8, 0))
+        ttk.Button(action_row, text="运行评测", command=self.run_evaluation).pack(side="left", padx=(8, 0))
+        ttk.Button(action_row, text="复制结果", command=self.copy_summary).pack(side="left", padx=(8, 0))
         ttk.Button(action_row, text="导出结果", command=self.export_summary).pack(side="left", padx=(8, 0))
         ttk.Button(action_row, text="打开首个来源", command=self.open_first_reference).pack(side="left", padx=(8, 0))
 
@@ -64,16 +67,17 @@ class MedEvidenceApp:
         notebook = ttk.Notebook(self.root)
         notebook.pack(fill="both", expand=True, padx=16, pady=(0, 16))
 
-        self.summary_text = self._add_text_tab(notebook, "最终结论")
+        self.summary_text = self._add_text_tab(notebook, "最终回答")
         self.plan_text = self._add_text_tab(notebook, "检索计划")
         self.sources_text = self._add_text_tab(notebook, "候选来源")
-        self.evidence_text = self._add_text_tab(notebook, "证据抽取")
-        self.review_text = self._add_text_tab(notebook, "审核结果")
+        self.evidence_text = self._add_text_tab(notebook, "抽取证据")
+        self.review_text = self._add_text_tab(notebook, "核验结果")
+        self.baseline_text = self._add_text_tab(notebook, "方法对比说明")
+        self.eval_text = self._add_text_tab(notebook, "评测产物")
 
     def _add_text_tab(self, notebook: ttk.Notebook, title: str) -> ScrolledText:
         frame = ttk.Frame(notebook, padding=8)
         notebook.add(frame, text=title)
-
         text = ScrolledText(frame, wrap="word", font=("Microsoft YaHei UI", 10))
         text.pack(fill="both", expand=True)
         text.configure(state="disabled")
@@ -114,7 +118,7 @@ class MedEvidenceApp:
             return
 
         self.run_button.configure(state="disabled")
-        self.status_var.set("分析中：准备开始")
+        self.status_var.set("正在运行工作流")
         self.progress.configure(value=0, maximum=5)
         self.current_references = []
 
@@ -124,11 +128,18 @@ class MedEvidenceApp:
             self.sources_text,
             self.evidence_text,
             self.review_text,
+            self.baseline_text,
         ):
             self._set_text(widget, "")
 
         self._save_history(question)
         thread = threading.Thread(target=self._run_workflow_thread, args=(question,), daemon=True)
+        thread.start()
+
+    def run_evaluation(self) -> None:
+        self.status_var.set("正在运行评测")
+        self._set_text(self.eval_text, "正在生成方法对比、消融实验和结果产物，请稍候...")
+        thread = threading.Thread(target=self._run_evaluation_thread, daemon=True)
         thread.start()
 
     def _run_workflow_thread(self, question: str) -> None:
@@ -143,26 +154,35 @@ class MedEvidenceApp:
         except Exception as exc:
             self.root.after(0, self._show_error, exc)
 
+    def _run_evaluation_thread(self) -> None:
+        try:
+            paths = run_experiments(settings, DEFAULT_EVAL_OUTPUT)
+            summary_md = paths["method_summary"].read_text(encoding="utf-8")
+            ablation_md = paths["ablation_summary"].read_text(encoding="utf-8")
+            combined = summary_md + "\n\n" + ablation_md + "\n\n产物位置：\n" + "\n".join(
+                f"- {name}：{path}" for name, path in paths.items()
+            )
+            self.root.after(0, self._render_evaluation, combined)
+        except Exception as exc:
+            self.root.after(0, self._show_error, exc)
+
     def _threadsafe_progress_update(self, stage: str, current: int, total: int) -> None:
         self.root.after(0, self._update_progress_ui, stage, current, total)
 
     def _update_progress_ui(self, stage: str, current: int, total: int) -> None:
         self.progress.configure(maximum=total)
         self.progress["value"] = current
-        if current >= total:
-            self.status_var.set(f"分析中：{stage}（即将完成）")
-        else:
-            self.status_var.set(f"分析中：{stage}")
+        self.status_var.set(f"{stage}（{current}/{total}）")
 
     def _render_state(self, state) -> None:
         if state.plan:
             plan_content = (
-                f"Intent:\n{state.plan.intent}\n\n"
-                f"Risk Level:\n{state.plan.risk_level}\n\n"
-                f"Keywords:\n- " + "\n- ".join(state.plan.keywords)
+                f"任务意图：\n{state.plan.intent}\n\n"
+                f"风险等级：\n{state.plan.risk_level}\n\n"
+                f"关键词：\n- " + "\n- ".join(state.plan.keywords)
             )
         else:
-            plan_content = "无检索计划。"
+            plan_content = "暂无检索计划。"
 
         if state.candidate_sources:
             sources_content = "\n---\n".join(
@@ -173,55 +193,68 @@ class MedEvidenceApp:
                 ]
             )
         else:
-            sources_content = "无候选来源。"
+            sources_content = "暂无候选来源。"
 
         if state.evidence_items:
             evidence_content = "\n---\n".join(
                 [
-                    f"标题：{item.title}\n结论：{item.claim}\n支持文本：{item.support_text}\n"
+                    f"标题：{item.title}\n结论：{item.claim}\n支撑文本：{item.support_text}\n"
                     f"分数：{item.score:.3f}\n类型：{item.source_type}"
                     for item in state.evidence_items
                 ]
             )
         else:
-            evidence_content = "无抽取证据。"
+            evidence_content = "暂无抽取证据。"
 
         if state.verification:
             conflicts = "\n- ".join(state.verification.conflicts) if state.verification.conflicts else "无"
+            checks = "\n".join(f"- {key}：{value}" for key, value in state.verification.check_results.items())
             review_content = (
-                f"总结：\n{state.verification.summary_claim}\n\n"
+                f"总结结论：\n{state.verification.summary_claim}\n\n"
                 f"置信度：{state.verification.confidence:.3f}\n"
-                f"需要人工审核：{state.verification.needs_human_review}\n\n"
-                f"冲突信息：\n- {conflicts}"
+                f"是否需要人工审核：{state.verification.needs_human_review}\n"
+                f"主题覆盖度：{state.verification.evidence_coverage:.3f}\n\n"
+                f"检查结果：\n{checks}\n\n"
+                f"风险与冲突：\n- {conflicts}"
             )
         else:
-            review_content = "无审核结果。"
+            review_content = "暂无核验结果。"
 
         if state.final_answer:
             self.current_references = state.final_answer.references
             references = "\n".join(state.final_answer.references)
             summary_content = f"{state.final_answer.answer}\n\n参考来源：\n{references}"
         else:
-            summary_content = "无最终结论。"
+            summary_content = "暂无最终回答。"
+
+        baseline_hint = (
+            "点击“运行评测”后，可生成 baseline 对比、消融实验、成功案例和失败案例。\n"
+            f"默认输出目录：{DEFAULT_EVAL_OUTPUT}"
+        )
 
         self._set_text(self.plan_text, plan_content)
         self._set_text(self.sources_text, sources_content)
         self._set_text(self.evidence_text, evidence_content)
         self._set_text(self.review_text, review_content)
         self._set_text(self.summary_text, summary_content)
+        self._set_text(self.baseline_text, baseline_hint)
 
         self.run_button.configure(state="normal")
         self.status_var.set("完成")
         self.progress["value"] = self.progress["maximum"]
 
+    def _render_evaluation(self, content: str) -> None:
+        self._set_text(self.eval_text, content)
+        self.status_var.set("评测完成")
+
     def copy_summary(self) -> None:
         content = self.summary_text.get("1.0", tk.END).strip()
         if not content:
-            messagebox.showinfo("提示", "当前没有可复制的结论。")
+            messagebox.showinfo("提示", "当前没有可复制的结果。")
             return
         self.root.clipboard_clear()
         self.root.clipboard_append(content)
-        messagebox.showinfo("提示", "已复制最终结论。")
+        messagebox.showinfo("提示", "结果已复制。")
 
     def export_summary(self) -> None:
         content = self.summary_text.get("1.0", tk.END).strip()
@@ -231,8 +264,8 @@ class MedEvidenceApp:
 
         file_path = filedialog.asksaveasfilename(
             defaultextension=".md",
-            filetypes=[("Markdown", "*.md"), ("Text", "*.txt")],
-            title="导出分析结果",
+            filetypes=[("Markdown", "*.md"), ("文本文件", "*.txt")],
+            title="导出最终结果",
         )
         if not file_path:
             return
@@ -242,7 +275,7 @@ class MedEvidenceApp:
 
     def open_first_reference(self) -> None:
         if not self.current_references:
-            messagebox.showinfo("提示", "当前没有可打开的参考来源。")
+            messagebox.showinfo("提示", "当前没有可打开的来源。")
             return
 
         first_ref = self.current_references[0]
@@ -250,7 +283,7 @@ class MedEvidenceApp:
             url = first_ref.split(" - ", 1)[1].strip()
             webbrowser.open(url)
         else:
-            messagebox.showwarning("提示", "未能从参考来源中解析出链接。")
+            messagebox.showwarning("提示", "无法从首个来源中解析出链接。")
 
     def _show_error(self, exc: Exception) -> None:
         self.run_button.configure(state="normal")

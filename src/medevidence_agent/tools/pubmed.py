@@ -10,23 +10,102 @@ PUBMED_ESEARCH_URL = "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi
 PUBMED_EFETCH_URL = "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi"
 
 
-def build_pubmed_query(keywords: list[str]) -> str:
+def split_query_terms(keywords: list[str]) -> tuple[list[str], list[str]]:
     cleaned = [keyword.strip() for keyword in keywords if keyword.strip()]
+    disease_terms: list[str] = []
+    support_terms: list[str] = []
+
+    disease_markers = [
+        "diabetes",
+        "hypertension",
+        "kidney",
+        "renal",
+        "thyroid",
+        "goiter",
+        "cholesterol",
+        "hyperlipidemia",
+        "coronary",
+        "heart failure",
+        "atrial fibrillation",
+        "stroke",
+        "copd",
+        "asthma",
+        "pneumonia",
+        "tuberculosis",
+        "anemia",
+        "osteoporosis",
+        "gout",
+        "arthritis",
+        "reflux",
+        "ulcer",
+        "gastroenteritis",
+        "fatty liver",
+        "hepatitis",
+        "urinary tract infection",
+        "prostatic hyperplasia",
+        "kidney stone",
+        "depression",
+        "anxiety",
+        "insomnia",
+        "migraine",
+        "eczema",
+        "urticaria",
+        "acne",
+        "obesity",
+        "cancer",
+    ]
+
+    support_markers = [
+        "guideline",
+        "screening",
+        "monitoring",
+        "risk",
+        "management",
+        "treatment",
+        "therapy",
+        "first-line",
+        "follow-up",
+        "control",
+        "secondary prevention",
+        "severity",
+    ]
+
+    for keyword in cleaned:
+        lowered = keyword.lower()
+        if any(marker in lowered for marker in disease_markers):
+            disease_terms.append(keyword)
+        elif any(marker in lowered for marker in support_markers):
+            support_terms.append(keyword)
+        else:
+            support_terms.append(keyword)
+
+    if not disease_terms and cleaned:
+        disease_terms = cleaned[:1]
+        support_terms = cleaned[1:]
+
+    return disease_terms, support_terms
+
+
+def build_pubmed_query(keywords: list[str]) -> str:
+    disease_terms, support_terms = split_query_terms(keywords)
+    cleaned = disease_terms + support_terms
     if not cleaned:
         return ""
 
-    quoted = [f'"{keyword}"' if " " in keyword else keyword for keyword in cleaned]
+    def quote(term: str) -> str:
+        return f'"{term}"' if " " in term else term
 
-    if len(quoted) == 1:
-        return quoted[0]
+    disease_quoted = [quote(term) for term in disease_terms]
+    support_quoted = [quote(term) for term in support_terms]
 
-    if len(quoted) == 2:
-        return f"{quoted[0]} AND {quoted[1]}"
+    if not support_quoted:
+        if len(disease_quoted) == 1:
+            return disease_quoted[0]
+        return " AND ".join(disease_quoted)
 
-    core_terms = quoted[:2]
-    support_terms = quoted[2:]
-    support_group = " OR ".join(support_terms)
-    return f"({core_terms[0]} AND {core_terms[1]}) AND ({support_group})"
+    disease_group = " AND ".join(disease_quoted) if len(disease_quoted) > 1 else disease_quoted[0]
+    support_group = " OR ".join(support_quoted)
+    return f"({disease_group}) AND ({support_group})"
 
 
 def search_pubmed_pmids(query: str, retmax: int = 5) -> list[str]:
@@ -57,10 +136,18 @@ def search_pubmed_pmids_with_fallback(keywords: list[str], retmax: int = 5) -> l
     if pmids:
         return pmids
 
-    core_only = cleaned[:2]
+    disease_terms, support_terms = split_query_terms(cleaned)
+
+    core_only = disease_terms[:2] if disease_terms else cleaned[:2]
     if core_only:
-        core_query = build_pubmed_query(core_only)
+        core_query = build_pubmed_query(core_only + support_terms[:1])
         pmids = search_pubmed_pmids(core_query, retmax=retmax)
+        if pmids:
+            return pmids
+
+    if disease_terms:
+        disease_query = " OR ".join(f'"{term}"' if " " in term else term for term in disease_terms)
+        pmids = search_pubmed_pmids(disease_query, retmax=retmax)
         if pmids:
             return pmids
 

@@ -27,12 +27,120 @@
     "content": "Combined control of glucose, blood pressure, weight, and lifestyle factors is important in type 2 diabetes with hypertension. Guideline-based treatment frequently prioritizes renin-angiotensin system blockade together with diet and exercise."
   },
   {
+    "source_id": "guideline_lipid_2023",
+    "title": "Lipid Management Guideline 2023",
+    "source_type": "guideline",
+    "year": 2023,
+    "url": "https://example.org/lipid-2023",
+    "quality_score": 0.91,
+    "content": "Lipid management commonly emphasizes LDL cholesterol lowering according to overall cardiovascular risk. Long-term treatment should integrate lifestyle management and risk stratification."
+  },
+  {
+    "source_id": "review_lipid_primarycare_2022",
+    "title": "Primary Care Review of Hyperlipidemia 2022",
+    "source_type": "review",
+    "year": 2022,
+    "url": "https://example.org/lipid-review-2022",
+    "quality_score": 0.79,
+    "content": "Hyperlipidemia management in primary care often combines dietary intervention, statin-based treatment, and ongoing cardiovascular risk assessment."
+  },
+  {
+    "source_id": "guideline_cad_secondary_2023",
+    "title": "Secondary Prevention Guideline for Coronary Artery Disease 2023",
+    "source_type": "guideline",
+    "year": 2023,
+    "url": "https://example.org/cad-secondary-2023",
+    "quality_score": 0.93,
+    "content": "Secondary prevention for coronary artery disease should combine pharmacologic therapy, blood pressure and lipid control, smoking cessation, and long-term risk management."
+  },
+  {
+    "source_id": "review_secondary_prevention_2022",
+    "title": "Review on Secondary Prevention After Coronary Events 2022",
+    "source_type": "review",
+    "year": 2022,
+    "url": "https://example.org/secondary-prevention-review-2022",
+    "quality_score": 0.8,
+    "content": "Long-term prevention after coronary events requires comprehensive cardiovascular risk-factor control, medication adherence, and structured follow-up."
+  },
+  {
+    "source_id": "guideline_copd_2024",
+    "title": "COPD Stable Management Guideline 2024",
+    "source_type": "guideline",
+    "year": 2024,
+    "url": "https://example.org/copd-2024",
+    "quality_score": 0.9,
+    "content": "Stable COPD management should assess symptom burden, exacerbation history, inhaler adherence, and future exacerbation risk to guide maintenance therapy."
+  },
+  {
+    "source_id": "review_copd_primarycare_2022",
+    "title": "Primary Care Review of Stable COPD 2022",
+    "source_type": "review",
+    "year": 2022,
+    "url": "https://example.org/copd-review-2022",
+    "quality_score": 0.78,
+    "content": "Management of stable COPD in primary care commonly focuses on symptom control, inhaled therapy optimization, smoking cessation, and exacerbation prevention."
+  },
+  {
+    "source_id": "guideline_asthma_2024",
+    "title": "Asthma Long-Term Control Guideline 2024",
+    "source_type": "guideline",
+    "year": 2024,
+    "url": "https://example.org/asthma-2024",
+    "quality_score": 0.91,
+    "content": "Long-term asthma control should consider symptom frequency, nighttime symptoms, exacerbation history, inhaled therapy adherence, and trigger management."
+  },
+  {
+    "source_id": "review_asthma_management_2022",
+    "title": "Review of Asthma Control Strategies 2022",
+    "source_type": "review",
+    "year": 2022,
+    "url": "https://example.org/asthma-review-2022",
+    "quality_score": 0.78,
+    "content": "Asthma management commonly requires regular follow-up, stepwise inhaled therapy adjustment, trigger avoidance, and patient education."
+  },
+  {
+    "source_id": "guideline_cap_2023",
+    "title": "Community Acquired Pneumonia Guideline 2023",
+    "source_type": "guideline",
+    "year": 2023,
+    "url": "https://example.org/cap-2023",
+    "quality_score": 0.9,
+    "content": "Community acquired pneumonia management should begin with severity assessment, prompt anti-infective treatment, and ongoing monitoring for complications."
+  },
+  {
+    "source_id": "review_pneumonia_2022",
+    "title": "Review on Community Acquired Pneumonia 2022",
+    "source_type": "review",
+    "year": 2022,
+    "url": "https://example.org/pneumonia-review-2022",
+    "quality_score": 0.77,
+    "content": "Evaluation of community acquired pneumonia typically includes symptom assessment, vital signs, imaging, and estimation of disease severity."
+  },
+  {
+    "source_id": "guideline_anemia_2023",
+    "title": "Iron Deficiency Anemia Guideline 2023",
+    "source_type": "guideline",
+    "year": 2023,
+    "url": "https://example.org/anemia-2023",
+    "quality_score": 0.89,
+    "content": "Iron deficiency anemia management should clarify the underlying cause, assess iron status, and monitor hematologic recovery during treatment."
+  },
+  {
+    "source_id": "review_iron_deficiency_2022",
+    "title": "Review of Iron Deficiency Evaluation 2022",
+    "source_type": "review",
+    "year": 2022,
+    "url": "https://example.org/iron-review-2022",
+    "quality_score": 0.77,
+    "content": "Evaluation of iron deficiency anemia often includes hemoglobin, ferritin, and assessment of potential chronic blood loss or nutritional deficiency."
+  },
+  {
     "source_id": "blog_low_quality_2021",
-    "title": "Personal Blog About Diabetes and Blood Pressure",
+    "title": "Personal Blog About General Disease Self-Treatment",
     "source_type": "blog",
     "year": 2021,
     "url": "https://example.org/blog-2021",
     "quality_score": 0.28,
-    "content": "Some people believe natural therapies should always be tried before medication. Drug choice can depend mainly on personal experience and preference."
+    "content": "Some people believe natural therapies should always be tried before medication. Treatment choice can depend mainly on personal experience and preference."
   }
 ]

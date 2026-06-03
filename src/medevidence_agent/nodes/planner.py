@@ -11,49 +11,61 @@ def build_rule_based_search_plan(question: ClinicalQuestion) -> SearchPlan:
 
     keywords = ["clinical guideline"]
 
-    if "癌" in text or "cancer" in lowered:
-        keywords.append("cancer")
-    if "胰腺癌" in text or "pancreatic cancer" in lowered:
-        keywords.append("pancreatic cancer")
-    if "甲状腺" in text or "thyroid" in lowered:
-        keywords.append("thyroid")
-    if "甲状腺肿大" in text or "goiter" in lowered or "thyroid enlargement" in lowered:
-        keywords.append("goiter")
-        keywords.append("thyroid enlargement")
+    disease_rules = [
+        (["糖尿病", "diabetes"], ["diabetes mellitus"]),
+        (["高血压", "hypertension"], ["hypertension", "blood pressure"]),
+        (["蛋白尿", "白蛋白尿", "albuminuria", "proteinuria"], ["proteinuria", "albuminuria"]),
+        (["慢性肾病", "肾病", "chronic kidney disease", "ckd"], ["chronic kidney disease"]),
+        (["甲状腺", "thyroid"], ["thyroid"]),
+        (["甲状腺肿大", "goiter", "thyroid enlargement"], ["goiter", "thyroid enlargement"]),
+        (["高脂血症", "血脂", "hyperlipidemia", "cholesterol", "ldl"], ["hyperlipidemia", "ldl cholesterol"]),
+        (["冠心病", "心绞痛", "coronary", "cad"], ["coronary artery disease", "secondary prevention"]),
+        (["心力衰竭", "heart failure"], ["heart failure", "cardiac function"]),
+        (["房颤", "atrial fibrillation", "af"], ["atrial fibrillation", "stroke risk"]),
+        (["脑卒中", "stroke"], ["stroke", "secondary prevention", "rehabilitation"]),
+        (["慢阻肺", "copd"], ["copd", "stable management", "exacerbation risk"]),
+        (["哮喘", "asthma"], ["asthma", "control", "inhaled therapy"]),
+        (["肺炎", "community acquired pneumonia", "cap"], ["community acquired pneumonia", "severity"]),
+        (["肺结核", "tuberculosis", "tb"], ["tuberculosis", "infection control"]),
+        (["贫血", "anemia", "缺铁"], ["iron deficiency anemia", "hemoglobin", "ferritin"]),
+        (["骨质疏松", "osteoporosis"], ["osteoporosis", "fracture risk"]),
+        (["痛风", "gout"], ["gout", "urate", "joint pain"]),
+        (["类风湿", "rheumatoid arthritis", "ra"], ["rheumatoid arthritis", "joint inflammation"]),
+        (["骨关节炎", "osteoarthritis"], ["osteoarthritis", "joint pain", "function"]),
+        (["胃食管反流", "gerd", "reflux"], ["gastroesophageal reflux", "heartburn"]),
+        (["消化性溃疡", "ulcer"], ["peptic ulcer", "bleeding risk"]),
+        (["胃肠炎", "gastroenteritis"], ["gastroenteritis", "dehydration"]),
+        (["脂肪肝", "fatty liver"], ["fatty liver", "metabolic risk"]),
+        (["乙肝", "hepatitis b", "hbv"], ["hepatitis b", "liver function"]),
+        (["尿路感染", "urinary tract infection", "uti"], ["urinary tract infection", "infection"]),
+        (["前列腺增生", "bph", "benign prostatic hyperplasia"], ["benign prostatic hyperplasia", "urinary symptoms"]),
+        (["肾结石", "kidney stone", "stone"], ["kidney stone", "recurrence risk"]),
+        (["抑郁", "depression"], ["depression", "mood symptoms"]),
+        (["焦虑", "anxiety"], ["anxiety disorder", "symptom control"]),
+        (["失眠", "insomnia"], ["insomnia", "sleep hygiene"]),
+        (["偏头痛", "migraine"], ["migraine", "headache", "trigger"]),
+        (["湿疹", "eczema"], ["eczema", "itch", "skin barrier"]),
+        (["荨麻疹", "urticaria"], ["urticaria", "allergy", "itch"]),
+        (["痤疮", "acne"], ["acne", "skin care"]),
+        (["肥胖", "obesity"], ["obesity", "weight management", "metabolic risk"]),
+    ]
 
-    if "糖尿病" in text or "diabetes" in lowered:
-        keywords.append("diabetes mellitus")
-    if "高血压" in text or "hypertension" in lowered:
-        keywords.append("hypertension")
-        keywords.append("blood pressure")
+    modifier_rules = [
+        (["并发症", "complication"], ["complications"]),
+        (["筛查", "screening", "monitoring"], ["screening", "monitoring"]),
+        (["治疗", "therapy", "treatment"], ["treatment", "drug therapy"]),
+        (["一线", "首选", "first-line"], ["first-line"]),
+        (["目标", "target"], ["management target", "individualized treatment"]),
+        (["风险", "risk"], ["risk stratification"]),
+        (["随访", "follow-up", "follow up"], ["follow-up", "long-term management"]),
+        (["指南", "guideline"], ["guideline"]),
+        (["压迫", "compressive"], ["compressive symptoms"]),
+        (["康复", "rehabilitation"], ["rehabilitation"]),
+    ]
 
-    if "蛋白尿" in text or "albuminuria" in lowered or "proteinuria" in lowered:
-        keywords.append("proteinuria")
-    if "肾病" in text or "chronic kidney disease" in lowered or "ckd" in lowered:
-        keywords.append("chronic kidney disease")
-
-    if "并发症" in text or "complication" in lowered:
-        keywords.append("complications")
-    if "压迫" in text or "compressive" in lowered:
-        keywords.append("compressive symptoms")
-    if "甲亢" in text or "hyperthyroidism" in lowered:
-        keywords.append("hyperthyroidism")
-    if "甲减" in text or "hypothyroidism" in lowered:
-        keywords.append("hypothyroidism")
-
-    if "用药" in text or "治疗" in text or "treatment" in lowered or "therapy" in lowered:
-        keywords.append("drug therapy")
-        keywords.append("treatment")
-
-    if "一线" in text or "首选" in text or "first-line" in lowered:
-        keywords.append("first-line")
-
-    if "目标" in text or "target" in lowered:
-        keywords.append("management target")
-        keywords.append("individualized treatment")
-
-    if "指南" in text or "guideline" in lowered:
-        keywords.append("guideline")
+    for triggers, additions in disease_rules + modifier_rules:
+        if any(trigger in text or trigger in lowered for trigger in triggers):
+            keywords.extend(additions)
 
     keywords = list(dict.fromkeys(keywords))
 
@@ -67,7 +79,6 @@ def build_rule_based_search_plan(question: ClinicalQuestion) -> SearchPlan:
 def build_llm_search_plan(question: ClinicalQuestion, settings: Settings) -> SearchPlan:
     system_prompt = """
 你是一个医学信息检索规划助手。你的任务不是回答医学问题，而是把用户问题转换成结构化检索计划。
-
 请严格输出 JSON，不要输出任何额外解释。JSON 格式如下：
 {
   "intent": "一句话描述检索目标",
@@ -78,9 +89,9 @@ def build_llm_search_plan(question: ClinicalQuestion, settings: Settings) -> Sea
 要求：
 1. 不要直接回答医学问题
 2. keywords 应适合检索临床指南、综述或医学资料
-3. risk_level 对治疗建议类、并发症类和临床风险类问题统一输出 high
+3. 治疗、并发症、风险管理类问题可标为 high
 4. keywords 数量控制在 4 到 8 个之间
-5. 关键词优先使用英文医学检索词
+5. 优先使用英文医学检索词
 """.strip()
 
     user_prompt = f"用户问题：{question.text}"

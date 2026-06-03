@@ -1,0 +1,51 @@
+[
+  {
+    "method_name": "retrieve_then_summarize",
+    "question_id": "q1",
+    "question": "2型糖尿病合并高血压且伴蛋白尿时，一线降压治疗通常优先考虑什么？",
+    "summary_claim": "High-level guideline evidence is available and supports a cautious clinical summary. The evidence is mainly useful for treatment-oriented recommendation synthesis.",
+    "confidence": 0.954
+  },
+  {
+    "method_name": "workflow_with_rag_and_verifier",
+    "question_id": "q1",
+    "question": "2型糖尿病合并高血压且伴蛋白尿时，一线降压治疗通常优先考虑什么？",
+    "summary_claim": "High-level guideline evidence is available and supports a cautious clinical summary. The evidence is mainly useful for treatment-oriented recommendation synthesis.",
+    "confidence": 0.727
+  },
+  {
+    "method_name": "ablation_no_planner",
+    "question_id": "q1",
+    "question": "2型糖尿病合并高血压且伴蛋白尿时，一线降压治疗通常优先考虑什么？",
+    "summary_claim": "High-level guideline evidence is available and supports a cautious clinical summary. The evidence is mainly useful for treatment-oriented recommendation synthesis.",
+    "confidence": 0.727
+  },
+  {
+    "method_name": "ablation_no_verifier",
+    "question_id": "q1",
+    "question": "2型糖尿病合并高血压且伴蛋白尿时，一线降压治疗通常优先考虑什么？",
+    "summary_claim": "Verification bypassed for this ablation run.",
+    "confidence": 0.279
+  },
+  {
+    "method_name": "ablation_no_rag",
+    "question_id": "q1",
+    "question": "2型糖尿病合并高血压且伴蛋白尿时，一线降压治疗通常优先考虑什么？",
+    "summary_claim": "High-level guideline evidence is available and supports a cautious clinical summary. The evidence is mainly useful for treatment-oriented recommendation synthesis.",
+    "confidence": 0.864
+  },
+  {
+    "method_name": "ablation_rule_extractor_only",
+    "question_id": "q1",
+    "question": "2型糖尿病合并高血压且伴蛋白尿时，一线降压治疗通常优先考虑什么？",
+    "summary_claim": "High-level guideline evidence is available and supports a cautious clinical summary. The evidence is mainly useful for treatment-oriented recommendation synthesis.",
+    "confidence": 0.727
+  },
+  {
+    "method_name": "ablation_no_source_type_weighting",
+    "question_id": "q1",
+    "question": "2型糖尿病合并高血压且伴蛋白尿时，一线降压治疗通常优先考虑什么？",
+    "summary_claim": "High-level guideline evidence is available and supports a cautious clinical summary. The evidence is mainly useful for treatment-oriented recommendation synthesis.",
+    "confidence": 0.727
+  }
+]

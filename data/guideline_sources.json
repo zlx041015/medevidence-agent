@@ -1,0 +1,578 @@
+[
+  {
+    "source_id": "guideline_nice_ckd_2021",
+    "title": "NICE Chronic Kidney Disease Guideline 2021",
+    "source_type": "guideline",
+    "year": 2021,
+    "url": "https://example.org/nice-ckd-2021",
+    "quality_score": 0.94,
+    "content": "Adults with chronic kidney disease, diabetes, and albuminuria are commonly managed with renin-angiotensin system blockade, especially ACE inhibitors or ARBs, alongside blood pressure control and risk-factor management."
+  },
+  {
+    "source_id": "guideline_ada_bp_targets_2024",
+    "title": "ADA Blood Pressure Targets Update 2024",
+    "source_type": "guideline",
+    "year": 2024,
+    "url": "https://example.org/ada-bp-2024",
+    "quality_score": 0.96,
+    "content": "For diabetes with hypertension, individualized blood pressure targets and kidney-protective antihypertensive agents should be considered. ACE inhibitors or ARBs are frequently preferred when albuminuria is present."
+  },
+  {
+    "source_id": "consensus_thyroid_2022",
+    "title": "Consensus Statement on Benign Thyroid Enlargement 2022",
+    "source_type": "consensus",
+    "year": 2022,
+    "url": "https://example.org/thyroid-consensus-2022",
+    "quality_score": 0.88,
+    "content": "Evaluation of benign thyroid enlargement should consider compressive symptoms, thyroid function, and ultrasound findings. Surgical referral is mainly considered when symptoms or structural risks are present."
+  },
+  {
+    "source_id": "knowledgebase_screening_2023",
+    "title": "Clinical Knowledge Base for Diabetes Screening 2023",
+    "source_type": "knowledge_base",
+    "year": 2023,
+    "url": "https://example.org/diabetes-screening-kb-2023",
+    "quality_score": 0.82,
+    "content": "Diabetes complication screening commonly includes blood pressure assessment, urine albumin testing, retinal evaluation, and kidney function monitoring. Frequency may depend on duration and risk profile."
+  },
+  {
+    "source_id": "guideline_lipid_2023",
+    "title": "Lipid Management Guideline 2023",
+    "source_type": "guideline",
+    "year": 2023,
+    "url": "https://example.org/lipid-2023",
+    "quality_score": 0.91,
+    "content": "Lipid management commonly emphasizes LDL cholesterol lowering according to overall cardiovascular risk. Long-term treatment should integrate lifestyle management and risk stratification."
+  },
+  {
+    "source_id": "review_lipid_primarycare_2022",
+    "title": "Primary Care Review of Hyperlipidemia 2022",
+    "source_type": "review",
+    "year": 2022,
+    "url": "https://example.org/lipid-review-2022",
+    "quality_score": 0.79,
+    "content": "Hyperlipidemia management in primary care often combines dietary intervention, statin-based treatment, and ongoing cardiovascular risk assessment."
+  },
+  {
+    "source_id": "guideline_cad_secondary_2023",
+    "title": "Secondary Prevention Guideline for Coronary Artery Disease 2023",
+    "source_type": "guideline",
+    "year": 2023,
+    "url": "https://example.org/cad-secondary-2023",
+    "quality_score": 0.93,
+    "content": "Secondary prevention for coronary artery disease should combine pharmacologic therapy, blood pressure and lipid control, smoking cessation, and long-term risk management."
+  },
+  {
+    "source_id": "review_secondary_prevention_2022",
+    "title": "Review on Secondary Prevention After Coronary Events 2022",
+    "source_type": "review",
+    "year": 2022,
+    "url": "https://example.org/secondary-prevention-review-2022",
+    "quality_score": 0.8,
+    "content": "Long-term prevention after coronary events requires comprehensive cardiovascular risk-factor control, medication adherence, and structured follow-up."
+  },
+  {
+    "source_id": "guideline_heart_failure_2023",
+    "title": "Heart Failure Guideline 2023",
+    "source_type": "guideline",
+    "year": 2023,
+    "url": "https://example.org/heart-failure-2023",
+    "quality_score": 0.92,
+    "content": "Heart failure management should assess symptoms, cardiac function, volume status, guideline-directed medical therapy, and long-term decompensation risk."
+  },
+  {
+    "source_id": "review_heart_failure_2022",
+    "title": "Review of Heart Failure Long-Term Management 2022",
+    "source_type": "review",
+    "year": 2022,
+    "url": "https://example.org/heart-failure-review-2022",
+    "quality_score": 0.79,
+    "content": "Long-term heart failure care focuses on symptom monitoring, medication adherence, fluid management, and readmission prevention."
+  },
+  {
+    "source_id": "guideline_af_2023",
+    "title": "Atrial Fibrillation Guideline 2023",
+    "source_type": "guideline",
+    "year": 2023,
+    "url": "https://example.org/af-2023",
+    "quality_score": 0.91,
+    "content": "Atrial fibrillation management commonly integrates stroke risk assessment, rhythm or rate strategy selection, and long-term anticoagulation considerations."
+  },
+  {
+    "source_id": "review_af_2022",
+    "title": "Review on Atrial Fibrillation Follow-Up 2022",
+    "source_type": "review",
+    "year": 2022,
+    "url": "https://example.org/af-review-2022",
+    "quality_score": 0.78,
+    "content": "Atrial fibrillation follow-up often focuses on symptom burden, recurrence risk, heart rate control, and anticoagulation adherence."
+  },
+  {
+    "source_id": "guideline_stroke_2023",
+    "title": "Stroke Secondary Prevention Guideline 2023",
+    "source_type": "guideline",
+    "year": 2023,
+    "url": "https://example.org/stroke-2023",
+    "quality_score": 0.92,
+    "content": "Stroke secondary prevention should address blood pressure control, lipid management, recurrence risk reduction, and rehabilitation planning."
+  },
+  {
+    "source_id": "review_stroke_2022",
+    "title": "Review of Post-Stroke Long-Term Care 2022",
+    "source_type": "review",
+    "year": 2022,
+    "url": "https://example.org/stroke-review-2022",
+    "quality_score": 0.79,
+    "content": "Long-term management after stroke commonly includes rehabilitation, vascular risk-factor control, and functional follow-up."
+  },
+  {
+    "source_id": "guideline_copd_2024",
+    "title": "COPD Stable Management Guideline 2024",
+    "source_type": "guideline",
+    "year": 2024,
+    "url": "https://example.org/copd-2024",
+    "quality_score": 0.9,
+    "content": "Stable COPD management should assess symptom burden, exacerbation history, inhaler adherence, and future exacerbation risk to guide maintenance therapy."
+  },
+  {
+    "source_id": "review_copd_primarycare_2022",
+    "title": "Primary Care Review of Stable COPD 2022",
+    "source_type": "review",
+    "year": 2022,
+    "url": "https://example.org/copd-review-2022",
+    "quality_score": 0.78,
+    "content": "Management of stable COPD in primary care commonly focuses on symptom control, inhaled therapy optimization, smoking cessation, and exacerbation prevention."
+  },
+  {
+    "source_id": "guideline_asthma_2024",
+    "title": "Asthma Long-Term Control Guideline 2024",
+    "source_type": "guideline",
+    "year": 2024,
+    "url": "https://example.org/asthma-2024",
+    "quality_score": 0.91,
+    "content": "Long-term asthma control should consider symptom frequency, nighttime symptoms, exacerbation history, inhaled therapy adherence, and trigger management."
+  },
+  {
+    "source_id": "review_asthma_management_2022",
+    "title": "Review of Asthma Control Strategies 2022",
+    "source_type": "review",
+    "year": 2022,
+    "url": "https://example.org/asthma-review-2022",
+    "quality_score": 0.78,
+    "content": "Asthma management commonly requires regular follow-up, stepwise inhaled therapy adjustment, trigger avoidance, and patient education."
+  },
+  {
+    "source_id": "guideline_cap_2023",
+    "title": "Community Acquired Pneumonia Guideline 2023",
+    "source_type": "guideline",
+    "year": 2023,
+    "url": "https://example.org/cap-2023",
+    "quality_score": 0.9,
+    "content": "Community acquired pneumonia management should begin with severity assessment, prompt anti-infective treatment, and ongoing monitoring for complications."
+  },
+  {
+    "source_id": "review_pneumonia_2022",
+    "title": "Review on Community Acquired Pneumonia 2022",
+    "source_type": "review",
+    "year": 2022,
+    "url": "https://example.org/pneumonia-review-2022",
+    "quality_score": 0.77,
+    "content": "Evaluation of community acquired pneumonia typically includes symptom assessment, vital signs, imaging, and estimation of disease severity."
+  },
+  {
+    "source_id": "guideline_tb_2023",
+    "title": "Tuberculosis Management Guideline 2023",
+    "source_type": "guideline",
+    "year": 2023,
+    "url": "https://example.org/tb-2023",
+    "quality_score": 0.9,
+    "content": "Tuberculosis care commonly includes microbiologic diagnosis, infection control, treatment adherence monitoring, and long-term follow-up."
+  },
+  {
+    "source_id": "review_tb_2022",
+    "title": "Review of Pulmonary Tuberculosis Follow-Up 2022",
+    "source_type": "review",
+    "year": 2022,
+    "url": "https://example.org/tb-review-2022",
+    "quality_score": 0.77,
+    "content": "Tuberculosis follow-up focuses on symptom relief, treatment adherence, infection risk reduction, and monitoring for recurrence."
+  },
+  {
+    "source_id": "guideline_anemia_2023",
+    "title": "Iron Deficiency Anemia Guideline 2023",
+    "source_type": "guideline",
+    "year": 2023,
+    "url": "https://example.org/anemia-2023",
+    "quality_score": 0.89,
+    "content": "Iron deficiency anemia management should clarify the underlying cause, assess iron status, and monitor hematologic recovery during treatment."
+  },
+  {
+    "source_id": "review_iron_deficiency_2022",
+    "title": "Review of Iron Deficiency Evaluation 2022",
+    "source_type": "review",
+    "year": 2022,
+    "url": "https://example.org/iron-review-2022",
+    "quality_score": 0.77,
+    "content": "Evaluation of iron deficiency anemia often includes hemoglobin, ferritin, and assessment of potential chronic blood loss or nutritional deficiency."
+  },
+  {
+    "source_id": "guideline_osteoporosis_2023",
+    "title": "Osteoporosis Guideline 2023",
+    "source_type": "guideline",
+    "year": 2023,
+    "url": "https://example.org/osteoporosis-2023",
+    "quality_score": 0.88,
+    "content": "Osteoporosis management usually includes fracture risk assessment, calcium and vitamin D considerations, fall prevention, and long-term bone health monitoring."
+  },
+  {
+    "source_id": "review_osteoporosis_2022",
+    "title": "Review of Osteoporosis Prevention 2022",
+    "source_type": "review",
+    "year": 2022,
+    "url": "https://example.org/osteoporosis-review-2022",
+    "quality_score": 0.76,
+    "content": "Osteoporosis prevention and long-term management focus on fracture risk reduction, bone density monitoring, and lifestyle support."
+  },
+  {
+    "source_id": "guideline_gout_2023",
+    "title": "Gout Management Guideline 2023",
+    "source_type": "guideline",
+    "year": 2023,
+    "url": "https://example.org/gout-2023",
+    "quality_score": 0.88,
+    "content": "Gout management generally includes urate control, flare prevention, risk-factor modification, and long-term recurrence assessment."
+  },
+  {
+    "source_id": "review_gout_2022",
+    "title": "Review of Gout Care 2022",
+    "source_type": "review",
+    "year": 2022,
+    "url": "https://example.org/gout-review-2022",
+    "quality_score": 0.76,
+    "content": "Long-term gout care often focuses on serum urate control, flare history, diet counseling, and joint symptom follow-up."
+  },
+  {
+    "source_id": "guideline_ra_2023",
+    "title": "Rheumatoid Arthritis Guideline 2023",
+    "source_type": "guideline",
+    "year": 2023,
+    "url": "https://example.org/ra-2023",
+    "quality_score": 0.89,
+    "content": "Rheumatoid arthritis management commonly emphasizes early treatment, inflammation control, joint function preservation, and long-term monitoring."
+  },
+  {
+    "source_id": "review_ra_2022",
+    "title": "Review of Rheumatoid Arthritis Follow-Up 2022",
+    "source_type": "review",
+    "year": 2022,
+    "url": "https://example.org/ra-review-2022",
+    "quality_score": 0.77,
+    "content": "Rheumatoid arthritis follow-up focuses on symptom activity, joint function, treatment response, and adverse-effect monitoring."
+  },
+  {
+    "source_id": "guideline_oa_2023",
+    "title": "Osteoarthritis Guideline 2023",
+    "source_type": "guideline",
+    "year": 2023,
+    "url": "https://example.org/oa-2023",
+    "quality_score": 0.87,
+    "content": "Osteoarthritis management generally includes pain control, function preservation, exercise support, and individualized symptom monitoring."
+  },
+  {
+    "source_id": "review_oa_2022",
+    "title": "Review of Osteoarthritis Primary Care Management 2022",
+    "source_type": "review",
+    "year": 2022,
+    "url": "https://example.org/oa-review-2022",
+    "quality_score": 0.75,
+    "content": "Primary care management of osteoarthritis often focuses on pain burden, mobility, lifestyle modification, and conservative therapy response."
+  },
+  {
+    "source_id": "guideline_gerd_2023",
+    "title": "GERD Guideline 2023",
+    "source_type": "guideline",
+    "year": 2023,
+    "url": "https://example.org/gerd-2023",
+    "quality_score": 0.87,
+    "content": "Gastroesophageal reflux disease care commonly includes symptom assessment, lifestyle modification, and treatment based on symptom pattern and alarm features."
+  },
+  {
+    "source_id": "review_gerd_2022",
+    "title": "Review of GERD Management 2022",
+    "source_type": "review",
+    "year": 2022,
+    "url": "https://example.org/gerd-review-2022",
+    "quality_score": 0.75,
+    "content": "GERD management often emphasizes reflux symptom control, trigger avoidance, lifestyle adjustment, and follow-up of persistent symptoms."
+  },
+  {
+    "source_id": "guideline_ulcer_2023",
+    "title": "Peptic Ulcer Guideline 2023",
+    "source_type": "guideline",
+    "year": 2023,
+    "url": "https://example.org/ulcer-2023",
+    "quality_score": 0.88,
+    "content": "Peptic ulcer management includes symptom evaluation, bleeding risk assessment, and appropriate treatment with attention to recurrence prevention."
+  },
+  {
+    "source_id": "review_ulcer_2022",
+    "title": "Review of Peptic Ulcer Follow-Up 2022",
+    "source_type": "review",
+    "year": 2022,
+    "url": "https://example.org/ulcer-review-2022",
+    "quality_score": 0.76,
+    "content": "Ulcer follow-up usually focuses on symptom improvement, complication warning signs, and recurrence risk management."
+  },
+  {
+    "source_id": "guideline_gastroenteritis_2023",
+    "title": "Acute Gastroenteritis Guideline 2023",
+    "source_type": "guideline",
+    "year": 2023,
+    "url": "https://example.org/gastroenteritis-2023",
+    "quality_score": 0.86,
+    "content": "Acute gastroenteritis care generally emphasizes dehydration risk evaluation, symptom monitoring, and supportive management."
+  },
+  {
+    "source_id": "review_gastroenteritis_2022",
+    "title": "Review of Acute Gastroenteritis in Primary Care 2022",
+    "source_type": "review",
+    "year": 2022,
+    "url": "https://example.org/gastroenteritis-review-2022",
+    "quality_score": 0.74,
+    "content": "Primary care evaluation of acute gastroenteritis often focuses on dehydration, symptom duration, infection clues, and warning signs."
+  },
+  {
+    "source_id": "guideline_fatty_liver_2023",
+    "title": "Fatty Liver Disease Guideline 2023",
+    "source_type": "guideline",
+    "year": 2023,
+    "url": "https://example.org/fatty-liver-2023",
+    "quality_score": 0.87,
+    "content": "Fatty liver management commonly includes metabolic risk evaluation, lifestyle intervention, and long-term liver function monitoring."
+  },
+  {
+    "source_id": "review_fatty_liver_2022",
+    "title": "Review of Fatty Liver Primary Care Management 2022",
+    "source_type": "review",
+    "year": 2022,
+    "url": "https://example.org/fatty-liver-review-2022",
+    "quality_score": 0.75,
+    "content": "Primary care management of fatty liver often focuses on weight reduction, metabolic syndrome screening, and follow-up liver assessment."
+  },
+  {
+    "source_id": "guideline_hbv_2023",
+    "title": "Chronic Hepatitis B Guideline 2023",
+    "source_type": "guideline",
+    "year": 2023,
+    "url": "https://example.org/hbv-2023",
+    "quality_score": 0.9,
+    "content": "Chronic hepatitis B management commonly includes liver function monitoring, viral activity assessment, and long-term risk stratification."
+  },
+  {
+    "source_id": "review_hbv_2022",
+    "title": "Review of Chronic Hepatitis B Follow-Up 2022",
+    "source_type": "review",
+    "year": 2022,
+    "url": "https://example.org/hbv-review-2022",
+    "quality_score": 0.77,
+    "content": "Follow-up of chronic hepatitis B often focuses on liver enzymes, disease activity, treatment indications, and long-term liver risk."
+  },
+  {
+    "source_id": "guideline_uti_2023",
+    "title": "Urinary Tract Infection Guideline 2023",
+    "source_type": "guideline",
+    "year": 2023,
+    "url": "https://example.org/uti-2023",
+    "quality_score": 0.86,
+    "content": "Urinary tract infection evaluation includes symptom assessment, recurrence risk review, and treatment planning according to clinical presentation."
+  },
+  {
+    "source_id": "review_uti_2022",
+    "title": "Review of Urinary Tract Infection Care 2022",
+    "source_type": "review",
+    "year": 2022,
+    "url": "https://example.org/uti-review-2022",
+    "quality_score": 0.74,
+    "content": "Urinary tract infection follow-up often focuses on symptom resolution, recurrence prevention, and recognition of warning signs."
+  },
+  {
+    "source_id": "guideline_bph_2023",
+    "title": "Benign Prostatic Hyperplasia Guideline 2023",
+    "source_type": "guideline",
+    "year": 2023,
+    "url": "https://example.org/bph-2023",
+    "quality_score": 0.86,
+    "content": "Benign prostatic hyperplasia management often includes urinary symptom assessment, quality-of-life evaluation, and individualized follow-up."
+  },
+  {
+    "source_id": "review_bph_2022",
+    "title": "Review of Benign Prostatic Hyperplasia Management 2022",
+    "source_type": "review",
+    "year": 2022,
+    "url": "https://example.org/bph-review-2022",
+    "quality_score": 0.74,
+    "content": "BPH follow-up usually focuses on lower urinary tract symptoms, symptom progression, and treatment response."
+  },
+  {
+    "source_id": "guideline_stone_2023",
+    "title": "Kidney Stone Guideline 2023",
+    "source_type": "guideline",
+    "year": 2023,
+    "url": "https://example.org/stone-2023",
+    "quality_score": 0.86,
+    "content": "Kidney stone care commonly includes pain assessment, recurrence risk evaluation, hydration advice, and follow-up planning."
+  },
+  {
+    "source_id": "review_stone_2022",
+    "title": "Review of Kidney Stone Recurrence Prevention 2022",
+    "source_type": "review",
+    "year": 2022,
+    "url": "https://example.org/stone-review-2022",
+    "quality_score": 0.74,
+    "content": "Stone recurrence prevention often focuses on hydration, metabolic risk review, and symptom monitoring."
+  },
+  {
+    "source_id": "guideline_depression_2023",
+    "title": "Depression Guideline 2023",
+    "source_type": "guideline",
+    "year": 2023,
+    "url": "https://example.org/depression-2023",
+    "quality_score": 0.87,
+    "content": "Depression management commonly includes symptom severity assessment, suicide risk review, structured follow-up, and treatment adherence monitoring."
+  },
+  {
+    "source_id": "review_depression_2022",
+    "title": "Review of Depression Long-Term Care 2022",
+    "source_type": "review",
+    "year": 2022,
+    "url": "https://example.org/depression-review-2022",
+    "quality_score": 0.75,
+    "content": "Long-term depression care often focuses on mood symptoms, relapse risk, psychosocial support, and treatment response."
+  },
+  {
+    "source_id": "guideline_anxiety_2023",
+    "title": "Anxiety Disorder Guideline 2023",
+    "source_type": "guideline",
+    "year": 2023,
+    "url": "https://example.org/anxiety-2023",
+    "quality_score": 0.86,
+    "content": "Anxiety disorder management often includes symptom assessment, functional impact review, follow-up of treatment response, and patient education."
+  },
+  {
+    "source_id": "review_anxiety_2022",
+    "title": "Review of Anxiety Disorder Care 2022",
+    "source_type": "review",
+    "year": 2022,
+    "url": "https://example.org/anxiety-review-2022",
+    "quality_score": 0.74,
+    "content": "Anxiety care commonly emphasizes long-term symptom monitoring, trigger management, and functional recovery."
+  },
+  {
+    "source_id": "guideline_insomnia_2023",
+    "title": "Insomnia Guideline 2023",
+    "source_type": "guideline",
+    "year": 2023,
+    "url": "https://example.org/insomnia-2023",
+    "quality_score": 0.85,
+    "content": "Insomnia management usually includes sleep history review, sleep hygiene support, and follow-up of daytime functional impact."
+  },
+  {
+    "source_id": "review_insomnia_2022",
+    "title": "Review of Insomnia Management 2022",
+    "source_type": "review",
+    "year": 2022,
+    "url": "https://example.org/insomnia-review-2022",
+    "quality_score": 0.73,
+    "content": "Long-term insomnia care often focuses on sleep routines, symptom persistence, and behavioral management strategies."
+  },
+  {
+    "source_id": "guideline_migraine_2023",
+    "title": "Migraine Guideline 2023",
+    "source_type": "guideline",
+    "year": 2023,
+    "url": "https://example.org/migraine-2023",
+    "quality_score": 0.85,
+    "content": "Migraine care commonly includes trigger review, attack burden evaluation, recurrence follow-up, and individualized symptom management."
+  },
+  {
+    "source_id": "review_migraine_2022",
+    "title": "Review of Migraine Long-Term Management 2022",
+    "source_type": "review",
+    "year": 2022,
+    "url": "https://example.org/migraine-review-2022",
+    "quality_score": 0.73,
+    "content": "Migraine follow-up often focuses on attack frequency, trigger recognition, and treatment response over time."
+  },
+  {
+    "source_id": "guideline_eczema_2023",
+    "title": "Eczema Guideline 2023",
+    "source_type": "guideline",
+    "year": 2023,
+    "url": "https://example.org/eczema-2023",
+    "quality_score": 0.84,
+    "content": "Eczema management commonly includes skin barrier care, itch assessment, trigger avoidance, and long-term symptom follow-up."
+  },
+  {
+    "source_id": "review_eczema_2022",
+    "title": "Review of Eczema Follow-Up 2022",
+    "source_type": "review",
+    "year": 2022,
+    "url": "https://example.org/eczema-review-2022",
+    "quality_score": 0.72,
+    "content": "Follow-up of eczema often focuses on itch burden, flare frequency, and skin-care adherence."
+  },
+  {
+    "source_id": "guideline_urticaria_2023",
+    "title": "Urticaria Guideline 2023",
+    "source_type": "guideline",
+    "year": 2023,
+    "url": "https://example.org/urticaria-2023",
+    "quality_score": 0.84,
+    "content": "Urticaria management generally includes trigger review, symptom burden evaluation, and follow-up of treatment response."
+  },
+  {
+    "source_id": "review_urticaria_2022",
+    "title": "Review of Urticaria Care 2022",
+    "source_type": "review",
+    "year": 2022,
+    "url": "https://example.org/urticaria-review-2022",
+    "quality_score": 0.72,
+    "content": "Urticaria follow-up often focuses on symptom recurrence, potential triggers, and quality-of-life impact."
+  },
+  {
+    "source_id": "guideline_acne_2023",
+    "title": "Acne Guideline 2023",
+    "source_type": "guideline",
+    "year": 2023,
+    "url": "https://example.org/acne-2023",
+    "quality_score": 0.83,
+    "content": "Acne care commonly includes lesion severity assessment, skin-care support, and follow-up of treatment response."
+  },
+  {
+    "source_id": "review_acne_2022",
+    "title": "Review of Acne Long-Term Management 2022",
+    "source_type": "review",
+    "year": 2022,
+    "url": "https://example.org/acne-review-2022",
+    "quality_score": 0.71,
+    "content": "Acne follow-up often focuses on symptom improvement, recurrence tendency, and adherence to skin-care routines."
+  },
+  {
+    "source_id": "guideline_obesity_2023",
+    "title": "Obesity Management Guideline 2023",
+    "source_type": "guideline",
+    "year": 2023,
+    "url": "https://example.org/obesity-2023",
+    "quality_score": 0.88,
+    "content": "Obesity management commonly includes weight reduction planning, metabolic risk assessment, lifestyle intervention, and long-term follow-up."
+  },
+  {
+    "source_id": "review_obesity_2022",
+    "title": "Review of Obesity Long-Term Care 2022",
+    "source_type": "review",
+    "year": 2022,
+    "url": "https://example.org/obesity-review-2022",
+    "quality_score": 0.76,
+    "content": "Long-term obesity care often focuses on sustained lifestyle change, weight trend monitoring, and complication risk reduction."
+  }
+]

@@ -1,69 +1,57 @@
 # MedEvidence Agent
 
-面向临床问题的医学证据检索与结论生成系统实训项目。
+`MedEvidence Agent` 是一个面向通用常见病症问题的证据驱动型医学信息系统原型，适合用于简历、面试展示和医学信息方向的项目演示。它保留了 `Planner -> Retriever -> Extractor -> Verifier -> Writer` 的工作流主链，并在此基础上支持 benchmark、baseline 对比、消融实验、多病种来源、结构化结果导出和图形界面展示。
 
-这个项目不是单纯的聊天机器人，而是一个有明确工作流的 `evidence-driven agent`：
+## 当前项目包含什么
 
-1. 接收一个临床问题
-2. 拆解检索计划
-3. 搜索候选证据
-4. 抽取结构化信息
-5. 交叉验证结论
-6. 生成带引用的回答与后续建议
+- 面向通用病症问题的“先证据、后结论”工作流
+- 支持离线运行的 `mock` 与 `hybrid_mock` 检索模式
+- 预留未来在线接入的 PubMed 适配器
+- 自建 benchmark 数据结构与 100 条示例问题集
+- 覆盖 30 多种常见病症主题
+- baseline 对比与消融实验框架
+- 自动评测指标与结果产物导出
+- 增强 verifier，可做主题一致性、证据等级、时间有效性和冲突检查
+- Tkinter 图形界面，可查看工作流过程与评测结果
 
-## 为什么这个项目适合你
+## 当前覆盖的典型病种
 
-- 贴合 `生物医学工程 / 医学信息工程` 背景
-- 能体现 `AI 应用工程` 能力
-- 能讲清楚 `医疗场景安全性`、`证据链`、`人工审核`
-- 容易扩展为简历项目、比赛项目、科研工具
+- 高血压
+- 2型糖尿病
+- 慢性肾病
+- 甲状腺肿大
+- 高脂血症
+- 冠心病
+- 心力衰竭
+- 房颤
+- 脑卒中后管理
+- 慢阻肺
+- 哮喘
+- 社区获得性肺炎
+- 肺结核
+- 缺铁性贫血
+- 骨质疏松
+- 痛风
+- 类风湿关节炎
+- 骨关节炎
+- 胃食管反流病
+- 消化性溃疡
+- 急性胃肠炎
+- 脂肪肝
+- 乙肝慢性感染
+- 尿路感染
+- 良性前列腺增生
+- 肾结石
+- 抑郁症
+- 焦虑障碍
+- 失眠
+- 偏头痛
+- 湿疹
+- 荨麻疹
+- 痤疮
+- 肥胖症
 
-## 当前版本包含什么
-
-- 可学习的项目结构
-- 从 0 到 1 的制作流程文档
-- 每个模块为什么这样设计的解释
-- 可运行的最小代码骨架
-- 参数调优与架构升级建议
-- 本地 mock 数据，方便你先跑通流程
-
-## 目录结构
-
-```text
-.
-├─ docs/
-│  ├─ 01_project_positioning.md
-│  ├─ 02_build_flow.md
-│  ├─ 03_architecture_and_tuning.md
-│  └─ 04_resume_and_interview.md
-├─ data/
-│  └─ mock_sources.json
-├─ src/
-│  └─ medevidence_agent/
-│     ├─ nodes/
-│     ├─ tools/
-│     ├─ __init__.py
-│     ├─ config.py
-│     ├─ main.py
-│     ├─ models.py
-│     └─ workflow.py
-├─ .env.example
-└─ pyproject.toml
-```
-
-## 先学什么
-
-建议按这个顺序看：
-
-1. [docs/01_project_positioning.md](E:/agent/docs/01_project_positioning.md)
-2. [docs/02_build_flow.md](E:/agent/docs/02_build_flow.md)
-3. [src/medevidence_agent/workflow.py](E:/agent/src/medevidence_agent/workflow.py)
-4. [docs/03_architecture_and_tuning.md](E:/agent/docs/03_architecture_and_tuning.md)
-5. [docs/04_resume_and_interview.md](E:/agent/docs/04_resume_and_interview.md)
-
-## 环境准备
-
-建议 Python `3.11+`。
+## 快速开始
 
 安装依赖：
 
@@ -71,42 +59,46 @@
 pip install -e .
 ```
 
-复制环境变量模板：
+运行单个问题：
 
 ```bash
-copy .env.example .env
+python -m medevidence_agent.main main "高脂血症长期管理时，一线控制重点通常是什么？"
 ```
 
-## 运行最小 Demo
+运行 benchmark、baseline 和消融实验：
 
 ```bash
-python -m medevidence_agent.main "2型糖尿病合并高血压患者的一线治疗建议是什么？"
+python -m medevidence_agent.main evaluate
 ```
 
-当前默认使用本地 mock 数据，不需要联网和 API Key。
+启动图形界面：
 
-## 你后面要做的升级
+```bash
+python -m medevidence_agent.gui
+```
 
-第一阶段：
-- 看懂工作流
-- 用 mock 数据跑通
-- 学会调整 `top_k`、置信度阈值、节点职责
+## 项目定位
 
-第二阶段：
-- 接入真实搜索 API
-- 接入 OpenAI / 其他 LLM
-- 增加网页抓取与引用附录
+这个项目不是一个只针对单一专项病种的问答 demo，而是一个可扩展到通用常见病症问题的医学证据系统原型。
 
-第三阶段：
-- 增加人工审批
-- 增加评测集
-- 增加前端页面或 FastAPI 接口
+它的重点不在于“让模型直接回答”，而在于：
 
-## 这个项目最重要的学习点
+- 先将问题结构化理解
+- 先检索和筛选来源
+- 先抽取结构化证据
+- 先做安全核验
+- 最后再输出结论
 
-不是“怎么让模型回答医学问题”，而是：
+## 为什么适合做简历项目
 
-- 怎么限制模型只基于证据说话
-- 怎么把长任务拆成稳定的节点
-- 怎么让结论可追溯
-- 怎么设计调参和评测闭环
+因为它同时体现了：
+
+- 医学问题理解能力
+- AI 应用工程能力
+- 检索增强与证据抽取能力
+- 安全核验与可解释性设计
+- benchmark、baseline、ablation 的实验意识
+
+## 简历推荐表述
+
+`构建面向通用常见病症问题的证据驱动型医学 AI 系统，自建 benchmark 数据结构，设计多阶段工作流，接入多病种来源检索、可解释 verifier、安全核验、baseline 对比、消融实验与结构化评测产物导出。`

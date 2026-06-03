@@ -1,5 +1,6 @@
 import json
 import time
+from typing import Optional
 from urllib import request
 
 from medevidence_agent.config import Settings
@@ -43,7 +44,7 @@ def chat_completion(
         },
     )
 
-    last_error: Exception | None = None
+    last_error: Optional[Exception] = None
 
     for attempt in range(3):
         try:

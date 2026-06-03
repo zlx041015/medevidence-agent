@@ -1,0 +1,30 @@
+[
+  {
+    "method_name": "retrieve_then_summarize",
+    "question_id": "q1",
+    "question": "高血压一线管理或治疗的核心是什么，请结合循证医学角度说明。",
+    "summary_claim": "High-level guideline evidence is available and supports a cautious clinical summary. The evidence is mainly useful for treatment-oriented recommendation synthesis.",
+    "confidence": 1.0
+  },
+  {
+    "method_name": "retrieve_then_summarize",
+    "question_id": "q5",
+    "question": "高脂血症一线管理或治疗的核心是什么，请结合循证医学角度说明。",
+    "summary_claim": "High-level guideline evidence is available and supports a cautious clinical summary. The evidence is mainly useful for treatment-oriented recommendation synthesis.",
+    "confidence": 0.953
+  },
+  {
+    "method_name": "ablation_no_rag",
+    "question_id": "q1",
+    "question": "高血压一线管理或治疗的核心是什么，请结合循证医学角度说明。",
+    "summary_claim": "High-level guideline evidence is available and supports a cautious clinical summary. The evidence is mainly useful for treatment-oriented recommendation synthesis.",
+    "confidence": 0.749
+  },
+  {
+    "method_name": "ablation_no_rag",
+    "question_id": "q3",
+    "question": "慢性肾病一线管理或治疗的核心是什么，请结合循证医学角度说明。",
+    "summary_claim": "High-level guideline evidence is available and supports a cautious clinical summary. The evidence is mainly useful for treatment-oriented recommendation synthesis.",
+    "confidence": 0.855
+  }
+]

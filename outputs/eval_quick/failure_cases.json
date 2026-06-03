@@ -1,0 +1,86 @@
+[
+  {
+    "method_name": "direct_llm",
+    "question_id": "q1",
+    "question": "高血压一线管理或治疗的核心是什么，请结合循证医学角度说明。",
+    "failure_reason": "offline_llm_unavailable",
+    "summary_claim": "No evidence-backed summary was produced in offline baseline mode."
+  },
+  {
+    "method_name": "direct_llm",
+    "question_id": "q2",
+    "question": "2型糖尿病一线管理或治疗的核心是什么，请结合循证医学角度说明。",
+    "failure_reason": "offline_llm_unavailable",
+    "summary_claim": "No evidence-backed summary was produced in offline baseline mode."
+  },
+  {
+    "method_name": "direct_llm",
+    "question_id": "q3",
+    "question": "慢性肾病一线管理或治疗的核心是什么，请结合循证医学角度说明。",
+    "failure_reason": "offline_llm_unavailable",
+    "summary_claim": "No evidence-backed summary was produced in offline baseline mode."
+  },
+  {
+    "method_name": "direct_llm",
+    "question_id": "q4",
+    "question": "甲状腺肿大一线管理或治疗的核心是什么，请结合循证医学角度说明。",
+    "failure_reason": "offline_llm_unavailable",
+    "summary_claim": "No evidence-backed summary was produced in offline baseline mode."
+  },
+  {
+    "method_name": "direct_llm",
+    "question_id": "q5",
+    "question": "高脂血症一线管理或治疗的核心是什么，请结合循证医学角度说明。",
+    "failure_reason": "offline_llm_unavailable",
+    "summary_claim": "No evidence-backed summary was produced in offline baseline mode."
+  },
+  {
+    "method_name": "retrieve_then_summarize",
+    "question_id": "q2",
+    "question": "2型糖尿病一线管理或治疗的核心是什么，请结合循证医学角度说明。",
+    "failure_reason": "",
+    "summary_claim": "High-level guideline evidence is available and supports a cautious clinical summary. The evidence is mainly useful for treatment-oriented recommendation synthesis."
+  },
+  {
+    "method_name": "workflow_with_rag_and_verifier",
+    "question_id": "q2",
+    "question": "2型糖尿病一线管理或治疗的核心是什么，请结合循证医学角度说明。",
+    "failure_reason": "Evidence claims only weakly match the question topic.",
+    "summary_claim": "High-level guideline evidence is available and supports a cautious clinical summary. The evidence is mainly useful for treatment-oriented recommendation synthesis."
+  },
+  {
+    "method_name": "ablation_no_verifier",
+    "question_id": "q1",
+    "question": "高血压一线管理或治疗的核心是什么，请结合循证医学角度说明。",
+    "failure_reason": "",
+    "summary_claim": "本次消融实验跳过了 verifier 核验阶段。"
+  },
+  {
+    "method_name": "ablation_no_verifier",
+    "question_id": "q2",
+    "question": "2型糖尿病一线管理或治疗的核心是什么，请结合循证医学角度说明。",
+    "failure_reason": "",
+    "summary_claim": "本次消融实验跳过了 verifier 核验阶段。"
+  },
+  {
+    "method_name": "ablation_no_verifier",
+    "question_id": "q5",
+    "question": "高脂血症一线管理或治疗的核心是什么，请结合循证医学角度说明。",
+    "failure_reason": "",
+    "summary_claim": "本次消融实验跳过了 verifier 核验阶段。"
+  },
+  {
+    "method_name": "ablation_no_rag",
+    "question_id": "q4",
+    "question": "甲状腺肿大一线管理或治疗的核心是什么，请结合循证医学角度说明。",
+    "failure_reason": "Evidence claims only weakly match the question topic.",
+    "summary_claim": "High-level guideline evidence is available and supports a cautious clinical summary. The evidence is mainly useful for treatment-oriented recommendation synthesis."
+  },
+  {
+    "method_name": "ablation_no_rag",
+    "question_id": "q5",
+    "question": "高脂血症一线管理或治疗的核心是什么，请结合循证医学角度说明。",
+    "failure_reason": "Evidence claims only weakly match the question topic.",
+    "summary_claim": "High-level guideline evidence is available and supports a cautious clinical summary. The evidence is mainly useful for treatment-oriented recommendation synthesis."
+  }
+]

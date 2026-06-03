@@ -100,3 +100,13 @@ def extract_evidence(candidates: list[SourceDocument], settings: Settings) -> li
     except Exception as exc:
         print(f"[Extractor fallback] LLM extractor failed: {exc}")
         return extract_evidence_rule_based(candidates)
+
+
+def extract_evidence_with_mode(
+    candidates: list[SourceDocument],
+    settings: Settings,
+    mode: str = "auto",
+) -> list[EvidenceItem]:
+    if mode == "rule":
+        return extract_evidence_rule_based(candidates)
+    return extract_evidence(candidates, settings)

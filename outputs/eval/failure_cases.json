@@ -1,0 +1,44 @@
+[
+  {
+    "method_name": "direct_llm",
+    "question_id": "q1",
+    "question": "2型糖尿病合并高血压且伴蛋白尿时，一线降压治疗通常优先考虑什么？",
+    "failure_reason": "offline_llm_unavailable",
+    "summary_claim": "No evidence-backed summary was produced in offline baseline mode."
+  },
+  {
+    "method_name": "direct_llm",
+    "question_id": "q2",
+    "question": "2型糖尿病患者并发症随访时，常见的筛查项目包括哪些？",
+    "failure_reason": "offline_llm_unavailable",
+    "summary_claim": "No evidence-backed summary was produced in offline baseline mode."
+  },
+  {
+    "method_name": "direct_llm",
+    "question_id": "q3",
+    "question": "甲状腺肿大出现压迫症状时，评估与处理应重点关注什么？",
+    "failure_reason": "offline_llm_unavailable",
+    "summary_claim": "No evidence-backed summary was produced in offline baseline mode."
+  },
+  {
+    "method_name": "current_workflow",
+    "question_id": "q1",
+    "question": "2型糖尿病合并高血压且伴蛋白尿时，一线降压治疗通常优先考虑什么？",
+    "failure_reason": "Evidence claims only weakly match the question topic.",
+    "summary_claim": "High-level guideline evidence is available and supports a cautious clinical summary. The evidence is mainly useful for treatment-oriented recommendation synthesis."
+  },
+  {
+    "method_name": "current_workflow",
+    "question_id": "q2",
+    "question": "2型糖尿病患者并发症随访时，常见的筛查项目包括哪些？",
+    "failure_reason": "No usable evidence was available for verification.",
+    "summary_claim": "No sufficient evidence was retrieved for a reliable clinical summary."
+  },
+  {
+    "method_name": "current_workflow",
+    "question_id": "q3",
+    "question": "甲状腺肿大出现压迫症状时，评估与处理应重点关注什么？",
+    "failure_reason": "No usable evidence was available for verification.",
+    "summary_claim": "No sufficient evidence was retrieved for a reliable clinical summary."
+  }
+]

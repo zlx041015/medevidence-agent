@@ -1,0 +1,572 @@
+[
+  {
+    "method_name": "direct_llm",
+    "question_id": "q1",
+    "question": "高血压一线管理或治疗的核心是什么，请结合循证医学角度说明。",
+    "answer": "Direct LLM baseline unavailable in offline mode. This placeholder intentionally has no retrieval evidence.",
+    "references": [],
+    "retrieved_source_ids": [],
+    "extracted_claims": [],
+    "summary_claim": "No evidence-backed summary was produced in offline baseline mode.",
+    "confidence": 0.2,
+    "needs_human_review": true,
+    "conflicts": [
+      "Direct LLM baseline was simulated offline without source grounding."
+    ],
+    "check_results": {
+      "baseline_mode": "offline_placeholder"
+    },
+    "failure_reason": "offline_llm_unavailable",
+    "metrics": {
+      "retrieval_recall_at_k": 0.0,
+      "citation_precision": 0.0,
+      "claim_consistency": 0.0,
+      "hallucination_rate": 1.0,
+      "human_review_trigger_rate": 1.0
+    }
+  },
+  {
+    "method_name": "direct_llm",
+    "question_id": "q2",
+    "question": "2型糖尿病一线管理或治疗的核心是什么，请结合循证医学角度说明。",
+    "answer": "Direct LLM baseline unavailable in offline mode. This placeholder intentionally has no retrieval evidence.",
+    "references": [],
+    "retrieved_source_ids": [],
+    "extracted_claims": [],
+    "summary_claim": "No evidence-backed summary was produced in offline baseline mode.",
+    "confidence": 0.2,
+    "needs_human_review": true,
+    "conflicts": [
+      "Direct LLM baseline was simulated offline without source grounding."
+    ],
+    "check_results": {
+      "baseline_mode": "offline_placeholder"
+    },
+    "failure_reason": "offline_llm_unavailable",
+    "metrics": {
+      "retrieval_recall_at_k": 0.0,
+      "citation_precision": 0.0,
+      "claim_consistency": 0.0,
+      "hallucination_rate": 1.0,
+      "human_review_trigger_rate": 1.0
+    }
+  },
+  {
+    "method_name": "direct_llm",
+    "question_id": "q3",
+    "question": "慢性肾病一线管理或治疗的核心是什么，请结合循证医学角度说明。",
+    "answer": "Direct LLM baseline unavailable in offline mode. This placeholder intentionally has no retrieval evidence.",
+    "references": [],
+    "retrieved_source_ids": [],
+    "extracted_claims": [],
+    "summary_claim": "No evidence-backed summary was produced in offline baseline mode.",
+    "confidence": 0.2,
+    "needs_human_review": true,
+    "conflicts": [
+      "Direct LLM baseline was simulated offline without source grounding."
+    ],
+    "check_results": {
+      "baseline_mode": "offline_placeholder"
+    },
+    "failure_reason": "offline_llm_unavailable",
+    "metrics": {
+      "retrieval_recall_at_k": 0.0,
+      "citation_precision": 0.0,
+      "claim_consistency": 0.0,
+      "hallucination_rate": 1.0,
+      "human_review_trigger_rate": 1.0
+    }
+  },
+  {
+    "method_name": "direct_llm",
+    "question_id": "q4",
+    "question": "甲状腺肿大一线管理或治疗的核心是什么，请结合循证医学角度说明。",
+    "answer": "Direct LLM baseline unavailable in offline mode. This placeholder intentionally has no retrieval evidence.",
+    "references": [],
+    "retrieved_source_ids": [],
+    "extracted_claims": [],
+    "summary_claim": "No evidence-backed summary was produced in offline baseline mode.",
+    "confidence": 0.2,
+    "needs_human_review": true,
+    "conflicts": [
+      "Direct LLM baseline was simulated offline without source grounding."
+    ],
+    "check_results": {
+      "baseline_mode": "offline_placeholder"
+    },
+    "failure_reason": "offline_llm_unavailable",
+    "metrics": {
+      "retrieval_recall_at_k": 0.0,
+      "citation_precision": 0.0,
+      "claim_consistency": 0.0,
+      "hallucination_rate": 1.0,
+      "human_review_trigger_rate": 1.0
+    }
+  },
+  {
+    "method_name": "direct_llm",
+    "question_id": "q5",
+    "question": "高脂血症一线管理或治疗的核心是什么，请结合循证医学角度说明。",
+    "answer": "Direct LLM baseline unavailable in offline mode. This placeholder intentionally has no retrieval evidence.",
+    "references": [],
+    "retrieved_source_ids": [],
+    "extracted_claims": [],
+    "summary_claim": "No evidence-backed summary was produced in offline baseline mode.",
+    "confidence": 0.2,
+    "needs_human_review": true,
+    "conflicts": [
+      "Direct LLM baseline was simulated offline without source grounding."
+    ],
+    "check_results": {
+      "baseline_mode": "offline_placeholder"
+    },
+    "failure_reason": "offline_llm_unavailable",
+    "metrics": {
+      "retrieval_recall_at_k": 0.0,
+      "citation_precision": 0.0,
+      "claim_consistency": 0.0,
+      "hallucination_rate": 1.0,
+      "human_review_trigger_rate": 0.0
+    }
+  },
+  {
+    "method_name": "retrieve_then_summarize",
+    "question_id": "q1",
+    "question": "高血压一线管理或治疗的核心是什么，请结合循证医学角度说明。",
+    "answer": "结论：\n结合当前检索到的证据，这一问题的核心回答是：In patients with diabetes and hypertension, first-line antihypertensive treatment often includes ACE inhibitors or ARBs 同时还需要结合 For diabetes with hypertension, individualized blood pressure targets and kidney-protective antihypertensive agents should be considered 所提示的风险分层、长期管理或器官保护策略进行综合决策。\n\n证据要点：\n- In patients with diabetes and hypertension, first-line antihypertensive treatment often includes ACE inhibitors or ARBs\n- For diabetes with hypertension, individualized blood pressure targets and kidney-protective antihypertensive agents should be considered\n- For adults with type 2 diabetes and hypertension, blood pressure management should be part of comprehensive cardiovascular risk reduction\n- Combined control of glucose, blood pressure, weight, and lifestyle factors is important in type 2 diabetes with hypertension\n\n置信度与风险：\n- 置信度：1.000\n- 状态：可作为初步参考",
+    "references": [
+      "1. European Society of Hypertension Guideline 2023 (2023) - https://example.org/esh-2023",
+      "2. ADA Blood Pressure Targets Update 2024 (2024) - https://example.org/ada-bp-2024",
+      "3. ADA Standards of Care in Diabetes 2024 (2024) - https://example.org/ada-2024",
+      "4. Review on Type 2 Diabetes with Hypertension in Primary Care (2022) - https://example.org/review-2022"
+    ],
+    "retrieved_source_ids": [
+      "guideline_esh_2023",
+      "guideline_ada_bp_targets_2024",
+      "guideline_ada_2024",
+      "review_t2dm_htn_2022"
+    ],
+    "extracted_claims": [
+      "In patients with diabetes and hypertension, first-line antihypertensive treatment often includes ACE inhibitors or ARBs",
+      "For diabetes with hypertension, individualized blood pressure targets and kidney-protective antihypertensive agents should be considered",
+      "For adults with type 2 diabetes and hypertension, blood pressure management should be part of comprehensive cardiovascular risk reduction",
+      "Combined control of glucose, blood pressure, weight, and lifestyle factors is important in type 2 diabetes with hypertension"
+    ],
+    "summary_claim": "High-level guideline evidence is available and supports a cautious clinical summary. The evidence is mainly useful for treatment-oriented recommendation synthesis.",
+    "confidence": 1.0,
+    "needs_human_review": false,
+    "conflicts": [],
+    "check_results": {
+      "topic_alignment": "passed",
+      "support_strength": "passed",
+      "evidence_level": "passed",
+      "timeliness": "passed",
+      "conflict_check": "passed"
+    },
+    "failure_reason": "",
+    "metrics": {
+      "retrieval_recall_at_k": 1.0,
+      "citation_precision": 0.5,
+      "claim_consistency": 0.0,
+      "hallucination_rate": 0.0,
+      "human_review_trigger_rate": 0.0
+    }
+  },
+  {
+    "method_name": "retrieve_then_summarize",
+    "question_id": "q2",
+    "question": "2型糖尿病一线管理或治疗的核心是什么，请结合循证医学角度说明。",
+    "answer": "结论：\n结合当前检索到的证据，这一问题的核心回答是：In patients with diabetes and hypertension, first-line antihypertensive treatment often includes ACE inhibitors or ARBs 同时还需要结合 Lipid management commonly emphasizes LDL cholesterol lowering according to overall cardiovascular risk 所提示的风险分层、长期管理或器官保护策略进行综合决策。\n\n证据要点：\n- In patients with diabetes and hypertension, first-line antihypertensive treatment often includes ACE inhibitors or ARBs\n- Lipid management commonly emphasizes LDL cholesterol lowering according to overall cardiovascular risk\n- Lipid management commonly emphasizes LDL cholesterol lowering according to overall cardiovascular risk\n- Community acquired pneumonia management should begin with severity assessment, prompt anti-infective treatment, and ongoing monitoring for complications\n\n置信度与风险：\n- 置信度：0.806\n- 状态：可作为初步参考",
+    "references": [
+      "1. European Society of Hypertension Guideline 2023 (2023) - https://example.org/esh-2023",
+      "2. Lipid Management Guideline 2023 (2023) - https://example.org/lipid-2023",
+      "3. Lipid Management Guideline 2023 (2023) - https://example.org/lipid-2023",
+      "4. Community Acquired Pneumonia Guideline 2023 (2023) - https://example.org/cap-2023"
+    ],
+    "retrieved_source_ids": [
+      "guideline_esh_2023",
+      "guideline_lipid_2023",
+      "guideline_lipid_2023",
+      "guideline_cap_2023"
+    ],
+    "extracted_claims": [
+      "In patients with diabetes and hypertension, first-line antihypertensive treatment often includes ACE inhibitors or ARBs",
+      "Lipid management commonly emphasizes LDL cholesterol lowering according to overall cardiovascular risk",
+      "Lipid management commonly emphasizes LDL cholesterol lowering according to overall cardiovascular risk",
+      "Community acquired pneumonia management should begin with severity assessment, prompt anti-infective treatment, and ongoing monitoring for complications"
+    ],
+    "summary_claim": "High-level guideline evidence is available and supports a cautious clinical summary. The evidence is mainly useful for treatment-oriented recommendation synthesis.",
+    "confidence": 0.806,
+    "needs_human_review": false,
+    "conflicts": [],
+    "check_results": {
+      "topic_alignment": "passed",
+      "support_strength": "passed",
+      "evidence_level": "passed",
+      "timeliness": "passed",
+      "conflict_check": "passed"
+    },
+    "failure_reason": "",
+    "metrics": {
+      "retrieval_recall_at_k": 0.0,
+      "citation_precision": 0.0,
+      "claim_consistency": 0.0,
+      "hallucination_rate": 0.5,
+      "human_review_trigger_rate": 0.0
+    }
+  },
+  {
+    "method_name": "retrieve_then_summarize",
+    "question_id": "q3",
+    "question": "慢性肾病一线管理或治疗的核心是什么，请结合循证医学角度说明。",
+    "answer": "结论：\n结合当前检索到的证据，这一问题的核心回答是：For adults with type 2 diabetes and hypertension, blood pressure management should be part of comprehensive cardiovascular risk reduction 同时还需要结合 Adults with chronic kidney disease, diabetes, and albuminuria are commonly managed with renin-angiotensin system blockade, especially ACE inhibitors or ARBs, alongside blood pressure control and risk-factor management 所提示的风险分层、长期管理或器官保护策略进行综合决策。\n\n证据要点：\n- For adults with type 2 diabetes and hypertension, blood pressure management should be part of comprehensive cardiovascular risk reduction\n- Adults with chronic kidney disease, diabetes, and albuminuria are commonly managed with renin-angiotensin system blockade, especially ACE inhibitors or ARBs, alongside blood pressure control and risk-factor management\n- In patients with diabetes and hypertension, first-line antihypertensive treatment often includes ACE inhibitors or ARBs\n- Lipid management commonly emphasizes LDL cholesterol lowering according to overall cardiovascular risk\n\n置信度与风险：\n- 置信度：0.926\n- 状态：可作为初步参考",
+    "references": [
+      "1. ADA Standards of Care in Diabetes 2024 (2024) - https://example.org/ada-2024",
+      "2. NICE Chronic Kidney Disease Guideline 2021 (2021) - https://example.org/nice-ckd-2021",
+      "3. European Society of Hypertension Guideline 2023 (2023) - https://example.org/esh-2023",
+      "4. Lipid Management Guideline 2023 (2023) - https://example.org/lipid-2023"
+    ],
+    "retrieved_source_ids": [
+      "guideline_ada_2024",
+      "guideline_nice_ckd_2021",
+      "guideline_esh_2023",
+      "guideline_lipid_2023"
+    ],
+    "extracted_claims": [
+      "For adults with type 2 diabetes and hypertension, blood pressure management should be part of comprehensive cardiovascular risk reduction",
+      "Adults with chronic kidney disease, diabetes, and albuminuria are commonly managed with renin-angiotensin system blockade, especially ACE inhibitors or ARBs, alongside blood pressure control and risk-factor management",
+      "In patients with diabetes and hypertension, first-line antihypertensive treatment often includes ACE inhibitors or ARBs",
+      "Lipid management commonly emphasizes LDL cholesterol lowering according to overall cardiovascular risk"
+    ],
+    "summary_claim": "High-level guideline evidence is available and supports a cautious clinical summary. The evidence is mainly useful for treatment-oriented recommendation synthesis.",
+    "confidence": 0.926,
+    "needs_human_review": false,
+    "conflicts": [],
+    "check_results": {
+      "topic_alignment": "passed",
+      "support_strength": "passed",
+      "evidence_level": "passed",
+      "timeliness": "passed",
+      "conflict_check": "passed"
+    },
+    "failure_reason": "",
+    "metrics": {
+      "retrieval_recall_at_k": 0.5,
+      "citation_precision": 0.25,
+      "claim_consistency": 0.0,
+      "hallucination_rate": 0.0,
+      "human_review_trigger_rate": 0.0
+    }
+  },
+  {
+    "method_name": "retrieve_then_summarize",
+    "question_id": "q4",
+    "question": "甲状腺肿大一线管理或治疗的核心是什么，请结合循证医学角度说明。",
+    "answer": "结论：\n结合当前检索到的证据，这一问题的核心回答是：Evaluation of benign thyroid enlargement should consider compressive symptoms, thyroid function, and ultrasound findings 同时还需要结合 In patients with diabetes and hypertension, first-line antihypertensive treatment often includes ACE inhibitors or ARBs 所提示的风险分层、长期管理或器官保护策略进行综合决策。\n\n证据要点：\n- Evaluation of benign thyroid enlargement should consider compressive symptoms, thyroid function, and ultrasound findings\n- In patients with diabetes and hypertension, first-line antihypertensive treatment often includes ACE inhibitors or ARBs\n- Lipid management commonly emphasizes LDL cholesterol lowering according to overall cardiovascular risk\n- Lipid management commonly emphasizes LDL cholesterol lowering according to overall cardiovascular risk\n\n置信度与风险：\n- 置信度：0.856\n- 状态：可作为初步参考",
+    "references": [
+      "1. Consensus Statement on Benign Thyroid Enlargement 2022 (2022) - https://example.org/thyroid-consensus-2022",
+      "2. European Society of Hypertension Guideline 2023 (2023) - https://example.org/esh-2023",
+      "3. Lipid Management Guideline 2023 (2023) - https://example.org/lipid-2023",
+      "4. Lipid Management Guideline 2023 (2023) - https://example.org/lipid-2023"
+    ],
+    "retrieved_source_ids": [
+      "consensus_thyroid_2022",
+      "guideline_esh_2023",
+      "guideline_lipid_2023",
+      "guideline_lipid_2023"
+    ],
+    "extracted_claims": [
+      "Evaluation of benign thyroid enlargement should consider compressive symptoms, thyroid function, and ultrasound findings",
+      "In patients with diabetes and hypertension, first-line antihypertensive treatment often includes ACE inhibitors or ARBs",
+      "Lipid management commonly emphasizes LDL cholesterol lowering according to overall cardiovascular risk",
+      "Lipid management commonly emphasizes LDL cholesterol lowering according to overall cardiovascular risk"
+    ],
+    "summary_claim": "High-level guideline evidence is available and supports a cautious clinical summary. The evidence is mainly useful for treatment-oriented recommendation synthesis.",
+    "confidence": 0.856,
+    "needs_human_review": false,
+    "conflicts": [],
+    "check_results": {
+      "topic_alignment": "passed",
+      "support_strength": "passed",
+      "evidence_level": "passed",
+      "timeliness": "passed",
+      "conflict_check": "passed"
+    },
+    "failure_reason": "",
+    "metrics": {
+      "retrieval_recall_at_k": 1.0,
+      "citation_precision": 0.25,
+      "claim_consistency": 0.0,
+      "hallucination_rate": 0.0,
+      "human_review_trigger_rate": 0.0
+    }
+  },
+  {
+    "method_name": "retrieve_then_summarize",
+    "question_id": "q5",
+    "question": "高脂血症一线管理或治疗的核心是什么，请结合循证医学角度说明。",
+    "answer": "结论：\n结合当前检索到的证据，这一问题的核心回答是：Lipid management commonly emphasizes LDL cholesterol lowering according to overall cardiovascular risk 同时还需要结合 Lipid management commonly emphasizes LDL cholesterol lowering according to overall cardiovascular risk 所提示的风险分层、长期管理或器官保护策略进行综合决策。\n\n证据要点：\n- Lipid management commonly emphasizes LDL cholesterol lowering according to overall cardiovascular risk\n- Lipid management commonly emphasizes LDL cholesterol lowering according to overall cardiovascular risk\n- Hyperlipidemia management in primary care often combines dietary intervention, statin-based treatment, and ongoing cardiovascular risk assessment\n- Hyperlipidemia management in primary care often combines dietary intervention, statin-based treatment, and ongoing cardiovascular risk assessment\n\n置信度与风险：\n- 置信度：0.953\n- 状态：可作为初步参考",
+    "references": [
+      "1. Lipid Management Guideline 2023 (2023) - https://example.org/lipid-2023",
+      "2. Lipid Management Guideline 2023 (2023) - https://example.org/lipid-2023",
+      "3. Primary Care Review of Hyperlipidemia 2022 (2022) - https://example.org/lipid-review-2022",
+      "4. Primary Care Review of Hyperlipidemia 2022 (2022) - https://example.org/lipid-review-2022"
+    ],
+    "retrieved_source_ids": [
+      "guideline_lipid_2023",
+      "guideline_lipid_2023",
+      "review_lipid_primarycare_2022",
+      "review_lipid_primarycare_2022"
+    ],
+    "extracted_claims": [
+      "Lipid management commonly emphasizes LDL cholesterol lowering according to overall cardiovascular risk",
+      "Lipid management commonly emphasizes LDL cholesterol lowering according to overall cardiovascular risk",
+      "Hyperlipidemia management in primary care often combines dietary intervention, statin-based treatment, and ongoing cardiovascular risk assessment",
+      "Hyperlipidemia management in primary care often combines dietary intervention, statin-based treatment, and ongoing cardiovascular risk assessment"
+    ],
+    "summary_claim": "High-level guideline evidence is available and supports a cautious clinical summary. The evidence is mainly useful for treatment-oriented recommendation synthesis.",
+    "confidence": 0.953,
+    "needs_human_review": false,
+    "conflicts": [],
+    "check_results": {
+      "topic_alignment": "passed",
+      "support_strength": "passed",
+      "evidence_level": "passed",
+      "timeliness": "passed",
+      "conflict_check": "passed"
+    },
+    "failure_reason": "",
+    "metrics": {
+      "retrieval_recall_at_k": 1.0,
+      "citation_precision": 1.0,
+      "claim_consistency": 0.0,
+      "hallucination_rate": 0.0,
+      "human_review_trigger_rate": 1.0
+    }
+  },
+  {
+    "method_name": "workflow_with_rag_and_verifier",
+    "question_id": "q1",
+    "question": "高血压一线管理或治疗的核心是什么，请结合循证医学角度说明。",
+    "answer": "结论：\n从现有核验证据看，高血压一线治疗的核心可概括为：在合并糖尿病的高血压患者中，通常优先考虑 ACE 抑制剂或 ARB 作为一线降压治疗；同时，血压控制目标不应一刀切，而应根据心血管风险、年龄和合并症进行个体化设定。\n\n证据要点：\n- 2023 年欧洲高血压指南指出，合并糖尿病的高血压患者一线降压治疗常包括 ACE 抑制剂或 ARB。\n- 同一指南强调，血压目标应依据心血管风险、年龄及合并症进行个体化制定。\n- 已核验的高层级证据主要支持治疗导向的推荐综合。\n\n置信度与风险：\n- 置信度：0.706\n- 状态：有高层级指南证据可用于谨慎总结，但与原始问题的匹配度偏弱，且需要人工审核。\n- 风险：现有证据主要集中于“合并糖尿病的高血压患者”这一特定人群，不能完全代表所有高血压患者的一线管理全貌；证据列表中还包含与高血压主题无关的信息，应避免纳入医学结论。",
+    "references": [
+      "1. European Society of Hypertension Guideline 2023 (2023) - https://example.org/esh-2023",
+      "2. Urticaria Guideline 2023 (2023) - https://example.org/urticaria-2023",
+      "3. Review of Rheumatoid Arthritis Follow-Up 2022 (2022) - https://example.org/ra-review-2022",
+      "4. Review of Osteoarthritis Primary Care Management 2022 (2022) - https://example.org/oa-review-2022"
+    ],
+    "retrieved_source_ids": [
+      "guideline_esh_2023",
+      "guideline_urticaria_2023",
+      "review_ra_2022",
+      "review_oa_2022"
+    ],
+    "extracted_claims": [
+      "在合并糖尿病的高血压患者中，一线降压治疗通常包括 ACE 抑制剂或 ARB，且血压目标应个体化制定。",
+      "2023年荨麻疹指南指出，荨麻疹管理通常包括诱因审查、症状负担评估和治疗反应随访。",
+      "类风湿关节炎随访主要关注症状活动、关节功能、治疗反应及不良反应监测。",
+      "骨关节炎的初级保健管理通常关注疼痛负担、活动能力、生活方式调整和保守治疗反应。"
+    ],
+    "summary_claim": "High-level guideline evidence is available and supports a cautious clinical summary. The evidence is mainly useful for treatment-oriented recommendation synthesis.",
+    "confidence": 0.706,
+    "needs_human_review": true,
+    "conflicts": [
+      "Evidence claims only weakly match the question topic."
+    ],
+    "check_results": {
+      "topic_alignment": "warning",
+      "support_strength": "passed",
+      "evidence_level": "passed",
+      "timeliness": "passed",
+      "conflict_check": "passed"
+    },
+    "failure_reason": "",
+    "metrics": {
+      "retrieval_recall_at_k": 0.5,
+      "citation_precision": 0.25,
+      "claim_consistency": 0.0,
+      "hallucination_rate": 0.0,
+      "human_review_trigger_rate": 1.0
+    }
+  },
+  {
+    "method_name": "workflow_with_rag_and_verifier",
+    "question_id": "q2",
+    "question": "2型糖尿病一线管理或治疗的核心是什么，请结合循证医学角度说明。",
+    "answer": "结论：\n基于当前提供的核验证据，无法直接得出“2型糖尿病一线管理或治疗核心”的针对性循证结论。现有证据更接近于提示慢性代谢相关疾病管理常包含代谢风险评估、生活方式干预以及长期随访或监测。\n\n证据要点：\n- 2023年脂肪肝指南指出，管理通常包括代谢风险评估、生活方式干预和长期肝功能监测。\n- 2023年肥胖管理指南指出，管理通常包括减重计划、代谢风险评估、生活方式干预和长期随访。\n- 其他提供的证据主要涉及慢性乙肝和类风湿关节炎，强调长期监测、风险分层或早期治疗，但并非2型糖尿病直接证据。\n\n置信度与风险：\n- 置信度：0.69\n- 状态：有高层级指南证据可用于谨慎总结，但与原问题主题匹配偏弱，且需要人工审核。\n- 风险：现有证据并非直接针对2型糖尿病一线管理，若据此回答原问题，存在主题偏移和医学适用性不足的风险。",
+    "references": [
+      "1. Fatty Liver Disease Guideline 2023 (2023) - https://example.org/fatty-liver-2023",
+      "2. Obesity Management Guideline 2023 (2023) - https://example.org/obesity-2023",
+      "3. Chronic Hepatitis B Guideline 2023 (2023) - https://example.org/hbv-2023",
+      "4. Rheumatoid Arthritis Guideline 2023 (2023) - https://example.org/ra-2023"
+    ],
+    "retrieved_source_ids": [
+      "guideline_fatty_liver_2023",
+      "guideline_obesity_2023",
+      "guideline_hbv_2023",
+      "guideline_ra_2023"
+    ],
+    "extracted_claims": [
+      "脂肪肝管理通常包括代谢风险评估、生活方式干预和长期肝功能监测。",
+      "2023年肥胖管理指南指出，肥胖管理通常包括减重计划、代谢风险评估、生活方式干预和长期随访。",
+      "慢性乙型肝炎的管理通常包括肝功能监测、病毒活动评估和长期风险分层。",
+      "2023年类风湿关节炎管理强调早期治疗、控制炎症、保护关节功能及长期监测。"
+    ],
+    "summary_claim": "High-level guideline evidence is available and supports a cautious clinical summary. The evidence is mainly useful for treatment-oriented recommendation synthesis.",
+    "confidence": 0.69,
+    "needs_human_review": true,
+    "conflicts": [
+      "Evidence claims only weakly match the question topic."
+    ],
+    "check_results": {
+      "topic_alignment": "warning",
+      "support_strength": "passed",
+      "evidence_level": "passed",
+      "timeliness": "passed",
+      "conflict_check": "passed"
+    },
+    "failure_reason": "",
+    "metrics": {
+      "retrieval_recall_at_k": 0.0,
+      "citation_precision": 0.0,
+      "claim_consistency": 0.0,
+      "hallucination_rate": 0.5,
+      "human_review_trigger_rate": 1.0
+    }
+  },
+  {
+    "method_name": "workflow_with_rag_and_verifier",
+    "question_id": "q3",
+    "question": "慢性肾病一线管理或治疗的核心是什么，请结合循证医学角度说明。",
+    "answer": "结论：\n从现有核验证据看，慢性肾病一线管理或治疗的核心主要是：对合并糖尿病和白蛋白尿的成人患者，优先考虑肾素-血管紧张素系统阻断治疗，尤其是ACE抑制剂或ARB，并将血压控制和危险因素管理作为综合管理的重要组成部分。\n\n证据要点：\n- 2021年NICE慢性肾病指南指出，合并糖尿病和白蛋白尿的慢性肾病成人，通常采用肾素-血管紧张素系统阻断治疗，尤其是ACE抑制剂或ARB，并结合血压控制和危险因素管理。\n- 2024年ADA糖尿病诊疗标准指出，2型糖尿病合并高血压成人应将血压管理纳入综合心血管风险降低；在合并白蛋白尿或慢性肾病时，常推荐ACEI或ARB。\n- 现有高层级证据主要支持面向治疗的建议整合，重点集中在肾脏保护相关降压治疗与风险因素控制。\n\n置信度与风险：\n- 置信度：0.725\n- 状态：有高层级指南证据支持，但与原问题的整体匹配度偏弱，建议人工审核。\n- 风险：部分证据来自心力衰竭长期管理内容，与慢性肾病一线管理主题相关性有限，存在主题混杂风险。",
+    "references": [
+      "1. NICE Chronic Kidney Disease Guideline 2021 (2021) - https://example.org/nice-ckd-2021",
+      "2. Review of Heart Failure Long-Term Management 2022 (2022) - https://example.org/heart-failure-review-2022",
+      "3. ADA Standards of Care in Diabetes 2024 (2024) - https://example.org/ada-2024",
+      "4. Heart Failure Guideline 2023 (2023) - https://example.org/heart-failure-2023"
+    ],
+    "retrieved_source_ids": [
+      "guideline_nice_ckd_2021",
+      "review_heart_failure_2022",
+      "guideline_ada_2024",
+      "guideline_heart_failure_2023"
+    ],
+    "extracted_claims": [
+      "对于合并糖尿病和白蛋白尿的慢性肾病成人，通常采用肾素-血管紧张素系统阻断治疗，尤其是ACE抑制剂或ARB，并结合血压控制和危险因素管理。",
+      "心力衰竭长期管理的重点包括症状监测、用药依从性、液体管理和预防再入院。",
+      "2024年ADA指南指出，2型糖尿病合并高血压成人应将血压管理纳入综合心血管风险降低，尤其在合并白蛋白尿或慢性肾病时常推荐ACEI或ARB。",
+      "2023年心力衰竭指南指出，心衰管理应评估症状、心功能、容量状态、指南指导药物治疗及长期失代偿风险。"
+    ],
+    "summary_claim": "High-level guideline evidence is available and supports a cautious clinical summary. The evidence is mainly useful for treatment-oriented recommendation synthesis.",
+    "confidence": 0.725,
+    "needs_human_review": true,
+    "conflicts": [
+      "Evidence claims only weakly match the question topic."
+    ],
+    "check_results": {
+      "topic_alignment": "warning",
+      "support_strength": "passed",
+      "evidence_level": "passed",
+      "timeliness": "passed",
+      "conflict_check": "passed"
+    },
+    "failure_reason": "",
+    "metrics": {
+      "retrieval_recall_at_k": 0.5,
+      "citation_precision": 0.25,
+      "claim_consistency": 0.0,
+      "hallucination_rate": 0.0,
+      "human_review_trigger_rate": 1.0
+    }
+  },
+  {
+    "method_name": "workflow_with_rag_and_verifier",
+    "question_id": "q4",
+    "question": "甲状腺肿大一线管理或治疗的核心是什么，请结合循证医学角度说明。",
+    "answer": "结论：\n从现有已核验证据看，甲状腺肿大一线管理的核心是先进行规范评估，重点关注是否存在压迫症状、甲状腺功能异常及超声提示的结构性风险；当出现症状或明确结构性风险时，主要考虑外科转诊。\n\n证据要点：\n- 2022年关于良性甲状腺肿大的共识指出，评估应重点考虑压迫症状、甲状腺功能和超声表现。\n- 同一共识提示，若存在症状或结构性风险，治疗路径上主要应考虑外科转诊。\n- 现有高层级证据可支持一个谨慎的、以治疗建议整合为导向的临床总结。\n\n置信度与风险：\n- 置信度：0.693\n- 状态：需要人工审核\n- 风险：现有证据与问题主题的匹配度偏弱，且证据列表中包含与甲状腺肿大无直接关联的内容，解读时应以良性甲状腺肿大相关共识为主。",
+    "references": [
+      "1. Consensus Statement on Benign Thyroid Enlargement 2022 (2022) - https://example.org/thyroid-consensus-2022",
+      "2. Primary Care Review of Stable COPD 2022 (2022) - https://example.org/copd-review-2022",
+      "3. Review of Heart Failure Long-Term Management 2022 (2022) - https://example.org/heart-failure-review-2022",
+      "4. Benign Prostatic Hyperplasia Guideline 2023 (2023) - https://example.org/bph-2023"
+    ],
+    "retrieved_source_ids": [
+      "consensus_thyroid_2022",
+      "review_copd_primarycare_2022",
+      "review_heart_failure_2022",
+      "guideline_bph_2023"
+    ],
+    "extracted_claims": [
+      "良性甲状腺肿大的评估应关注压迫症状、甲状腺功能和超声表现，出现症状或结构性风险时主要考虑外科转诊。",
+      "初级保健中稳定期COPD管理通常重点关注症状控制、吸入治疗优化、戒烟和预防急性加重。",
+      "心力衰竭的长期管理重点包括症状监测、用药依从性、液体管理和预防再入院。",
+      "良性前列腺增生的管理通常包括尿路症状评估、生活质量评估和个体化随访。"
+    ],
+    "summary_claim": "High-level guideline evidence is available and supports a cautious clinical summary. The evidence is mainly useful for treatment-oriented recommendation synthesis.",
+    "confidence": 0.693,
+    "needs_human_review": true,
+    "conflicts": [
+      "Evidence claims only weakly match the question topic."
+    ],
+    "check_results": {
+      "topic_alignment": "warning",
+      "support_strength": "passed",
+      "evidence_level": "passed",
+      "timeliness": "passed",
+      "conflict_check": "passed"
+    },
+    "failure_reason": "",
+    "metrics": {
+      "retrieval_recall_at_k": 1.0,
+      "citation_precision": 0.25,
+      "claim_consistency": 0.0,
+      "hallucination_rate": 0.0,
+      "human_review_trigger_rate": 1.0
+    }
+  },
+  {
+    "method_name": "workflow_with_rag_and_verifier",
+    "question_id": "q5",
+    "question": "高脂血症一线管理或治疗的核心是什么，请结合循证医学角度说明。",
+    "answer": "结论：\n从现有循证信息看，高脂血症一线管理或治疗的核心是：以饮食干预为基础，结合他汀治疗，并持续进行心血管风险评估，以指导长期管理决策。\n\n证据要点：\n- 2022年基层医疗高脂血症综述指出，高脂血症管理通常结合饮食干预、他汀类治疗和持续的心血管风险评估。\n- 已核验信息显示，当前可用证据以高层级指南和综述为主，主要支持面向治疗的推荐总结。\n- 现有直接相关证据重点集中在“生活方式干预+他汀治疗+风险分层评估”的管理框架。\n\n置信度与风险：\n- 置信度：0.726\n- 状态：需要人工审核\n- 风险：现有证据与原始问题的主题匹配度偏弱；证据列表中含有与高脂血症问题关联性较低的其他疾病管理内容，解读时应以直接相关的高脂血症证据为主。",
+    "references": [
+      "1. Primary Care Review of Hyperlipidemia 2022 (2022) - https://example.org/lipid-review-2022",
+      "2. Chronic Hepatitis B Guideline 2023 (2023) - https://example.org/hbv-2023",
+      "3. Review of Heart Failure Long-Term Management 2022 (2022) - https://example.org/heart-failure-review-2022",
+      "4. Stroke Secondary Prevention Guideline 2023 (2023) - https://example.org/stroke-2023"
+    ],
+    "retrieved_source_ids": [
+      "review_lipid_primarycare_2022",
+      "guideline_hbv_2023",
+      "review_heart_failure_2022",
+      "guideline_stroke_2023"
+    ],
+    "extracted_claims": [
+      "基层医疗中的高脂血症管理通常结合饮食干预、他汀治疗和持续的心血管风险评估。",
+      "慢性乙型肝炎的管理通常包括肝功能监测、病毒活动评估和长期风险分层。",
+      "心力衰竭的长期管理重点包括症状监测、坚持用药、液体管理和预防再入院。",
+      "卒中二级预防应包括血压控制、血脂管理、降低复发风险和康复计划。"
+    ],
+    "summary_claim": "High-level guideline evidence is available and supports a cautious clinical summary. The evidence is mainly useful for treatment-oriented recommendation synthesis.",
+    "confidence": 0.726,
+    "needs_human_review": true,
+    "conflicts": [
+      "Evidence claims only weakly match the question topic."
+    ],
+    "check_results": {
+      "topic_alignment": "warning",
+      "support_strength": "passed",
+      "evidence_level": "passed",
+      "timeliness": "passed",
+      "conflict_check": "passed"
+    },
+    "failure_reason": "",
+    "metrics": {
+      "retrieval_recall_at_k": 0.5,
+      "citation_precision": 0.25,
+      "claim_consistency": 0.0,
+      "hallucination_rate": 0.0,
+      "human_review_trigger_rate": 0.0
+    }
+  }
+]
