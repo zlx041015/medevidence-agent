@@ -57,6 +57,13 @@ class FinalAnswer:
 
 
 @dataclass
+class AgentRunRecord:
+    agent_name: str
+    status: str
+    notes: str = ""
+
+
+@dataclass
 class WorkflowState:
     question: ClinicalQuestion
     plan: Optional[SearchPlan] = None
@@ -64,6 +71,7 @@ class WorkflowState:
     evidence_items: list[EvidenceItem] = field(default_factory=list)
     verification: Optional[VerificationResult] = None
     final_answer: Optional[FinalAnswer] = None
+    agent_trace: list[AgentRunRecord] = field(default_factory=list)
 
 
 @dataclass
@@ -74,6 +82,7 @@ class WorkflowOptions:
     use_source_type_weighting: bool = True
     extractor_mode: str = "auto"
     source_mode_override: Optional[str] = None
+    max_agent_steps: int = 12
 
 
 @dataclass

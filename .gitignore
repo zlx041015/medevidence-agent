@@ -12,3 +12,4 @@ build/
 .env
 .vscode/
 .idea/
+docs_private/
