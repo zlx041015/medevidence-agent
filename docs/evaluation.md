@@ -14,6 +14,7 @@
 - `question_type`
 - `risk_level`
 - `gold_keywords`
+- `mesh_terms`
 - `gold_sources`
 - `gold_claim`
 - `needs_human_review`

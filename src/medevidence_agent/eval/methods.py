@@ -18,6 +18,18 @@ class MethodDefinition:
     special_runner: Optional[str] = None
 
 
+@dataclass
+class EvidenceItemProxy:
+    source_id: str
+    title: str
+    claim: str
+    support_text: str
+    source_type: str
+    year: int
+    url: str
+    score: float
+
+
 def _state_to_result(method_name: str, benchmark: BenchmarkQuestion, state) -> MethodRunResult:
     return MethodRunResult(
         method_name=method_name,
@@ -65,24 +77,19 @@ def run_retrieve_then_summarize(benchmark: BenchmarkQuestion, settings: Settings
         use_rag=False,
         use_source_type_weighting=True,
     )
-    evidence_items = []
-    for source in retrieval.sources:
-        evidence_items.append(
-            type(
-                "EvidenceItemProxy",
-                (),
-                {
-                    "source_id": source.source_id,
-                    "title": source.title,
-                    "claim": source.content.split(".")[0].strip(),
-                    "support_text": source.content,
-                    "source_type": source.source_type,
-                    "year": source.year,
-                    "url": source.url,
-                    "score": source.relevance_score,
-                },
-            )()
+    evidence_items = [
+        EvidenceItemProxy(
+            source_id=source.source_id,
+            title=source.title,
+            claim=source.content.split(".")[0].strip(),
+            support_text=source.content,
+            source_type=source.source_type,
+            year=source.year,
+            url=source.url,
+            score=source.relevance_score,
         )
+        for source in retrieval.sources
+    ]
     verification = verify_evidence(benchmark.question, evidence_items, settings.confidence_threshold)
     final_answer = write_answer_rule_based(benchmark.question, verification)
     state = type(

@@ -1,4 +1,5 @@
 from dataclasses import dataclass
+from typing import Callable, Optional
 
 from medevidence_agent.config import Settings
 from medevidence_agent.models import (
@@ -18,7 +19,7 @@ from medevidence_agent.retrieval import retrieve_documents
 
 @dataclass
 class AgentResult:
-    next_agent: str | None = None
+    next_agent: Optional[str] = None
     notes: str = ""
 
 
@@ -89,6 +90,7 @@ class VerifierAgent(BaseAgent):
                 question_text=state.question.text,
                 evidence_items=state.evidence_items,
                 confidence_threshold=settings.confidence_threshold,
+                mesh_terms=state.plan.mesh_terms if state.plan else [],
             )
             self._record(state, "completed", "Verifier completed.")
         else:
@@ -138,10 +140,26 @@ class MultiAgentCoordinator:
         settings: Settings,
         options: WorkflowOptions,
         start_agent: str = "planner_agent",
+        progress_callback: Optional[Callable[[str, int, int], None]] = None,
     ) -> WorkflowState:
         current_agent = start_agent
         seen = {}
         step_count = 0
+        ordered_agents = [
+            "planner_agent",
+            "retriever_agent",
+            "extractor_agent",
+            "verifier_agent",
+            "writer_agent",
+        ]
+        total_steps = len(ordered_agents)
+        stage_names = {
+            "planner_agent": "规划阶段",
+            "retriever_agent": "检索阶段",
+            "extractor_agent": "抽取阶段",
+            "verifier_agent": "核验阶段",
+            "writer_agent": "生成阶段",
+        }
 
         while current_agent is not None:
             step_count += 1
@@ -168,6 +186,8 @@ class MultiAgentCoordinator:
 
             agent = self.agents[current_agent]
             result = agent.run(state, settings, options)
+            if progress_callback is not None and current_agent in ordered_agents:
+                progress_callback(stage_names[current_agent], ordered_agents.index(current_agent) + 1, total_steps)
             current_agent = result.next_agent
 
         return state

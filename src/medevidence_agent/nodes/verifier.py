@@ -1,6 +1,9 @@
 from collections import Counter
+from typing import Optional
 
 from medevidence_agent.models import EvidenceItem, VerificationResult
+from medevidence_agent.tools.mesh import detect_mesh_terms, load_mesh_terms
+from medevidence_agent.config import settings
 
 
 EVIDENCE_LEVEL_WEIGHTS = {
@@ -135,7 +138,9 @@ def verify_evidence(
     question_text: str,
     evidence_items: list[EvidenceItem],
     confidence_threshold: float,
+    mesh_terms: Optional[list[str]] = None,
 ) -> VerificationResult:
+    mesh_terms = mesh_terms or []
     if not evidence_items:
         return VerificationResult(
             summary_claim="No sufficient evidence was retrieved for a reliable clinical summary.",
@@ -150,6 +155,7 @@ def verify_evidence(
                 "conflict_check": "failed",
             },
             evidence_coverage=0.0,
+            mesh_topic_alignment=[],
             needs_human_review=True,
         )
 
@@ -160,6 +166,9 @@ def verify_evidence(
     question_keywords = _build_question_keywords(question_text)
     topic_coverage = _compute_topic_coverage(question_keywords, evidence_items)
     conflicts = _detect_conflicts(evidence_items)
+    mesh_map = load_mesh_terms(settings.mesh_terms_path)
+    evidence_mesh_hits = detect_mesh_terms(" ".join(item.support_text for item in evidence_items), mesh_map)
+    mesh_matches = [term for term in mesh_terms if term in evidence_mesh_hits]
 
     support_strength = round(
         sum(1 for item in evidence_items if len(item.support_text.split()) >= 8) / len(evidence_items),
@@ -171,6 +180,7 @@ def verify_evidence(
     confidence += min(len(evidence_items), 5) * 0.05
     confidence += evidence_level_bonus
     confidence += topic_coverage * 0.12
+    confidence += min(len(mesh_matches), 3) * 0.03
     confidence += support_strength * 0.08
     confidence += timeliness_score * 0.07
     if conflicts:
@@ -199,6 +209,7 @@ def verify_evidence(
         "support_strength": "passed" if support_strength >= 0.6 else "warning",
         "evidence_level": "passed" if evidence_level_bonus >= 0.1 else "warning",
         "timeliness": "passed" if timeliness_score >= 0.34 else "warning",
+        "mesh_alignment": "passed" if mesh_matches else "warning",
         "conflict_check": "warning" if conflicts else "passed",
     }
 
@@ -208,6 +219,8 @@ def verify_evidence(
         conflicts.append("Several extracted evidence items lack strong supporting text.")
     if timeliness_score == 0.0:
         conflicts.append("No recent evidence source was found.")
+    if mesh_terms and not mesh_matches:
+        conflicts.append("Evidence does not align well with expected MeSH disease topics.")
     if all(item.source_type == "case_report" for item in evidence_items):
         conflicts.append("All supporting evidence comes from case reports, which is low-level evidence.")
 
@@ -220,5 +233,6 @@ def verify_evidence(
         conflicts=conflicts,
         check_results=check_results,
         evidence_coverage=topic_coverage,
+        mesh_topic_alignment=mesh_matches,
         needs_human_review=needs_human_review,
     )

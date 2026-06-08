@@ -32,6 +32,7 @@ class Settings:
     rag_sparse_weight: float = float(os.getenv("MEDEVIDENCE_RAG_SPARSE_WEIGHT", "0.5"))
     data_path: Path = Path(__file__).resolve().parents[2] / "data" / "mock_sources.json"
     rag_store_path: Path = Path(__file__).resolve().parents[2] / "data" / "rag_store.json"
+    mesh_terms_path: Path = Path(__file__).resolve().parents[2] / "data" / "mesh_terms.json"
 
 
 settings = Settings()

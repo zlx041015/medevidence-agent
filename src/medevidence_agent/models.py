@@ -12,6 +12,7 @@ class SearchPlan:
     intent: str
     keywords: list[str]
     risk_level: str
+    mesh_terms: list[str] = field(default_factory=list)
 
 
 @dataclass
@@ -46,6 +47,7 @@ class VerificationResult:
     conflicts: list[str] = field(default_factory=list)
     check_results: dict[str, str] = field(default_factory=dict)
     evidence_coverage: float = 0.0
+    mesh_topic_alignment: list[str] = field(default_factory=list)
     needs_human_review: bool = False
 
 
@@ -95,6 +97,7 @@ class BenchmarkQuestion:
     gold_sources: list[str]
     gold_claim: str
     needs_human_review: bool
+    mesh_terms: list[str] = field(default_factory=list)
 
 
 @dataclass

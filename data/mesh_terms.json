@@ -1,0 +1,227 @@
+{
+  "source": "Project curated MeSH subset",
+  "terms": {
+    "D006973": {
+      "mesh_ui": "D006973",
+      "descriptor_name": "Hypertension",
+      "aliases": ["高血压", "hypertension", "blood pressure elevation"],
+      "tree_numbers": ["C14.907.489"]
+    },
+    "D003924": {
+      "mesh_ui": "D003924",
+      "descriptor_name": "Diabetes Mellitus, Type 2",
+      "aliases": ["2型糖尿病", "糖尿病", "type 2 diabetes", "diabetes mellitus"],
+      "tree_numbers": ["C18.452.394.750.149"]
+    },
+    "D007676": {
+      "mesh_ui": "D007676",
+      "descriptor_name": "Kidney Diseases, Chronic",
+      "aliases": ["慢性肾病", "慢性肾脏病", "肾病", "chronic kidney disease", "ckd"],
+      "tree_numbers": ["C12.777.419"]
+    },
+    "D011507": {
+      "mesh_ui": "D011507",
+      "descriptor_name": "Proteinuria",
+      "aliases": ["蛋白尿", "proteinuria"],
+      "tree_numbers": ["C12.777.934.647"]
+    },
+    "D000450": {
+      "mesh_ui": "D000450",
+      "descriptor_name": "Albuminuria",
+      "aliases": ["白蛋白尿", "albuminuria"],
+      "tree_numbers": ["C12.777.934.034"]
+    },
+    "D006042": {
+      "mesh_ui": "D006042",
+      "descriptor_name": "Goiter",
+      "aliases": ["甲状腺肿大", "甲状腺肿", "goiter", "thyroid enlargement"],
+      "tree_numbers": ["C19.874.283"]
+    },
+    "D013959": {
+      "mesh_ui": "D013959",
+      "descriptor_name": "Thyroid Diseases",
+      "aliases": ["甲状腺", "thyroid"],
+      "tree_numbers": ["C19.874"]
+    },
+    "D006949": {
+      "mesh_ui": "D006949",
+      "descriptor_name": "Hyperlipidemias",
+      "aliases": ["高脂血症", "血脂异常", "hyperlipidemia", "dyslipidemia"],
+      "tree_numbers": ["C18.452.584.500"]
+    },
+    "D003324": {
+      "mesh_ui": "D003324",
+      "descriptor_name": "Coronary Artery Disease",
+      "aliases": ["冠心病", "心绞痛", "coronary artery disease", "cad"],
+      "tree_numbers": ["C14.280.647.124"]
+    },
+    "D006333": {
+      "mesh_ui": "D006333",
+      "descriptor_name": "Heart Failure",
+      "aliases": ["心力衰竭", "heart failure"],
+      "tree_numbers": ["C14.280.434"]
+    },
+    "D001281": {
+      "mesh_ui": "D001281",
+      "descriptor_name": "Atrial Fibrillation",
+      "aliases": ["房颤", "atrial fibrillation", "af"],
+      "tree_numbers": ["C14.280.067.322"]
+    },
+    "D020521": {
+      "mesh_ui": "D020521",
+      "descriptor_name": "Stroke",
+      "aliases": ["脑卒中", "卒中", "stroke"],
+      "tree_numbers": ["C10.228.140.300.775"]
+    },
+    "D029424": {
+      "mesh_ui": "D029424",
+      "descriptor_name": "Pulmonary Disease, Chronic Obstructive",
+      "aliases": ["慢阻肺", "copd", "chronic obstructive pulmonary disease"],
+      "tree_numbers": ["C08.381.495.389"]
+    },
+    "D001249": {
+      "mesh_ui": "D001249",
+      "descriptor_name": "Asthma",
+      "aliases": ["哮喘", "asthma"],
+      "tree_numbers": ["C08.127.108"]
+    },
+    "D011014": {
+      "mesh_ui": "D011014",
+      "descriptor_name": "Pneumonia",
+      "aliases": ["肺炎", "pneumonia"],
+      "tree_numbers": ["C08.381.677"]
+    },
+    "D014376": {
+      "mesh_ui": "D014376",
+      "descriptor_name": "Tuberculosis, Pulmonary",
+      "aliases": ["肺结核", "结核", "tuberculosis", "tb"],
+      "tree_numbers": ["C08.730.939.547.880"]
+    },
+    "D018798": {
+      "mesh_ui": "D018798",
+      "descriptor_name": "Anemia, Iron-Deficiency",
+      "aliases": ["缺铁性贫血", "贫血", "iron deficiency anemia", "anemia"],
+      "tree_numbers": ["C15.378.071.141.150"]
+    },
+    "D010024": {
+      "mesh_ui": "D010024",
+      "descriptor_name": "Osteoporosis",
+      "aliases": ["骨质疏松", "osteoporosis"],
+      "tree_numbers": ["C05.116.198.911"]
+    },
+    "D006073": {
+      "mesh_ui": "D006073",
+      "descriptor_name": "Gout",
+      "aliases": ["痛风", "gout"],
+      "tree_numbers": ["C05.550.114.154"]
+    },
+    "D001172": {
+      "mesh_ui": "D001172",
+      "descriptor_name": "Arthritis, Rheumatoid",
+      "aliases": ["类风湿关节炎", "类风湿", "rheumatoid arthritis"],
+      "tree_numbers": ["C05.550.114.154.500"]
+    },
+    "D010003": {
+      "mesh_ui": "D010003",
+      "descriptor_name": "Osteoarthritis",
+      "aliases": ["骨关节炎", "osteoarthritis"],
+      "tree_numbers": ["C05.799.613.400"]
+    },
+    "D005764": {
+      "mesh_ui": "D005764",
+      "descriptor_name": "Gastroesophageal Reflux",
+      "aliases": ["胃食管反流病", "胃食管反流", "gerd", "reflux"],
+      "tree_numbers": ["C06.405.117.430"]
+    },
+    "D010437": {
+      "mesh_ui": "D010437",
+      "descriptor_name": "Peptic Ulcer",
+      "aliases": ["消化性溃疡", "溃疡", "peptic ulcer"],
+      "tree_numbers": ["C06.405.748.724"]
+    },
+    "D005759": {
+      "mesh_ui": "D005759",
+      "descriptor_name": "Gastroenteritis",
+      "aliases": ["急性胃肠炎", "胃肠炎", "gastroenteritis"],
+      "tree_numbers": ["C06.405.469"]
+    },
+    "D005234": {
+      "mesh_ui": "D005234",
+      "descriptor_name": "Fatty Liver",
+      "aliases": ["脂肪肝", "fatty liver"],
+      "tree_numbers": ["C06.552.241"]
+    },
+    "D006509": {
+      "mesh_ui": "D006509",
+      "descriptor_name": "Hepatitis B, Chronic",
+      "aliases": ["乙肝慢性感染", "乙肝", "hepatitis b", "hbv"],
+      "tree_numbers": ["C06.552.380.350.365"]
+    },
+    "D016728": {
+      "mesh_ui": "D016728",
+      "descriptor_name": "Urinary Tract Infections",
+      "aliases": ["尿路感染", "urinary tract infection", "uti"],
+      "tree_numbers": ["C12.777.892.700"]
+    },
+    "D011469": {
+      "mesh_ui": "D011469",
+      "descriptor_name": "Prostatic Hyperplasia",
+      "aliases": ["良性前列腺增生", "前列腺增生", "bph", "benign prostatic hyperplasia"],
+      "tree_numbers": ["C12.294.260.750"]
+    },
+    "D007669": {
+      "mesh_ui": "D007669",
+      "descriptor_name": "Kidney Calculi",
+      "aliases": ["肾结石", "kidney stone", "renal stone"],
+      "tree_numbers": ["C12.777.767.570"]
+    },
+    "D003866": {
+      "mesh_ui": "D003866",
+      "descriptor_name": "Depressive Disorder",
+      "aliases": ["抑郁症", "抑郁", "depression"],
+      "tree_numbers": ["F03.600.300"]
+    },
+    "D001008": {
+      "mesh_ui": "D001008",
+      "descriptor_name": "Anxiety Disorders",
+      "aliases": ["焦虑障碍", "焦虑", "anxiety"],
+      "tree_numbers": ["F03.080.050"]
+    },
+    "D007321": {
+      "mesh_ui": "D007321",
+      "descriptor_name": "Sleep Initiation and Maintenance Disorders",
+      "aliases": ["失眠", "insomnia"],
+      "tree_numbers": ["F03.870.400"]
+    },
+    "D008881": {
+      "mesh_ui": "D008881",
+      "descriptor_name": "Migraine Disorders",
+      "aliases": ["偏头痛", "migraine"],
+      "tree_numbers": ["C10.228.140.546.399"]
+    },
+    "D004485": {
+      "mesh_ui": "D004485",
+      "descriptor_name": "Dermatitis, Atopic",
+      "aliases": ["湿疹", "eczema", "atopic dermatitis"],
+      "tree_numbers": ["C17.800.815.255"]
+    },
+    "D014581": {
+      "mesh_ui": "D014581",
+      "descriptor_name": "Urticaria",
+      "aliases": ["荨麻疹", "urticaria"],
+      "tree_numbers": ["C17.800.862.900"]
+    },
+    "D000152": {
+      "mesh_ui": "D000152",
+      "descriptor_name": "Acne Vulgaris",
+      "aliases": ["痤疮", "acne"],
+      "tree_numbers": ["C17.800.030.255"]
+    },
+    "D009765": {
+      "mesh_ui": "D009765",
+      "descriptor_name": "Obesity",
+      "aliases": ["肥胖症", "肥胖", "obesity"],
+      "tree_numbers": ["C18.654.726.500"]
+    }
+  }
+}

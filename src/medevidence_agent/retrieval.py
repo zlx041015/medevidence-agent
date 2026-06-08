@@ -1,8 +1,11 @@
 from dataclasses import dataclass
+from typing import Optional
 
+from medevidence_agent.config import settings
 from medevidence_agent.models import SearchPlan, SourceDocument
 from medevidence_agent.rag.retriever import build_rag_context, persist_documents_to_store
 from medevidence_agent.tools.pubmed import fetch_pubmed_articles, search_pubmed_pmids_with_fallback
+from medevidence_agent.tools.mesh import load_mesh_terms, mesh_terms_to_keywords
 from medevidence_agent.tools.search import keyword_overlap_score, retrieve_sources, split_disease_and_support_terms
 from medevidence_agent.tools.storage import load_mock_sources
 
@@ -16,6 +19,7 @@ class RetrievalBundle:
 def apply_source_scoring(
     documents: list[SourceDocument],
     query_terms: list[str],
+    mesh_terms: Optional[list[str]] = None,
     use_source_type_weighting: bool = True,
 ) -> list[SourceDocument]:
     type_weights = {
@@ -32,6 +36,10 @@ def apply_source_scoring(
     }
 
     disease_terms, support_terms = split_disease_and_support_terms(query_terms)
+    mesh_terms = mesh_terms or []
+    mesh_bundle = load_mesh_terms(settings.mesh_terms_path) if mesh_terms else {}
+    mesh_keywords = mesh_terms_to_keywords(mesh_terms, mesh_bundle) if mesh_terms else []
+    disease_terms = list(dict.fromkeys(mesh_keywords + disease_terms))
 
     for source in documents:
         disease_overlap = keyword_overlap_score(disease_terms, source.content) if disease_terms else 0.0
@@ -93,6 +101,7 @@ def retrieve_documents(
         scored_sources = apply_source_scoring(
             raw_sources,
             plan.keywords,
+            mesh_terms=plan.mesh_terms,
             use_source_type_weighting=use_source_type_weighting,
         )
         if use_rag:
@@ -120,6 +129,7 @@ def retrieve_documents(
         sources = apply_source_scoring(
             sources,
             plan.keywords,
+            mesh_terms=plan.mesh_terms,
             use_source_type_weighting=use_source_type_weighting,
         )
         if use_rag:
@@ -142,5 +152,10 @@ def retrieve_documents(
         evidence_score_threshold=settings.evidence_score_threshold,
     )
     if use_source_type_weighting:
-        filtered = apply_source_scoring(filtered, plan.keywords, use_source_type_weighting=True)
+        filtered = apply_source_scoring(
+            filtered,
+            plan.keywords,
+            mesh_terms=plan.mesh_terms,
+            use_source_type_weighting=True,
+        )
     return RetrievalBundle(sources=filtered[: settings.top_k], retrieval_mode="mock")

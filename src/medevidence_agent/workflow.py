@@ -35,7 +35,12 @@ def run_workflow(
     coordinator = MultiAgentCoordinator()
 
     update_progress("开始多智能体工作流", 0, 5)
-    state = coordinator.run(state, settings, options)
+    state = coordinator.run(
+        state,
+        settings,
+        options,
+        progress_callback=update_progress,
+    )
 
     if verbose:
         console.rule("多智能体执行轨迹")

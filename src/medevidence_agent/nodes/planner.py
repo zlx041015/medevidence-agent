@@ -1,13 +1,16 @@
 import json
 
-from medevidence_agent.config import Settings
+from medevidence_agent.config import Settings, settings
 from medevidence_agent.llm import chat_completion
 from medevidence_agent.models import ClinicalQuestion, SearchPlan
+from medevidence_agent.tools.mesh import detect_mesh_terms, load_mesh_terms, mesh_terms_to_keywords
 
 
 def build_rule_based_search_plan(question: ClinicalQuestion) -> SearchPlan:
     text = question.text.strip()
     lowered = text.lower()
+    mesh_map = load_mesh_terms(settings.mesh_terms_path)
+    mesh_terms = detect_mesh_terms(text, mesh_map)
 
     keywords = ["clinical guideline"]
 
@@ -67,12 +70,14 @@ def build_rule_based_search_plan(question: ClinicalQuestion) -> SearchPlan:
         if any(trigger in text or trigger in lowered for trigger in triggers):
             keywords.extend(additions)
 
+    keywords.extend(mesh_terms_to_keywords(mesh_terms, mesh_map))
     keywords = list(dict.fromkeys(keywords))
 
     return SearchPlan(
         intent=f"Find evidence-based management suggestions for: {question.text}",
         keywords=keywords,
         risk_level="high",
+        mesh_terms=mesh_terms,
     )
 
 
@@ -83,7 +88,8 @@ def build_llm_search_plan(question: ClinicalQuestion, settings: Settings) -> Sea
 {
   "intent": "一句话描述检索目标",
   "keywords": ["关键词1", "关键词2", "关键词3"],
-  "risk_level": "high"
+  "risk_level": "high",
+  "mesh_terms": ["MeSH主题词1", "MeSH主题词2"]
 }
 
 要求：
@@ -92,6 +98,7 @@ def build_llm_search_plan(question: ClinicalQuestion, settings: Settings) -> Sea
 3. 治疗、并发症、风险管理类问题可标为 high
 4. keywords 数量控制在 4 到 8 个之间
 5. 优先使用英文医学检索词
+6. 如果能识别到明确疾病或病种，请尽量补充对应的 MeSH 主题词
 """.strip()
 
     user_prompt = f"用户问题：{question.text}"
@@ -109,6 +116,7 @@ def build_llm_search_plan(question: ClinicalQuestion, settings: Settings) -> Sea
         intent=data["intent"],
         keywords=data["keywords"],
         risk_level=data["risk_level"],
+        mesh_terms=data.get("mesh_terms", []),
     )
 
 

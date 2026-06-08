@@ -17,13 +17,9 @@ def citation_precision(result: MethodRunResult, benchmark: BenchmarkQuestion) ->
 
 def claim_consistency(result: MethodRunResult, benchmark: BenchmarkQuestion) -> float:
     answer_blob = f"{result.summary_claim} {' '.join(result.extracted_claims)}".lower()
-    normalized_claim = (
-        benchmark.gold_claim.lower()
-        .replace("，", " ")
-        .replace("。", " ")
-        .replace("；", " ")
-    )
+    normalized_claim = benchmark.gold_claim.lower()
     claim_terms = [term for term in normalized_claim.split() if term]
+
     if not claim_terms:
         compact = normalized_claim.replace(" ", "")
         if not compact:
@@ -31,27 +27,21 @@ def claim_consistency(result: MethodRunResult, benchmark: BenchmarkQuestion) -> 
         answer_compact = answer_blob.replace(" ", "")
         hits = sum(1 for ch in set(compact) if ch in answer_compact)
         return round(hits / len(set(compact)), 3)
-    if not claim_terms:
-        return 0.0
+
     hits = sum(1 for term in claim_terms if term in answer_blob)
     return round(hits / len(claim_terms), 3)
 
 
 def hallucination_rate(result: MethodRunResult, benchmark: BenchmarkQuestion) -> float:
-    if not result.answer.strip():
-        return 1.0
-    if not result.references:
+    if not result.answer.strip() or not result.references:
         return 1.0
     unsupported = 1 if result.failure_reason else 0
     unsupported += 1 if retrieval_recall_at_k(result, benchmark) == 0 else 0
-    denominator = 2
-    return round(unsupported / denominator, 3)
+    return round(unsupported / 2, 3)
 
 
 def human_review_trigger_rate(result: MethodRunResult, benchmark: BenchmarkQuestion) -> float:
-    expected = benchmark.needs_human_review
-    actual = result.needs_human_review
-    return 1.0 if expected == actual else 0.0
+    return 1.0 if benchmark.needs_human_review == result.needs_human_review else 0.0
 
 
 def score_result(result: MethodRunResult, benchmark: BenchmarkQuestion) -> dict[str, float]:

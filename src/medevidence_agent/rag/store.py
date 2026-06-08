@@ -20,7 +20,7 @@ class StoredChunk:
 def load_rag_store(path: Path) -> list[StoredChunk]:
     if not path.exists():
         return []
-    raw = json.loads(path.read_text(encoding="utf-8"))
+    raw = json.loads(path.read_text(encoding="utf-8-sig"))
     return [StoredChunk(**item) for item in raw]
 
 
